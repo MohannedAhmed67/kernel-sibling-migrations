@@ -19,7 +19,7 @@ Those earlier "sibling" conversions are reviewed, real examples of the correct c
 | Phase | What | Status |
 |---|---|---|
 | 0 | Environment (pinned Docker toolchain, kernel clone) | done |
-| 1 | Find DRIVEBENCH artifacts / build case list | — |
+| 1 | Find DRIVEBENCH artifacts (not public, see `docs/artifact_search.md`) / build our case list (`docs/phase1_cases.md`) | done |
 | 2 | H1 sibling coverage | — |
 | 3 | H2 Coccinelle rules from siblings | — |
 
@@ -33,7 +33,15 @@ which is case-sensitive even on macOS/Windows hosts.
 docker compose build                       # toolchain image
 docker compose run --rm dev make clone     # blobless clone of torvalds/linux into volume drivebench-linux
 docker compose run --rm dev make env       # writes results/env.txt
+docker compose run --rm dev make prefetch  # batch-download v5.10..v6.10 file contents (~2 GB) so history search is local
+
+# Phase 1: candidate migrations -> verified case list
+docker compose run --rm dev make mine candidates api-events   # data/mined_hits.csv, migration_summary.csv, verify_sample.csv, api_events.csv
+docker compose run --rm dev make select                       # applies docs/selection_rule.md to data/verification.csv
 ```
+
+`data/verification.csv` holds the stored verdicts of the review step (LLM reviewers, see `docs/phase1_cases.md`),
+so `make select` reproduces `data/cases.csv` exactly without re-running the review.
 
 ## Layout
 
