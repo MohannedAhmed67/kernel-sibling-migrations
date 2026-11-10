@@ -38,6 +38,9 @@ docker compose run --rm dev make prefetch  # batch-download v5.10..v6.10 file co
 # Phase 1: candidate migrations -> verified case list
 docker compose run --rm dev make mine candidates api-events   # data/mined_hits.csv, migration_summary.csv, verify_sample.csv, api_events.csv
 docker compose run --rm dev make select                       # applies docs/selection_rule.md to data/verification.csv
+
+# Phase 2: H1
+docker compose run --rm dev make h1                           # results/h1_*.csv, results/h1_coverage.png
 ```
 
 `data/verification.csv` holds the stored verdicts of the review step (LLM reviewers, see `docs/phase1_cases.md`),
