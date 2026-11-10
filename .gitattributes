@@ -1,0 +1,3 @@
+# Keep LF line endings everywhere so scripts run inside the Linux container.
+* text=auto eol=lf
+*.png binary

@@ -1,0 +1,17 @@
+# Usage (from the repo root, on any OS with Docker):
+#   docker compose run --rm dev make env     # Phase 0: toolchain + kernel clone check
+#   docker compose run --rm dev make clone   # blobless clone of torvalds/linux into a Docker volume
+services:
+  dev:
+    build: .
+    image: drivebench-dev:22.04
+    working_dir: /work
+    volumes:
+      - .:/work            # this repo (small files only)
+      - linux:/linux       # kernel tree lives on Linux storage: case-sensitive, fast
+    environment:
+      LINUX: /linux/linux
+
+volumes:
+  linux:
+    name: drivebench-linux

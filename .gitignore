@@ -1,0 +1,8 @@
+# Kernel tree lives in the Docker volume "drivebench-linux"; never commit it.
+/linux/
+/work/
+*.o
+*.ko
+*.cmd
+__pycache__/
+.DS_Store
