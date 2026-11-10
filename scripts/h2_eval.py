@@ -89,6 +89,11 @@ def run_migration(mig):
         d = f"work/h2/eval/{mig}/{int(idx):02d}"
         os.makedirs(d, exist_ok=True)
         sh(["git", "-C", wt, "-c", "gc.auto=0", "checkout", "-q", "--detach", "--force", f"{T}^"])
+        sh(["git", "-C", wt, "clean", "-q", "-fdx"])
+        # Fresh build directory per target: stale dependency files from another kernel version can break
+        # host-tool builds (e.g. objtool), which made results depend on run order.
+        shutil.rmtree(bdir, ignore_errors=True)
+        os.makedirs(bdir, exist_ok=True)
         sh(["make", "-s", f"O={bdir}", "allmodconfig"], cwd=wt)
         sh(["./scripts/config", "--file", f"{bdir}/.config", "-d", "WERROR"], cwd=wt)
         sh(["make", "-s", f"O={bdir}", "olddefconfig"], cwd=wt)

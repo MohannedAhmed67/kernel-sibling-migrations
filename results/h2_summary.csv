@@ -1,0 +1,13 @@
+migration,source,targets,buildable,exact,subset_complete,subset_incomplete,divergent,no_change,spatch_error,no_rule,rule_compiles_of_buildable,human_compiles_of_buildable,exact_or_subset_complete_and_compiles
+i2c_probe_new,manual,20,19,20,0,0,0,0,0,0,19,19,19
+ida_simple,manual,20,20,14,0,0,6,0,0,0,20,20,14
+pci_dma_wrappers,manual,20,20,5,1,2,11,1,0,0,19,20,6
+platform_remove_new,manual,20,20,19,0,0,0,1,0,0,20,19,19
+strlcpy_strscpy,manual,20,15,18,0,0,0,2,0,0,15,15,14
+ALL,manual,100,94,76,1,2,17,4,0,0,93,93,72
+i2c_probe_new,spinfer,20,19,0,0,0,0,0,0,20,0,19,0
+ida_simple,spinfer,20,20,9,0,4,7,0,0,0,20,20,9
+pci_dma_wrappers,spinfer,20,20,2,0,6,5,7,0,0,20,20,2
+platform_remove_new,spinfer,20,20,0,0,0,0,0,0,20,0,19,0
+strlcpy_strscpy,spinfer,20,15,17,0,0,1,2,0,0,15,15,13
+ALL,spinfer,100,94,28,0,10,13,9,0,40,55,93,24

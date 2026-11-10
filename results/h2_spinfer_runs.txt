@@ -1,0 +1,5 @@
+i2c_probe_new rc=0 seconds=3 no_rule
+platform_remove_new rc=0 seconds=3 no_rule
+strlcpy_strscpy rc=0 seconds=10 rule
+pci_dma_wrappers rc=0 seconds=26 rule
+ida_simple rc=0 seconds=30 rule

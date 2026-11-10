@@ -21,7 +21,7 @@ Those earlier "sibling" conversions are reviewed, real examples of the correct c
 | 0 | Environment (pinned Docker toolchain, kernel clone) | done |
 | 1 | Find DRIVEBENCH artifacts (not public, see `docs/artifact_search.md`) / build our case list (`docs/phase1_cases.md`) | done |
 | 2 | H1 sibling existence (`docs/phase2_h1.md`) | done |
-| 3 | H2 Coccinelle rules from siblings | — |
+| 3 | H2 Coccinelle rules from siblings (`docs/phase3_h2.md`) | done |
 
 ## Reproduce
 
@@ -41,7 +41,15 @@ docker compose run --rm dev make select                       # applies docs/sel
 
 # Phase 2: H1
 docker compose run --rm dev make h1                           # results/h1_*.csv, results/h1_coverage.png
+
+# Phase 3: H2
+docker build -f docker/spinfer.Dockerfile -t drivebench-spinfer:c47696a docker   # Spinfer (pinned)
+bash scripts/h2_spinfer.sh                                    # host: infer rules/spinfer/*.cocci
+docker compose run --rm dev make h2                           # results/h2_*.csv, results/h2_rules.png
 ```
+
+`results/h2_review.csv` stores the semantic reviews of non-exact rule outputs, so `make h2-final` rebuilds the
+final H2 tables without re-running the review.
 
 `data/verification.csv` holds the stored verdicts of the review step (LLM reviewers, see `docs/phase1_cases.md`),
 so `make select` reproduces `data/cases.csv` exactly without re-running the review.
