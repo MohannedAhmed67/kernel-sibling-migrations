@@ -1,7 +1,8 @@
 # Case selection rules (pre-registered)
 
-Written on 2026-11-10, **before** any verification verdicts or H1/H2 results were seen. The git history of this
-file shows it was committed before `data/verification.csv` existed.
+Written on 2026-11-10, before any H1/H2 results were computed. The git history shows this file was committed
+(17:50) before `data/verification.csv` was first committed (17:57). This orders the commits; it cannot by itself prove
+that no verdict existed yet.
 
 > **Correction, added 2026-11-10 after an adversarial review of H1. The rules below are unchanged.**
 > 1. "Pre-registered" holds only partly. The rules were written *after* `data/migration_summary.csv` (commit counts,

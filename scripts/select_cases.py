@@ -65,4 +65,9 @@ rows = [r for r in read("data/conversions_candidates.csv") if r["migration"] in 
 with open("data/conversions.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
     w.writeheader(); w.writerows(rows)
-print(f"included {len(included)}/{len(summ)} migrations; {len(rows)} conversions -> data/cases.csv, data/conversions.csv")
+pairs = {(r["migration"], r["file"]) for r in rows}
+stats = (f"included migrations: {len(included)} of {len(summ)}\ncandidate conversions: {len(rows)}\n"
+         f"distinct (migration, file) pairs: {len(pairs)}\ndistinct files: {len({r['file'] for r in rows})}\n"
+         f"distinct commits: {len({r['commit'] for r in rows})}\n")
+open("data/cases_stats.txt", "w", newline="\n").write(stats)
+print(stats + "-> data/cases.csv, data/conversions.csv, data/cases_stats.txt")

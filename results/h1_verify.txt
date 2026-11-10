@@ -1,0 +1,3 @@
+ancestry recount: 86 targets, 15607 distinct (sibling, target) merge-base checks, 0 mismatches
+recall spot check platform_remove_new: 2691 files use .remove_new at v6.10; 2612 are recorded conversions; 79 are not
+  of those 79: 69 were added (new or renamed) inside v5.10..v6.10, 10 existed before and were missed by the miner

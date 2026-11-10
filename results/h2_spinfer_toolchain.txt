@@ -1,0 +1,7 @@
+image: drivebench-spinfer:c47696a
+os: Debian GNU/Linux 10 (buster)
+ocaml: The OCaml toplevel, version 4.05.0
+python3: Python 3.7.3
+sklearn: 0.20.2
+spinfer commit: c47696a8bca7ecf1f6416ba3f4145859521eff58
+coccinelle submodule: 9fe14e3f9b5d39f4cc7f5e18e19991f50a081d46 (2019-11-19 13:47:24 +0100)

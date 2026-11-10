@@ -30,7 +30,7 @@ compile results), `results/h2_review.csv` (stored semantic reviews), `results/h2
 
 | Rule source | Correct* | Correct and compiles, of buildable | Partial | Wrong | No migration | Wrong but compiles |
 |---|---|---|---|---|---|---|
-| manual (sibling-derived) | **86/100** | **81/94** | 8 | 2 | 4 | 1 |
+| LLM-written rule (`rules/manual/`) | **86/100** | **81/94** | 8 | 2 | 4 | 1 |
 | Spinfer (sibling-derived) | 30/100 | 26/94 | 10 | 11 | 49 | **11** |
 
 \*Correct = identical to the human fix (manual 76, Spinfer 28), equivalent (8 / 2), or a behaviour-preserving
@@ -38,7 +38,7 @@ alternative (2 / 0).
 
 Per migration (correct-and-compiles / buildable):
 
-| Migration | manual | Spinfer | Note |
+| Migration | LLM-written | Spinfer | Note |
 |---|---|---|---|
 | `i2c_probe_new` | 19/19 | 0/19 | Spinfer: "no code to learn from" (change is in a struct initializer, outside functions) |
 | `platform_remove_new` | 19/20 | 0/20 | same Spinfer limitation; 1 human fix depends on another file |
@@ -48,7 +48,7 @@ Per migration (correct-and-compiles / buildable):
 
 **Buildability:** 94/100 targets compile in their original form on x86_64 `allmodconfig`. The 6 that do not:
 4 drivers for other architectures (PowerPC, m68k, 2× s390); 1 driver disabled by x86 Kconfig (`qcom_sysmon`);
-1 harness limitation (`amd/pm/legacy_dpm.c`, which is built from another directory's Makefile). The human fix
+1 harness limitation (`drivers/gpu/drm/amd/pm/legacy-dpm/legacy_dpm.c`, which is built from another directory's Makefile). The human fix
 compiles for 93/94; the exception depends on an edit in another file.
 
 ## What failed, and why (failure categories)
@@ -66,15 +66,16 @@ compiles for 93/94; the exception depends on an edit in another file.
   while the human deliberately allowed "one more device".
 
 ## Plain-language reading
-1. When the 20 earlier siblings show the whole pattern, a rule derived only from them reproduced the human fix on
+1. When the 20 earlier siblings show the whole pattern, a rule written from them alone reproduced the human fix on
    held-out drivers almost every time: 19/19, 20/20, 19/20 and 14/15 (correct and compiles) on four of five migrations.
 2. When the pattern has many variants (`pci_dma_wrappers`), sibling-derived rules stay incomplete (9/20 manual).
    This is the residue where something more flexible, such as an LLM given the siblings as examples, could help (H3).
-3. **"It compiles" is not "it is correct".** 11 of Spinfer's outputs and 1 manual output compile but change
-   behaviour. Compile success is AUTODRIVER's main metric, so this shows it can over-count.
-4. The automatic rule learner (Spinfer) is much weaker here than a hand-written rule from the same examples
-   (26/94 vs 81/94). This is partly because two common driver migrations change struct initializers, which are
-   outside Spinfer's scope.
+3. **"It compiles" is not "it is correct".** 11 Spinfer outputs and 1 LLM-written output compile but were judged to
+   change behaviour. This illustrates that compile success, the headline metric in the AUTODRIVER abstract, needs a
+   semantic check alongside it. AUTODRIVER's own outputs were not evaluated here.
+4. Spinfer is much weaker here than the LLM-written rule from the same examples (26/94 vs 81/94). Much of the gap is
+   scope: Spinfer inferred no rule for the two struct-initializer migrations. On the 3 migrations where it did infer a
+   rule, the comparison is 26/55 vs 43/55.
 
 ## Limitations
 - 5 migrations, 20 targets each, chosen by hand to span easy→hard. Not a random sample of driver updates.
@@ -85,9 +86,7 @@ compiles for 93/94; the exception depends on an edit in another file.
 - The category list lacked "rule too broad". 8 reviews were relabelled to it by a fixed text rule in
   `scripts/h2_final.py`; the reviewers' original category is kept in `reviewer_category`.
 - Compile checks are per-file on x86_64 only. No linking, boot (QEMU) or runtime test.
-- Spinfer ran with its default settings and an old toolchain (Debian 10, OCaml 4.05, Coccinelle 2019). A tuned
-  Spinfer, or one learning from more examples, could do better.
-- The stored first manual-rule run used per-migration build directories that persisted between targets. The final
-  run uses a fresh build directory per target. Both runs gave the same manual classifications for all 100 targets,
-  except `pci_dma_wrappers` #5. That row changed from `spatch_error` to `no_change` after the harness learned that
-  spatch exits non-zero when it changes nothing.
+- Spinfer ran with its default settings and its original toolchain (`results/h2_spinfer_toolchain.txt`: Debian 10,
+  OCaml 4.05.0, Coccinelle commit from 2019-11-19). A tuned Spinfer, or one learning from more examples, could do better.
+- "20 training siblings" are 20 file conversions, not 20 independent commits: they come from 1 (`strlcpy_strscpy`),
+  4 (`i2c_probe_new`), 14, 18 and 20 commits (`training_commits` in `results/h2_final_summary.csv`).

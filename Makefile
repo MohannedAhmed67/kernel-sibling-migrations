@@ -1,7 +1,7 @@
 # Run every target inside the container:  docker compose run --rm dev make <target>
 LINUX ?= /linux/linux
 
-.PHONY: env clone blob-probe prefetch mine candidates api-events select h1 h2 h2-final
+.PHONY: env clone blob-probe prefetch mine candidates api-events select h1 verify-h1 h2 h2-final
 
 env:            ## Phase 0: record toolchain + kernel-clone facts to results/env.txt
 	mkdir -p results && bash scripts/env_check.sh | tee results/env.txt
@@ -27,6 +27,9 @@ select:         ## Phase 1: apply pre-registered rule to stored verdicts -> data
 
 h1:             ## Phase 2: sibling coverage -> results/h1_coverage.csv, h1_summary.csv, h1_coverage.png
 	python3 scripts/h1_coverage.py
+
+verify-h1:      ## Phase 2 check: git merge-base recount + recall spot check -> results/h1_verify.txt
+	python3 scripts/verify_h1.py
 
 h2:             ## Phase 3: split, apply rules/{manual,spinfer}, compare, compile, merge stored reviews -> results/h2_*
 	python3 scripts/h2_split.py

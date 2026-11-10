@@ -1,0 +1,5 @@
+included migrations: 27 of 32
+candidate conversions: 8818
+distinct (migration, file) pairs: 8542
+distinct files: 6241
+distinct commits: 5175

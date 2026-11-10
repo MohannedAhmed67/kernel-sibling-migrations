@@ -25,5 +25,14 @@ We therefore build our own case list from Linux git history (v5.10..v6.10), as p
   dependency-heavy updates (Sec. 7.2, 7.5, 8.2). Future work: "coordinated dependency tracking and
   hierarchical regeneration" (Sec. 7.5).
 - **Coccinelle** is not used or evaluated in the paper's compiled PDF.
+- Verbatim from the v1 text (checked against the downloaded PDF):
+  - Abstract: "In evaluation across 55 cases, AUTODRIVER achieves 56.4% compilation success".
+  - Failure modes: "incomplete structure updates, partial function migrations, and missing propagation of related
+    changes across dependent code".
+  - Future work: "coupling AUTODRIVER with kernel-aware retrieval systems that dynamically extract API changes from
+    version control or symbol databases".
+  - Build setup: "Kernel builds require a case-sensitive filesystem, so a dedicated APFS volume was created and
+    mounted into Docker containers."
+  - Authors: Kharlamova, Liu, Zhang, Yang, Alqasimi, Sun, Xue.
 - **Their evaluation unit** is a single driver commit plus its triggering kernel commit. Ours is the same idea,
   restricted to API migrations where many drivers were converted.

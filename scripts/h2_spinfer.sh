@@ -7,6 +7,13 @@ IMAGE="${SPINFER_IMAGE:-drivebench-spinfer:c47696a}"
 TIMEOUT="${SPINFER_TIMEOUT:-7200}"
 mkdir -p rules/spinfer results
 : > results/h2_spinfer_runs.txt
+# record the toolchain inside the Spinfer image
+{ echo "image: $IMAGE"
+  MSYS_NO_PATHCONV=1 docker run --rm --entrypoint sh "$IMAGE" -c \
+    'echo "os: $(. /etc/os-release; echo $PRETTY_NAME)"; echo "ocaml: $(ocaml -version)"; echo "python3: $(python3 --version)";
+     echo "sklearn: $(python3 -c "import sklearn; print(sklearn.__version__)" 2>/dev/null)";
+     cd /usr/src/spinfer && echo "spinfer commit: $(git rev-parse HEAD)" && echo "coccinelle submodule: $(git -C coccinelle rev-parse HEAD) ($(git -C coccinelle log -1 --format=%ci))"'
+} > results/h2_spinfer_toolchain.txt
 run_one() {
   d="$1"; mig=$(basename "$(dirname "$d")")
   (cd "$d" && for x in */; do echo "${x%/}/before.c ${x%/}/after.c"; done > index)

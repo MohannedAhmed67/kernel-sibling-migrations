@@ -44,11 +44,10 @@ pre-registered 2327/2427 (95.9%); E2 released before written 2172/2427 (89.5%); 
    for 89.5% of targets.
 
 ## Verified checks (adversarial review, 2026-11-10)
-- An independent re-implementation (its own topological sort) matched all 9,015 target rows exactly.
-- A second check tested 15,617 (sibling, target) pairs directly with `git merge-base --is-ancestor` for 87
-  targets: 0 mismatches.
+- `make verify-h1` (`results/h1_verify.txt`): for 86 targets (up to 3 per migration: first, middle, last; duplicates dropped) the counts
+  were recomputed with 15,607 direct `git merge-base --is-ancestor` checks: 0 mismatches.
 - Bugs found and fixed before this write-up: the author check did not merge mailing-list-rewritten names
-  (`spi_get_chipselect` read 86.1% instead of 1.9%); the earlier "strict" view compared release windows instead
+  (this inflated `spi_get_chipselect`'s different-author share; it is 1.9% after the fix); the earlier "strict" view compared release windows instead
   of the target's writing time; "≥3 siblings" counted files rather than commits.
 
 ## Limitations (must accompany any H1 number)
@@ -58,9 +57,9 @@ pre-registered 2327/2427 (95.9%); E2 released before written 2172/2427 (89.5%); 
 - **Existence, not findability:** siblings are defined with migration-specific regexes, i.e. the migration's
   identity is assumed known. Whether a retrieval system could *find* them from a triggering kernel commit is untested.
 - **Candidate precision:** a sample of <= 8 per migration was verified; 95% Wilson lower bounds on precision are
-  0.44–0.68 (column `precision_wilson95_low`). No target in the 27 migrations relies only on a sibling that was
-  verified as noise. Unverified noise could still inflate counts.
-- **Recall** is unmeasured except for `platform_remove_new` (spot check: about 1% of converted files missed).
+  0.44–0.68 (column `precision_wilson95_low`). Regex noise among siblings could inflate counts.
+- **Recall** is unmeasured except one spot check (`results/h1_verify.txt`): of 2,691 files using `.remove_new` at
+  v6.10, 2,612 are recorded conversions, 69 were added during the window, and 10 pre-existing files were missed.
 - **Small migrations** (`kstrto` n=3, `in_hardirq` n=4, `pci_alloc_irq_vectors` n=5) weigh as much as large ones in the median.
 - The date view treats commits made in the same second as not earlier (one patch series is often applied within
   seconds). The ancestry view is unaffected.

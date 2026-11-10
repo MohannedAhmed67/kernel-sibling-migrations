@@ -50,15 +50,23 @@ with open("results/h2_final.csv", "w", newline="") as f:
 
 VERDICTS = ["exact", "correct_equivalent", "correct_alternative", "partial", "wrong", "no_migration", "not_a_migration_target", "unreviewed"]
 groups = collections.defaultdict(list)
+spinfer_rule_migs = {r["migration"] for r in final if r["source"] == "spinfer" and r["auto_class"] != "no_rule"}
 for r in final:
     groups[(r["source"], r["migration"])].append(r)
     groups[(r["source"], "ALL")].append(r)
+    if r["migration"] in spinfer_rule_migs:   # like-for-like: only migrations where Spinfer produced a rule
+        groups[(r["source"], "ALL_where_spinfer_inferred_a_rule")].append(r)
+split = list(csv.DictReader(open("data/h2_split.csv", newline="")))
+train_commits = {m: len({s["commit"] for s in split if s["migration"] == m and s["role"] == "train"})
+                 for m in {s["migration"] for s in split}}
 out = []
-for (src, mig), rs in sorted(groups.items(), key=lambda x: (x[0][0], x[0][1] == "ALL", x[0][1])):
+for (src, mig), rs in sorted(groups.items(), key=lambda x: (x[0][0], x[0][1].startswith("ALL"), x[0][1])):
     b = [r for r in rs if r["buildable"]]
     c = collections.Counter(r["final_verdict"] for r in rs)
     cats = collections.Counter(r["failure_category"] for r in rs if r["failure_category"] not in ("none", ""))
     out.append({"source": src, "migration": mig, "targets": len(rs), "buildable": len(b),
+                "training_commits": train_commits.get(mig, ""),
+                "success_exact_of_buildable": sum(r["success"] and r["final_verdict"] == "exact" for r in b),
                 **{v: c.get(v, 0) for v in VERDICTS},
                 "correct_any": sum(r["final_verdict"] in CORRECT for r in rs),
                 "success_of_buildable": sum(r["success"] for r in b),
@@ -78,7 +86,7 @@ SEG = [("correct (exact / equivalent / alternative)", ["exact", "correct_equival
        ("partial", ["partial"], "#eda100"),
        ("wrong", ["wrong"], "#e34948"),
        ("no migration / no rule", ["no_migration", "not_a_migration_target", "unreviewed"], "#6250d6")]
-rows_plot = [o for o in out]
+rows_plot = [o for o in out if o["migration"] != "ALL_where_spinfer_inferred_a_rule"]
 labels = [f"{o['source']}: {o['migration']}" for o in rows_plot]
 fig, ax = plt.subplots(figsize=(10, 0.42 * len(rows_plot) + 1.6), facecolor=SURF)
 ax.set_facecolor(SURF)

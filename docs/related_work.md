@@ -25,7 +25,9 @@ abstracts or PDFs. **This list decides how we may (and may not) describe our con
    driver-update cases an LLM pipeline like AUTODRIVER targets (**H1**).
 2. Validating sibling-derived rules by **compilation**, not only by line or node overlap with the human patch (**H2**).
 3. Comparing rule-based and LLM+exemplar repair on the same chronological split, with rules handling the easy
-   cases and the LLM the residue (**H3**). No paper combining LLMs with Coccinelle for the kernel was found.
+   cases and the LLM the residue (**H3**). Searches of OpenAlex and arXiv abstracts for "Coccinelle", "SmPL" and
+   "semantic patch" combined with LLM terms, and of works citing Spinfer and spdiff, found no paper combining LLMs
+   with Coccinelle semantic patches for kernel driver migration. This was not an exhaustive survey.
 
 Framing: *"retrieval of sibling migrations as context for LLM driver co-evolution, with rule-based (Coccinelle) application
 validated by compilation"*. This builds on Spinfer/Prequel and plugs into AUTODRIVER's stated future work.

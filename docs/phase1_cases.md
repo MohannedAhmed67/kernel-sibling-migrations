@@ -34,5 +34,6 @@ Reproduce: `make mine candidates api-events`, then `python3 scripts/select_cases
 - Candidates come from line regexes. Precision is estimated from a sample of <= 8 per migration, so it is a
   coarse estimate. Recall (conversions the regexes missed) is **not** measured.
 - The reviewers are LLM agents of the same model family. Their agreement is not equivalent to two independent
-  human experts. The author spot-checked rejections and two acceptances by hand.
+  human experts. During the session, the orchestrating agent also spot-checked the rejections and two acceptances
+  against the raw diffs; those spot checks are not stored in the repo.
 - "Conversion" is judged per file. A `partial` verdict means old-API uses remain in the file after the commit.
