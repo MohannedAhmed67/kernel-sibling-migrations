@@ -1,0 +1,6 @@
+agent-a544ae78f67eae394.jsonl migration=platform_remove_new tool_calls=13 violations=0
+agent-a580fc7e7cf378bbc.jsonl migration=ida_simple tool_calls=6 violations=0
+agent-a5f92464502203cf6.jsonl migration=i2c_probe_new tool_calls=7 violations=0
+agent-a766c5c9e2c2c0cc3.jsonl migration=pci_dma_wrappers tool_calls=13 violations=0
+agent-adbb0916d55a36aaf.jsonl migration=strlcpy_strscpy tool_calls=6 violations=0
+TOTAL violations: 0
