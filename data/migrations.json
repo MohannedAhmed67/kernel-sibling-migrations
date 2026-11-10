@@ -1,0 +1,251 @@
+{
+ "_comment": "CANDIDATE API migrations. Regexes are applied to single added/removed diff lines. A file in a commit is a candidate conversion if it removes >=1 'old' line and adds >=1 'new' line. Candidates are verified separately before use; patterns are deliberately simple and may be noisy.",
+ "migrations": [
+  {
+   "id": "ida_simple",
+   "old": "\\bida_simple_(?:get|remove)\\s*\\(",
+   "new": "\\bida_(?:alloc(?:_range|_min|_max)?|free)\\s*\\(",
+   "hdr_new": "\\bida_alloc\\s*\\(",
+   "hdr_old": "\\bida_simple_get\\b"
+  },
+  {
+   "id": "i2c_probe_new",
+   "old": "\\.probe_new\\s*=",
+   "new": "\\.probe\\s*=",
+   "hdr_new": "\\(\\*probe\\)\\s*\\(\\s*struct i2c_client\\s*\\*\\s*\\w*\\s*\\)\\s*;",
+   "hdr_old": "\\bprobe_new\\b"
+  },
+  {
+   "id": "class_create_owner",
+   "old": "\\bclass_create\\s*\\(\\s*THIS_MODULE\\s*,",
+   "new": "\\bclass_create\\s*\\(\\s*(?!THIS_MODULE)\\S",
+   "hdr_new": "class_create\\s*\\(\\s*const char",
+   "hdr_old": "\\b__class_create\\b"
+  },
+  {
+   "id": "strlcpy_strscpy",
+   "old": "\\bstrlcpy\\s*\\(",
+   "new": "\\bstrscpy\\s*\\(",
+   "hdr_new": "\\bstrscpy\\b",
+   "hdr_old": "\\bstrlcpy\\b"
+  },
+  {
+   "id": "strncpy_strscpy",
+   "old": "\\bstrncpy\\s*\\(",
+   "new": "\\bstrscpy(?:_pad)?\\s*\\(",
+   "hdr_new": "\\bstrscpy_pad\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "pci_dma_wrappers",
+   "old": "\\bpci_(?:alloc|zalloc|free)_consistent\\s*\\(|\\bpci_(?:map|unmap)_(?:single|page|sg)\\s*\\(|\\bpci_dma_sync_\\w+\\s*\\(|\\bpci_dma_mapping_error\\s*\\(|\\bpci_set_(?:dma|consistent_dma)_mask\\s*\\(",
+   "new": "\\bdma_(?:alloc_coherent|free_coherent|map_single|unmap_single|map_page|unmap_page|map_sg|unmap_sg|sync_\\w+|mapping_error|set_mask|set_coherent_mask|set_mask_and_coherent)\\s*\\(",
+   "hdr_new": null,
+   "hdr_old": "\\bpci_alloc_consistent\\b"
+  },
+  {
+   "id": "pci_dma_constants",
+   "old": "\\bPCI_DMA_(?:TODEVICE|FROMDEVICE|BIDIRECTIONAL|NONE)\\b",
+   "new": "\\bDMA_(?:TO_DEVICE|FROM_DEVICE|BIDIRECTIONAL|NONE)\\b",
+   "hdr_new": null,
+   "hdr_old": "\\bPCI_DMA_TODEVICE\\b"
+  },
+  {
+   "id": "pci_pool",
+   "old": "\\bpci_pool_(?:create|alloc|zalloc|free|destroy)\\s*\\(",
+   "new": "\\bdma_pool_\\w+\\s*\\(",
+   "hdr_new": null,
+   "hdr_old": "\\bpci_pool_create\\b"
+  },
+  {
+   "id": "napi_weight",
+   "old": "\\bnetif_napi_add\\s*\\(.*,\\s*(?:NAPI_POLL_WEIGHT|\\d+|\\w*WEIGHT\\w*)\\s*\\)",
+   "new": "\\bnetif_napi_add(?:_weight)?\\s*\\(",
+   "hdr_new": "\\bnetif_napi_add_weight\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "platform_remove_new",
+   "old": "\\.remove\\s*=\\s*\\w+",
+   "new": "\\.remove_new\\s*=",
+   "hdr_new": "\\bremove_new\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "i2c_remove_void",
+   "old": "\\bstatic\\s+int\\s+\\w+\\s*\\(\\s*struct\\s+i2c_client\\s*\\*\\s*\\w+\\s*\\)",
+   "new": "\\bstatic\\s+void\\s+\\w+\\s*\\(\\s*struct\\s+i2c_client\\s*\\*\\s*\\w+\\s*\\)",
+   "hdr_new": "void\\s*\\(\\*remove\\)\\s*\\(\\s*struct i2c_client",
+   "hdr_old": "int\\s*\\(\\*remove\\)\\s*\\(\\s*struct i2c_client"
+  },
+  {
+   "id": "tasklet_setup",
+   "old": "\\btasklet_init\\s*\\(",
+   "new": "\\btasklet_setup\\s*\\(",
+   "hdr_new": "\\btasklet_setup\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "devm_platform_ioremap",
+   "old": "\\bdevm_ioremap_resource\\s*\\(",
+   "new": "\\bdevm_platform_(?:get_and_)?ioremap_resource(?:_byname)?\\s*\\(",
+   "hdr_new": "\\bdevm_platform_ioremap_resource\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "kmap_local",
+   "old": "\\bkmap_atomic\\s*\\(",
+   "new": "\\bkmap_local_(?:page|folio)\\s*\\(",
+   "hdr_new": "\\bkmap_local_page\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "sysfs_emit",
+   "old": "\\b(?:sprintf|snprintf|scnprintf)\\s*\\(\\s*buf\\s*,",
+   "new": "\\bsysfs_emit(?:_at)?\\s*\\(",
+   "hdr_new": "\\bsysfs_emit\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "dev_err_probe",
+   "old": "\\bdev_err\\s*\\(",
+   "new": "\\bdev_err_probe\\s*\\(",
+   "hdr_new": "\\bdev_err_probe\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "devm_clk_get_enabled",
+   "old": "\\bclk_prepare_enable\\s*\\(",
+   "new": "\\bdevm_clk_get_(?:optional_)?enabled\\s*\\(",
+   "hdr_new": "\\bdevm_clk_get_enabled\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "pm_ops_macros",
+   "old": "\\bSET_(?:SYSTEM_SLEEP|RUNTIME|LATE_SYSTEM_SLEEP|NOIRQ_SYSTEM_SLEEP)_PM_OPS\\s*\\(|\\bSIMPLE_DEV_PM_OPS\\s*\\(|\\bUNIVERSAL_DEV_PM_OPS\\s*\\(",
+   "new": "\\b(?:SYSTEM_SLEEP|RUNTIME|LATE_SYSTEM_SLEEP|NOIRQ_SYSTEM_SLEEP)_PM_OPS\\s*\\(|\\bDEFINE_(?:SIMPLE|RUNTIME)_DEV_PM_OPS\\s*\\(|\\bpm_(?:sleep_)?ptr\\s*\\(",
+   "hdr_new": "\\bDEFINE_SIMPLE_DEV_PM_OPS\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "of_property_present",
+   "old": "\\bof_(?:find_property|property_read_bool)\\s*\\(",
+   "new": "\\bof_property_present\\s*\\(",
+   "hdr_new": "\\bof_property_present\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "irq_affinity_hint",
+   "old": "\\birq_set_affinity_hint\\s*\\(",
+   "new": "\\birq_(?:update_affinity_hint|set_affinity_and_hint)\\s*\\(",
+   "hdr_new": "\\birq_update_affinity_hint\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "pin_user_pages",
+   "old": "\\bget_user_pages(?:_fast|_unlocked|_remote)?\\s*\\(",
+   "new": "\\bpin_user_pages(?:_fast|_unlocked|_remote)?\\s*\\(",
+   "hdr_new": "\\bpin_user_pages_fast\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "pci_alloc_irq_vectors",
+   "old": "\\bpci_enable_msix?(?:_range|_exact)?\\s*\\(",
+   "new": "\\bpci_alloc_irq_vectors(?:_affinity)?\\s*\\(",
+   "hdr_new": "\\bpci_alloc_irq_vectors\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "dma_set_mask_and_coherent",
+   "old": "\\bdma_set_coherent_mask\\s*\\(",
+   "new": "\\bdma_set_mask_and_coherent\\s*\\(",
+   "hdr_new": "\\bdma_set_mask_and_coherent\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "device_get_match_data",
+   "old": "\\bof_device_get_match_data\\s*\\(",
+   "new": "\\bdevice_get_match_data\\s*\\(",
+   "hdr_new": "\\bdevice_get_match_data\\b",
+   "hdr_old": "\\bof_device_get_match_data\\b"
+  },
+  {
+   "id": "timer_delete",
+   "old": "\\bdel_timer(?:_sync)?\\s*\\(",
+   "new": "\\btimer_delete(?:_sync)?\\s*\\(",
+   "hdr_new": "\\btimer_delete_sync\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "gpiod_from_of_gpio",
+   "old": "\\bof_get_named_gpio(?:_flags)?\\s*\\(",
+   "new": "\\b(?:devm_)?(?:fwnode_)?gpiod_get(?:_optional|_index)?\\s*\\(",
+   "hdr_new": null,
+   "hdr_old": "\\bof_get_named_gpio_flags\\b"
+  },
+  {
+   "id": "kobj_default_groups",
+   "old": "\\.default_attrs\\s*=",
+   "new": "\\.default_groups\\s*=",
+   "hdr_new": "\\bdefault_groups\\b",
+   "hdr_old": "\\bdefault_attrs\\b"
+  },
+  {
+   "id": "in_hardirq",
+   "old": "\\bin_irq\\s*\\(\\s*\\)",
+   "new": "\\bin_hardirq\\s*\\(\\s*\\)",
+   "hdr_new": "\\bin_hardirq\\b",
+   "hdr_old": "\\bin_irq\\(\\)"
+  },
+  {
+   "id": "kstrto",
+   "old": "\\bsimple_strto(?:ul|l|ull|ll)\\s*\\(",
+   "new": "\\bkstrto\\w+\\s*\\(",
+   "hdr_new": "\\bkstrtoul\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "fallthrough",
+   "old": "/\\*\\s*[Ff]all(?:s)?[ -]?[Tt]hr(?:ough|u)",
+   "new": "\\bfallthrough\\s*;",
+   "hdr_new": "define fallthrough",
+   "hdr_old": null
+  },
+  {
+   "id": "input_setup_polling",
+   "old": "\\b(?:devm_)?input_allocate_polled_device\\s*\\(",
+   "new": "\\binput_setup_polling\\s*\\(",
+   "hdr_new": "\\binput_setup_polling\\b",
+   "hdr_old": "\\binput_allocate_polled_device\\b"
+  },
+  {
+   "id": "eth_hw_addr_set",
+   "old": "\\b(?:memcpy|ether_addr_copy)\\s*\\(\\s*[\\w>.-]*dev_addr\\s*,",
+   "new": "\\b(?:eth_hw_addr_set|dev_addr_set|eth_hw_addr_gen)\\s*\\(",
+   "hdr_new": "\\beth_hw_addr_set\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "netif_rx_ni",
+   "old": "\\bnetif_rx_ni\\s*\\(",
+   "new": "\\bnetif_rx\\s*\\(",
+   "hdr_new": null,
+   "hdr_old": "\\bnetif_rx_ni\\b"
+  },
+  {
+   "id": "vm_flags_set",
+   "old": "->vm_flags\\s*(?:\\|=|&=)",
+   "new": "\\bvm_flags_(?:set|clear|mod|init)\\s*\\(",
+   "hdr_new": "\\bvm_flags_set\\b",
+   "hdr_old": null
+  },
+  {
+   "id": "spi_get_chipselect",
+   "old": "->chip_select\\b",
+   "new": "\\bspi_(?:get|set)_chipselect\\s*\\(",
+   "hdr_new": "\\bspi_get_chipselect\\b",
+   "hdr_old": null
+  }
+ ],
+ "_comment_hdr": "hdr_new / hdr_old: regexes over include/ lines; used only to locate when the new API appeared and when the old API was removed from headers (null = not applicable)."
+}

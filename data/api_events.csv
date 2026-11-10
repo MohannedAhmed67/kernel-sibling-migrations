@@ -1,0 +1,36 @@
+migration,new_api_status,new_api_commit,new_api_date,new_api_subject,old_api_status,old_api_commit,old_api_date,old_api_subject
+ida_simple,before v5.10,,,,still present at v6.10,,,
+i2c_probe_new,introduced in window,03c835f498b5,2023-03-09,i2c: Switch .probe() to not take an id parameter,removed in window,5eb1e6e459cf,2023-09-13,i2c: Drop legacy callback .probe_new()
+class_create_owner,introduced in window,6e30a66433af,2023-03-17,driver core: class: remove struct module owner out of struct class,removed in window,dcfbb67e48a2,2023-03-24,driver core: class: use lock_class_key already present in struct subsys_private
+strlcpy_strscpy,before v5.10,,,,removed in window,d26270061ae6,2024-01-19,string: Remove strlcpy()
+strncpy_strscpy,before v5.10,,,,n/a,,,
+pci_dma_wrappers,n/a,,,,removed in window,7968778914e5,2022-03-30,"PCI: Remove the deprecated ""pci-dma-compat.h"" API"
+pci_dma_constants,n/a,,,,removed in window,7968778914e5,2022-03-30,"PCI: Remove the deprecated ""pci-dma-compat.h"" API"
+pci_pool,n/a,,,,removed in window,88dee3b0efe4,2021-10-18,PCI: Remove unused pci_pool wrappers
+napi_weight,introduced in window,58caed3dacb4,2022-05-03,netdev: reshuffle netif_napi_add() APIs to allow dropping weight,n/a,,,
+platform_remove_new,introduced in window,5c5a7680e67b,2023-01-17,platform: Provide a remove callback that returns no value,n/a,,,
+i2c_remove_void,introduced in window,ed5c2f5fd10d,2022-08-16,i2c: Make remove callback return void,removed in window,ed5c2f5fd10d,2022-08-16,i2c: Make remove callback return void
+tasklet_setup,before v5.10,,,,n/a,,,
+devm_platform_ioremap,before v5.10,,,,n/a,,,
+kmap_local,introduced in window,f3ba3c710ac5,2020-11-24,mm/highmem: Provide kmap_local*,n/a,,,
+sysfs_emit,before v5.10,,,,n/a,,,
+dev_err_probe,before v5.10,,,,n/a,,,
+devm_clk_get_enabled,introduced in window,7ef9651e9792,2022-06-15,clk: Provide new devm_clk helpers for prepared and enabled clocks,n/a,,,
+pm_ops_macros,introduced in window,1a3c7bb08826,2021-12-17,"PM: core: Add new *_PM_OPS macros, deprecate old ones",n/a,,,
+of_property_present,introduced in window,9cbad37ce812,2023-02-17,of: Add of_property_present() helper,n/a,,,
+irq_affinity_hint,introduced in window,65c7cdedeb30,2021-12-10,genirq: Provide new interfaces for affinity hints,n/a,,,
+pin_user_pages,before v5.10,,,,n/a,,,
+pci_alloc_irq_vectors,before v5.10,,,,n/a,,,
+dma_set_mask_and_coherent,before v5.10,,,,n/a,,,
+device_get_match_data,before v5.10,,,,still present at v6.10,,,
+timer_delete,introduced in window,9b13df3fb64e,2022-11-24,timers: Rename del_timer_sync() to timer_delete_sync(),n/a,,,
+gpiod_from_of_gpio,n/a,,,,removed in window,40fc56ee608c,2023-01-30,gpiolib: of: remove of_get_gpio[_flags]() and of_get_named_gpio_flags()
+kobj_default_groups,before v5.10,,,,removed in window,cdb4f26a63c3,2022-04-05,kobject: kobj_type: remove default_attrs
+in_hardirq,introduced in window,15115830c887,2020-11-23,preempt: Cleanup the macro maze a bit,still present at v6.10,,,
+kstrto,before v5.10,,,,n/a,,,
+fallthrough,before v5.10,,,,n/a,,,
+input_setup_polling,before v5.10,,,,removed in window,278b13ce3a89,2020-12-02,Input: remove input_polled_dev implementation
+eth_hw_addr_set,introduced in window,48eab831ae8b,2021-09-05,net: create netdev->dev_addr assignment helpers,n/a,,,
+netif_rx_ni,n/a,,,,removed in window,2655926aea9b,2022-03-07,net: Remove netif_rx_any_context() and netif_rx_ni().
+vm_flags_set,introduced in window,bc292ab00f6c,2023-02-09,mm: introduce vma->vm_flags wrapper functions,n/a,,,
+spi_get_chipselect,introduced in window,303feb3cc06a,2023-02-01,spi: Add APIs in spi core to set/get spi->chip_select and spi->cs_gpiod,n/a,,,

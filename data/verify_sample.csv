@@ -1,0 +1,224 @@
+sample_id,migration,commit,commit_date,file,subject
+class_create_owner#0,class_create_owner,1aaba11da9aa7d7d6b52a74d45b31cac118295a1,2023-03-17,drivers/accel/drm_accel.c,driver core: class: remove module * from class_create()
+dev_err_probe#0,dev_err_probe,9a93386bf667499d71e35051804438fd32dd77a8,2020-10-26,drivers/devfreq/tegra20-devfreq.c,PM / devfreq: tegra20: Silence deferred probe error
+dev_err_probe#1,dev_err_probe,45c5dc45d80d41596bc0364fafc523648e6124d8,2021-10-11,sound/soc/intel/boards/bytcr_rt5651.c,ASoC: Intel: bytcr_rt5651: Utilize dev_err_probe() to avoid log saturation
+dev_err_probe#2,dev_err_probe,f481d5b80bd86ad39229c430d26513c096474578,2022-02-01,drivers/power/supply/bq25890_charger.c,power: supply: bq25890: Drop dev->platform_data == NULL check
+dev_err_probe#3,dev_err_probe,f4ca8c88c2c7ea3ea17c6fdfcc1af4b007403833,2022-09-19,drivers/spi/spi-omap2-mcspi.c,spi: omap2-mcspi: Switch to use dev_err_probe() helper
+dev_err_probe#4,dev_err_probe,e1610209a8879e7bc6a4910f93b071cf6d91cbef,2023-02-06,drivers/media/i2c/ov9282.c,media: i2c: ov9282: Switch to use dev_err_probe helper
+dev_err_probe#5,dev_err_probe,6a52ee38c79825ef469ab3ed8588d17e90d2049c,2023-07-20,drivers/char/hw_random/nomadik-rng.c,hwrng: nomadik - use dev_err_probe
+dev_err_probe#6,dev_err_probe,b77f0c305ad7edba8274641bcd7fc67995a561e6,2023-12-11,drivers/soc/mediatek/mtk-svs.c,soc: mediatek: mtk-svs: Cleanup of svs_probe() function
+dev_err_probe#7,dev_err_probe,217f036242c7f7d5cf874f00ee39807162b90794,2024-05-08,drivers/extcon/extcon-intel-mrfld.c,extcon: intel-mrfld: Switch to use dev_err_probe()
+device_get_match_data#0,device_get_match_data,227ec129ad7b035ee2ae2e57e9567a8126ad93f3,2020-11-17,drivers/rtc/rtc-ds1307.c,rtc: ds1307: Make use of device properties
+device_get_match_data#1,device_get_match_data,2606e7c9f5fce1d6c8a75c20947049b63c1b8333,2021-08-05,drivers/gpio/gpio-tegra186.c,gpio: tegra186: Add ACPI support
+device_get_match_data#2,device_get_match_data,d272cfc3f0c480eac076d8ff394626e84b8c8169,2022-04-28,drivers/iio/afe/iio-rescale.c,iio: afe: rescale: Make use of device properties
+device_get_match_data#3,device_get_match_data,34b6eb89351bc281d5323c119e2deb84273d4266,2022-08-15,drivers/iio/adc/at91-sama5d2_adc.c,iio: adc: at91-sama5d2_adc: convert to device properties
+device_get_match_data#4,device_get_match_data,acabe12c6106b105ac8285d6d5ba2aeeab74fd47,2022-12-19,drivers/mailbox/mtk-cmdq-mailbox.c,mailbox: mtk-cmdq-mailbox: Use platform data directly instead of copying
+device_get_match_data#5,device_get_match_data,893911e657365d49b23fc8a32a3184be036878e2,2023-06-09,drivers/clk/clk-versaclock7.c,clk: vc7: Use device_get_match_data() instead of of_device_get_match_data()
+device_get_match_data#6,device_get_match_data,830fafce06e6fc2e63e141799833f7c7a73cf62b,2023-11-01,drivers/mfd/qcom-spmi-pmic.c,mfd: Use device_get_match_data() in a bunch of drivers
+device_get_match_data#7,device_get_match_data,d43cd48ef1791801c61a54fade4a88d294dedf77,2024-05-02,drivers/gpu/drm/panel/panel-ilitek-ili9341.c,drm/panel: ili9341: Correct use of device property APIs
+devm_clk_get_enabled#0,devm_clk_get_enabled,68bde8b2e3112d2f1ac52cbf078905f902950146,2022-06-16,drivers/clk/meson/axg-audio.c,clk: meson: axg-audio: Don't duplicate devm_clk_get_enabled()
+devm_clk_get_enabled#1,devm_clk_get_enabled,c61bfb1cb63ddab52b31cf5f1924688917e61fad,2022-11-29,drivers/mmc/host/mtk-sd.c,mmc: mtk-sd: Fix missing clk_disable_unprepare in msdc_of_clock_parse()
+devm_clk_get_enabled#2,devm_clk_get_enabled,4c4fe4f0bb02a46f226db88cb1c7e7586e16fc37,2023-02-17,drivers/mmc/host/meson-gx-mmc.c,mmc: meson-gx: use devm_clk_get_enabled() for core clock
+devm_clk_get_enabled#3,devm_clk_get_enabled,9c7174db4cdd111e10d19eed5c36fd978a14c8a2,2023-06-14,drivers/i2c/busses/i2c-nomadik.c,i2c: nomadik: Use devm_clk_get_enabled()
+devm_clk_get_enabled#4,devm_clk_get_enabled,8bcd9689384810bd1c610419563c827e23118e34,2023-07-28,drivers/char/hw_random/cctrng.c,hwrng: cctrng - let devres enable the clock
+devm_clk_get_enabled#5,devm_clk_get_enabled,b3422ea3913e27fd43a7a1883f358cb20599289e,2023-09-11,drivers/spi/spi-ath79.c,spi: ath79: Use helper function devm_clk_get_enabled()
+devm_clk_get_enabled#6,devm_clk_get_enabled,892de7031e905f242ea4e851abe5f4f7222e7455,2023-09-11,drivers/iio/adc/at91_adc.c,iio: adc: at91_adc: Use devm_clk_get_enabled() helper function
+devm_clk_get_enabled#7,devm_clk_get_enabled,55750148e5595bb85605e8fbb40b2759c2c4c2d7,2024-05-06,drivers/i2c/busses/i2c-synquacer.c,i2c: synquacer: Fix an error handling path in synquacer_i2c_probe()
+devm_platform_ioremap#0,devm_platform_ioremap,f215d6003736c48b894f2d9bf9c26855c2f3918d,2020-10-16,drivers/video/fbdev/omap2/omapfb/dss/hdmi4_core.c,omapfb: use devm_platform_ioremap_resource_byname
+devm_platform_ioremap#1,devm_platform_ioremap,e43805c28df6394254d1f49a388a1c70cae208a1,2021-06-15,sound/soc/img/img-i2s-in.c,ASoC: img-i2s-in: Use devm_platform_get_and_ioremap_resource()
+devm_platform_ioremap#2,devm_platform_ioremap,0e6fda9c65634e1f6f4a18fd1c48acf0af761deb,2021-09-21,drivers/soc/qcom/cpr.c,PM: AVS: qcom-cpr: Make use of the helper function devm_platform_ioremap_resource()
+devm_platform_ioremap#3,devm_platform_ioremap,ef231fefa47f9c694a8a5bbe16cb43b5db62d6d6,2022-04-26,drivers/memory/brcmstb_dpfe.c,memory: brcmstb_dpfe: simplify platform_get_resource_byname()
+devm_platform_ioremap#4,devm_platform_ioremap,220b484fa6e027e6fd296422513f2e7a76f7e6cf,2023-03-23,drivers/mmc/host/dw_mmc-pltfm.c,mmc: dw_mmc-pltfm: Use devm_platform_get_and_ioremap_resource()
+devm_platform_ioremap#5,devm_platform_ioremap,42c3cdaaacaa2d17e806ab81d7caca148bf32984,2023-07-12,drivers/dma/stm32-dma.c,dmaengine: stm32-dma: Use devm_platform_get_and_ioremap_resource()
+devm_platform_ioremap#6,devm_platform_ioremap,3c5a5df9c39bd0e408fdf60966b2c8dc2bb9a411,2023-07-27,drivers/gpu/drm/tegra/dpaux.c,drm/tegra: dpaux: Use devm_platform_ioremap_resource()
+devm_platform_ioremap#7,devm_platform_ioremap,994ac434b7261ac2d89c65c7fa75fa697bfd7054,2024-05-08,drivers/spmi/spmi-pmic-arb.c,spmi: pmic-arb: Make core resources acquiring a version operation
+dma_set_mask_and_coherent#0,dma_set_mask_and_coherent,05c2a61d69ea306e891884a86486e1ef37c4b78d,2020-12-07,drivers/net/wireless/admtek/adm8211.c,adm8211: fix error return code in adm8211_probe()
+dma_set_mask_and_coherent#1,dma_set_mask_and_coherent,915183b62276191ef767e00e683f4c085c4cc325,2021-01-15,sound/x86/intel_hdmi_audio.c,ALSA: x86: Simplify with dma_set_mask_and_coherent()
+dma_set_mask_and_coherent#2,dma_set_mask_and_coherent,7cc206bff69b52be24fa13ee2c9afde3320c6cf6,2021-01-19,sound/soc/tegra/tegra_pcm.c,ASoC: tegra: Simplify with dma_set_mask_and_coherent()
+dma_set_mask_and_coherent#3,dma_set_mask_and_coherent,c95e078069bf9bfcb66272fac162c79be6c9170b,2022-01-02,drivers/net/ethernet/tehuti/tehuti.c,tehuti: Use dma_set_mask_and_coherent() and simplify code
+dma_set_mask_and_coherent#4,dma_set_mask_and_coherent,4f9f531e1505a126b4d66d8a8a29e8e54fa4075c,2022-01-02,drivers/net/ethernet/qlogic/qed/qed_main.c,qed: Use dma_set_mask_and_coherent() and simplify code
+dma_set_mask_and_coherent#5,dma_set_mask_and_coherent,3d694552fd8fe502e7ffd22ffa0e085bfd73b19a,2022-01-03,drivers/net/ethernet/neterion/vxge/vxge-main.c,net: vxge: Use dma_set_mask_and_coherent() and simplify code
+dma_set_mask_and_coherent#6,dma_set_mask_and_coherent,515a2f507491e7c3818e74ef4f4e088c1fecb190,2022-01-23,drivers/misc/mei/pci-me.c,mei: me: Use dma_set_mask_and_coherent() and simplify code
+dma_set_mask_and_coherent#7,dma_set_mask_and_coherent,f0ed939b6ab63f6ed9f9ff454f33997de10d8ae7,2022-12-07,drivers/media/pci/pt3/pt3.c,media: pt3: Use dma_set_mask_and_coherent() and simplify code
+eth_hw_addr_set#0,eth_hw_addr_set,1681371762335221b02cb9266ac1a8b05c16fdef,2021-10-02,drivers/net/usb/asix_common.c,net: usb: use eth_hw_addr_set()
+eth_hw_addr_set#1,eth_hw_addr_set,f3956ebb3bf06ab2266ad5ee2214aed46405810c,2021-10-02,drivers/net/ethernet/agere/et131x.c,ethernet: use eth_hw_addr_set() instead of ether_addr_copy()
+eth_hw_addr_set#2,eth_hw_addr_set,49ed8dde371522b2d330a7383aaa213748ad007e,2021-10-05,drivers/net/usb/dm9601.c,net: usb: use eth_hw_addr_set() for dev->addr_len cases
+eth_hw_addr_set#3,eth_hw_addr_set,c51e5062c18067ccdc85798c2051edfc37e2475d,2021-10-14,drivers/net/ethernet/cadence/macb_main.c,"ethernet: manually convert memcpy(dev_addr,..., sizeof(addr))"
+eth_hw_addr_set#4,eth_hw_addr_set,8fac27fbc80ecdb22c2dd001e9bb0684eed55c01,2021-10-20,drivers/net/wireless/atmel/atmel.c,wireless: use eth_hw_addr_set() for dev->addr_len cases
+eth_hw_addr_set#5,eth_hw_addr_set,6ed178cb23ec7503dd354c02c0c9ef97a6b8b22a,2021-10-20,drivers/staging/r8188eu/os_dep/osdep_service.c,staging: use eth_hw_addr_set()
+eth_hw_addr_set#6,eth_hw_addr_set,2e0566aeb9ff83db9fb22bf6f0b994f03377b038,2021-10-22,drivers/net/fddi/skfp/skfddi.c,fddi: skfp: constify and use dev_addr_set()
+eth_hw_addr_set#7,eth_hw_addr_set,4dfb9982644b5bf7672fc6a0b51cf87503832b7e,2021-11-22,drivers/net/ethernet/engleder/tsnep_main.c,tsn:  Fix build.
+fallthrough#0,fallthrough,256ff2ef6c14bcb4bf9707e4547b77c582753c00,2020-11-07,drivers/net/wireless/ray_cs.c,ray_cs: Use fallthrough pseudo-keyword
+fallthrough#1,fallthrough,f7bda6662fd4f39113b4dee00f7ded44f846b7f4,2020-11-23,drivers/input/serio/libps2.c,Input: libps2 - fix fall-through warnings for Clang
+fallthrough#2,fallthrough,b251d357f53f1a43b27f64de1a6239e0e31e1cde,2020-11-24,drivers/gpu/drm/amd/pm/powerplay/si_dpm.c,drm/amd/pm: Fix fall-through warnings for Clang
+fallthrough#3,fallthrough,18572b0b54930ecf642a68444b15507c43c07f54,2020-12-08,drivers/net/wireless/zydas/zd1201.c,zd1201: Fix fall-through warnings for Clang
+fallthrough#4,fallthrough,5a2abdcadc3bd7c8f9a54a89bf0ed1926db993a3,2020-12-11,drivers/net/wireless/intel/iwlwifi/mvm/led.c,iwlwifi: mvm: Fix fall-through warnings for Clang
+fallthrough#5,fallthrough,bf3365a856a19ac6b96973dbf17069e0e5013e28,2021-04-17,drivers/net/wireless/realtek/rtl8xxxu/rtl8xxxu_core.c,rtl8xxxu: Fix fall-through warnings for Clang
+fallthrough#6,fallthrough,bb82ea3b0423fbbfd46ac27215df5af7a2fba923,2021-06-18,drivers/gpu/drm/amd/display/dc/dce/dce_aux.c,drm/amd/display: Fix fall-through warning for Clang
+fallthrough#7,fallthrough,38baa95e55483108aa14bcf36374d93ed19ea2a4,2021-07-30,drivers/staging/r8188eu/core/rtw_mlme_ext.c,"staging: r8188eu: Add ""fallthrough"" statement to quiet compiler"
+gpiod_from_of_gpio#0,gpiod_from_of_gpio,50da8d04ee52a0700ec6686e745379578246a9fb,2021-01-12,drivers/power/supply/max8903_charger.c,power: supply: max8903: Convert to GPIO descriptors
+gpiod_from_of_gpio#1,gpiod_from_of_gpio,7f5aaa4a0ae6948eace6cf30f40a3ec27ece8441,2022-04-26,drivers/mfd/hi655x-pmic.c,mfd: hi655x-pmic: Replace legacy gpio interface for gpiod interface
+gpiod_from_of_gpio#2,gpiod_from_of_gpio,a0d381caf99317977942e1228cdc2e14392e1d72,2022-09-30,drivers/usb/host/ehci-exynos.c,usb: host: ehci-exynos: switch to using gpiod API
+gpiod_from_of_gpio#3,gpiod_from_of_gpio,4220dd61e7e9b979fd96695ab7c98ea7a5f64c3f,2022-12-07,drivers/media/i2c/s5k5baf.c,media: i2c: s5k5baf: switch to using gpiod API
+gpiod_from_of_gpio#4,gpiod_from_of_gpio,836bfb5688e3ea87574760af82c82fa752b2540f,2022-12-14,drivers/video/fbdev/omap2/omapfb/displays/panel-tpo-td043mtea1.c,fbdev: omapfb: panel-tpo-td043mtea1: switch to using gpiod API
+gpiod_from_of_gpio#5,gpiod_from_of_gpio,7d4be90b3deb6b32fb99644a158e6cff0a0520f4,2023-05-25,drivers/media/platform/st/sti/c8sectpfe/c8sectpfe-core.c,media: c8sectpfe: switch to using gpiod API
+gpiod_from_of_gpio#6,gpiod_from_of_gpio,15b26d8165b39a07f038fb4d2b67a04c50463eb9,2023-10-09,sound/soc/rockchip/rk3288_hdmi_analog.c,ASoC: rockchip: Convert RK3288 HDMI to GPIO descriptors
+gpiod_from_of_gpio#7,gpiod_from_of_gpio,b7b1c59069123368a939327d49009e8771e88d9c,2024-03-29,drivers/nfc/st95hf/core.c,nfc: st95hf: Switch to using gpiod API
+i2c_probe_new#0,i2c_probe_new,2f2afad9d35ff762028de7497dac60aa32be9f0f,2023-03-09,drivers/i2c/muxes/i2c-mux-ltc4306.c,i2c: mux: Convert all drivers to new .probe() callback
+i2c_probe_new#1,i2c_probe_new,b41cabb7be3c8113af0357366bd5e41a34b05a50,2023-05-23,drivers/gpio/gpio-adnp.c,gpio: Switch i2c drivers back to use .probe()
+i2c_probe_new#2,i2c_probe_new,8ff55fe553b327ab8bcd91133d6a4b1b506f629e,2023-05-28,drivers/staging/iio/addac/adt7316-i2c.c,staging: iio: Switch i2c drivers back to use .probe()
+i2c_probe_new#3,i2c_probe_new,755b4e7f7c224e10af10edafe34577b5512f7cbb,2023-06-02,drivers/crypto/atmel-ecc.c,crypto: atmel - Switch i2c drivers back to use .probe()
+i2c_probe_new#4,i2c_probe_new,d692cc619247addcb9336c220ea1face91b365f0,2023-06-12,drivers/regulator/rt5739.c,regulator: Switch two more i2c drivers back to use .probe()
+i2c_probe_new#5,i2c_probe_new,9f7b17c9cf66e181134d210625c6e17b55e22cc8,2023-06-15,drivers/mux/adg792a.c,mux: adg792a: Switch back to use i2c_driver's .probe()
+i2c_probe_new#6,i2c_probe_new,2920e08bef609c8b59f9996fd6852a7b97119d75,2023-07-19,drivers/regulator/max77857-regulator.c,regulator: max77857: Switch back to use struct i2c_driver's .probe()
+i2c_probe_new#7,i2c_probe_new,3a7d263aea9d505e6272a913d6cfece00b800b4d,2023-09-13,drivers/w1/masters/ds2482.c,w1: ds2482: Switch back to use struct i2c_driver's .probe()
+i2c_remove_void#0,i2c_remove_void,f07d34d141e08d8de46ca1c5ef2cb73988d7339c,2021-03-22,drivers/staging/media/atomisp/i2c/atomisp-lm3554.c,media: staging: media: atomisp: Don't abort on error in module exit path
+i2c_remove_void#1,i2c_remove_void,c788f6e6aa112bf516d0f3f85ae6cc4e6c103239,2022-03-08,drivers/mfd/stmfx.c,mfd: stmfx: Improve error message triggered by regulator fault in .remove()
+i2c_remove_void#2,i2c_remove_void,ed5c2f5fd10dda07263f79f338a512c0f49f76f5,2022-08-16,drivers/auxdisplay/ht16k33.c,i2c: Make remove callback return void
+i2c_remove_void#3,i2c_remove_void,bbe2a5d87602ce0ac206e9f41fca9bd76d75da11,2022-08-26,drivers/pinctrl/pinctrl-cy8c95x0.c,"pinctrl: fixup for ""i2c: Make remove callback return void"""
+i2c_remove_void#4,i2c_remove_void,2dec3a7a7beb23ec11b23986e0e331913d621ff1,2022-09-17,drivers/macintosh/ams/ams-i2c.c,macintosh/ams: Adapt declaration of ams_i2c_remove() to earlier change
+i2c_remove_void#5,i2c_remove_void,39c8980cb27d8cda707cbf4b3a5b8c82785a0db7,2022-09-28,drivers/mfd/intel_soc_pmic_crc.c,mfd: intel_soc_pmic_crc: Replace intel_soc_pmic with crystal_cove
+i2c_remove_void#6,i2c_remove_void,d8cb88f1541fdc3602dbc87ede78ec704c11546f,2022-10-19,drivers/platform/chrome/cros_hps_i2c.c,platform/chrome: cros_hps_i2c: make remove callback return void
+i2c_remove_void#7,i2c_remove_void,f54f5fd05ee4d974dbc31a20f71a7054c12ae869,2022-11-25,drivers/media/i2c/ov08x40.c,media: i2c: ov08x40: Make remove callback return void
+ida_simple#0,ida_simple,8e27c2aef8c321ce94c69f397f26d7647a1914d0,2020-11-25,drivers/gpio/gpio-exar.c,gpio: exar: switch to a simpler IDA interface
+ida_simple#1,ida_simple,ab244be47a8f111bc82496a8a20c907236e37f95,2022-05-06,drivers/gpu/drm/nouveau/nouveau_backlight.c,drm/nouveau: Fix a potential theorical leak in nouveau_get_backlight_name()
+ida_simple#2,ida_simple,822242e649ea9f1d9b5c43735445fff26209b215,2022-06-22,drivers/iommu/iommu.c,iommu: Directly use ida_alloc()/free()
+ida_simple#3,ida_simple,9357fc3b3b85a7d9f0dedf5446222a26957852b4,2022-09-30,drivers/spmi/spmi.c,drivers: spmi: Directly use ida_alloc()/free()
+ida_simple#4,ida_simple,e4db80d80cff590eb5fe0444b665cec839c34133,2023-12-15,drivers/char/hw_random/virtio-rng.c,hwrng: virtio - Remove usage of the deprecated ida_simple_xx() API
+ida_simple#5,ida_simple,363096a27f9087bc3a081e157b09683ff18508d4,2024-01-07,drivers/net/ethernet/netronome/nfp/flower/lag_conf.c,nfp: flower: Remove usage of the deprecated ida_simple_xx() API
+ida_simple#6,ida_simple,18cbe81639f2c8999f9ad0505a08ddfc01cd05f7,2024-02-13,drivers/mmc/core/block.c,mmc: core: Remove usage of the deprecated ida_simple_xx() API
+ida_simple#7,ida_simple,f452001dca301d05e509f3e39998c442900e9937,2024-05-22,drivers/vhost/vdpa.c,vhost-vdpa: Remove usage of the deprecated ida_simple_xx() API
+in_hardirq#0,in_hardirq,e871ee6941842d4e52a7d81a9986cb6daf441dae,2021-08-16,drivers/s390/net/ctcm_fsms.c,s390/net: replace in_irq() with in_hardirq()
+in_hardirq#1,in_hardirq,1143637f00cd8205c43bad702b2aff57c01913f8,2021-08-16,drivers/tty/sysrq.c,tty: replace in_irq() with in_hardirq()
+in_hardirq#2,in_hardirq,d3703ef331297b6daa97f5228cbe2a657d0cfd21,2021-08-20,drivers/md/dm-crypt.c,dm crypt: use in_hardirq() instead of deprecated in_irq()
+irq_affinity_hint#0,irq_affinity_hint,0f9744f4ed539f2e847d7ed41993b243e3ba5cff,2021-12-10,drivers/net/ethernet/intel/iavf/iavf_main.c,iavf: Use irq_update_affinity_hint()
+irq_affinity_hint#1,irq_affinity_hint,d34c54d1739c2cdf2e4437b74e6da269147f4987,2021-12-10,drivers/net/ethernet/intel/i40e/i40e_main.c,i40e: Use irq_update_affinity_hint()
+irq_affinity_hint#2,irq_affinity_hint,fdb8ed13a77270c8e6e05b3ff9f4cb2f57e16d6a,2021-12-10,drivers/scsi/mpt3sas/mpt3sas_base.c,scsi: mpt3sas: Use irq_set_affinity_and_hint()
+irq_affinity_hint#3,irq_affinity_hint,7451e9ea8e2055af39afe7ff39a5f68d8ec6b98d,2021-12-10,drivers/net/ethernet/mellanox/mlx5/core/pci_irq.c,net/mlx5: Use irq_set_affinity_and_hint()
+irq_affinity_hint#4,irq_affinity_hint,bf886e1ef11a0155714ca93c975bb3f770e79d72,2021-12-10,drivers/mailbox/bcm-flexrm-mailbox.c,mailbox: Use irq_update_affinity_hint()
+irq_affinity_hint#5,irq_affinity_hint,cc493264c01d055742a34cfbaecaffb258dcc58c,2021-12-10,drivers/net/ethernet/intel/ixgbe/ixgbe_main.c,ixgbe: Use irq_update_affinity_hint()
+irq_affinity_hint#6,irq_affinity_hint,f2b03dffa62e496df97b2b0d68fba2324c8d13c7,2022-07-13,drivers/cpufreq/qcom-cpufreq-hw.c,cpufreq: qcom-hw: Remove deprecated irq_set_affinity_hint() call
+irq_affinity_hint#7,irq_affinity_hint,731d320e689d7f7a3c316b5628ae78141d43bef7,2024-02-26,drivers/accel/habanalabs/common/device.c,accel/habanalabs: remove call to deprecated function
+kmap_local#0,kmap_local,ce2203e7d6de90d0d94ca3c98dde4eff3a0accd0,2022-07-08,drivers/staging/media/atomisp/pci/hmm/hmm.c,media: staging: media: atomisp: Use kmap_local_page() in hmm_store()
+kmap_local#1,kmap_local,f61e6d3ca4dac83d7093e7be7ceabce95e738e68,2022-11-25,drivers/net/ethernet/sfc/tx.c,sfc: Use kmap_local_page() instead of kmap_atomic()
+kmap_local#2,kmap_local,47722e3fd92482c036be43a4ba62698c8b8b63b8,2022-12-07,drivers/mmc/host/sdhci.c,mmc: sdhci: Replace kmap_atomic() with kmap_local_page()
+kmap_local#3,kmap_local,cdb1ad52703b52e95696c38408ee9e3cf514dc4b,2022-12-07,drivers/mmc/host/wbsd.c,mmc: wbsd: Replace kmap_atomic() with kmap_local_page()
+kmap_local#4,kmap_local,acc3c8799b9723d0b6a8cd67f8036dfdaa280825,2023-04-02,drivers/block/null_blk/main.c,null_blk: use kmap_local_page() and kunmap_local()
+kmap_local#5,kmap_local,e6174e8e19e8fd26016c941c7271868326cd861a,2023-12-15,drivers/gpu/drm/i915/gem/i915_gem_object.c,drm/i915: Use kmap_local_page() in gem/i915_gem_object.c
+kmap_local#6,kmap_local,40b399000665ee154927a8e0d7b0c7e7505bbaef,2023-12-15,drivers/gpu/drm/i915/gem/selftests/i915_gem_coherency.c,drm/i915: Use kmap_local_page() in gem/selftests/i915_gem_coherency.c
+kmap_local#7,kmap_local,31accc37eaee98a90b25809ed58c6ee4956ab642,2023-12-15,drivers/gpu/drm/i915/gem/i915_gem_execbuffer.c,drm/i915: Use kmap_local_page() in gem/i915_gem_execbuffer.c
+kobj_default_groups#0,kobj_default_groups,51238e7fbd6182e36dbc093c92ae93142c57c0f5,2021-10-18,drivers/md/md.c,md: add the bitmap group to the default groups for the md kobject
+kobj_default_groups#1,kobj_default_groups,63064451d0b8359999e7e8c4fd92951d96f5a057,2021-12-29,drivers/misc/cxl/sysfs.c,cxl: use default_groups in kobj_type
+kobj_default_groups#2,kobj_default_groups,998e7ea8c641fc6bbca1acd478c6824733ac9851,2021-12-30,drivers/platform/x86/intel/uncore-frequency.c,platform/x86: intel-uncore-frequency: use default_groups in kobj_type
+kobj_default_groups#3,kobj_default_groups,01097139e772ac0082175c01eefb989f78e4437a,2022-01-05,drivers/infiniband/core/sysfs.c,RDMA: Use default_groups in kobj_type
+kobj_default_groups#4,kobj_default_groups,eaac0b590a47c717ef36cbfd1c528cd154c965a1,2022-01-06,drivers/md/dm-sysfs.c,dm sysfs: use default_groups in kobj_type
+kobj_default_groups#5,kobj_default_groups,0704a8586f75663cf30a283bbeeca09eb4e60a07,2022-01-08,drivers/s390/block/dasd_devmap.c,s390/dasd: use default_groups in kobj_type
+kobj_default_groups#6,kobj_default_groups,625c6b55699777ece6b87235f579e2cfbde049ce,2022-01-23,drivers/edac/edac_device_sysfs.c,EDAC: Use default_groups in kobj_type
+kobj_default_groups#7,kobj_default_groups,19d10a8333dcaaa824df27dbb35654359fb9d972,2022-01-29,drivers/video/fbdev/omap2/omapfb/dss/display-sysfs.c,video: fbdev: omapfb: use default_groups in kobj_type
+kstrto#0,kstrto,8e3ecc68e33ffe3a168f765a8f07377258615709,2021-06-07,drivers/acpi/acpi_lpss.c,ACPI: LPSS: Use kstrtol() instead of simple_strtol()
+kstrto#1,kstrto,a6b63ca455a19f263d56599f4b37cb1d61eb8fee,2021-09-30,drivers/media/usb/pvrusb2/pvrusb2-ctrl.c,media: pvrusb2: Replaced simple_strtol() with kstrtoint()
+kstrto#2,kstrto,87677749463463973589a85edd96b1468c9ea4ea,2023-08-21,drivers/net/wireless/intel/ipw2x00/ipw2200.c,wifi: ipw2x00: refactor to use kstrtoul
+napi_weight#0,napi_weight,b02e5a0ebb172c8276cea3151942aac681f7a4a6,2020-11-30,drivers/net/veth.c,xsk: Propagate napi_id to XDP socket Rx path
+napi_weight#1,napi_weight,195aae321c829dd1945900d75561e6aa79cce208,2021-04-16,drivers/net/usb/r8152.c,r8152: support new chips
+napi_weight#2,napi_weight,dedd53c5e075e4277f2a01c6d78318ac16e645c3,2021-07-20,drivers/net/veth.c,veth: factor out initialization helper
+napi_weight#3,napi_weight,592df366378963669a7e561f58b23564193a230d,2022-04-29,drivers/net/ethernet/broadcom/bgmac.c,net: bgmac: remove a copy of the NAPI_POLL_WEIGHT define
+napi_weight#4,napi_weight,e2a303295d28070cd602f3355d007b9222aa6683,2022-04-29,drivers/net/ethernet/smsc/smsc9420.c,eth: smsc: remove a copy of the NAPI_POLL_WEIGHT define
+napi_weight#5,napi_weight,8ded532cd1cbe48461821c605dbad9447555755a,2022-05-08,drivers/net/usb/r8152.c,r8152: switch to netif_napi_add_weight()
+napi_weight#6,napi_weight,caf6b7f81e053dfdc5f16e943b355bc954e0de34,2022-05-19,drivers/net/can/grcan.c,can: can-dev: move to netif_napi_add_weight()
+napi_weight#7,napi_weight,b48b89f9c189d24eb5e2b4a0ac067da5a24ee86d,2022-09-29,drivers/net/can/ctucanfd/ctucanfd_base.c,net: drop the weight argument from netif_napi_add
+netif_rx_ni#0,netif_rx_ni,3fb4430e73bfa58b14606512239c86b4d186f1ea,2022-03-04,drivers/net/caif/caif_serial.c,net: caif: Use netif_rx().
+netif_rx_ni#1,netif_rx_ni,566214f44697c0191b9b6673e3c73116c9b7817f,2022-03-04,drivers/net/macvlan.c,net: macvlan: Use netif_rx().
+netif_rx_ni#2,netif_rx_ni,db00cc9da079315f199e2b65cc4e05eeb94236e2,2022-03-04,drivers/net/dsa/hirschmann/hellcreek_hwtstamp.c,net: dsa: Use netif_rx().
+netif_rx_ni#3,netif_rx_ni,1cd2ef9fcb67115030b20ea2b560635efce746da,2022-03-06,drivers/net/wireless/ath/ath6kl/txrx.c,wireless: Atheros: Use netif_rx().
+netif_rx_ni#4,netif_rx_ni,b381728e7e282e2f5c2581d6919aa4fc08f5a88a,2022-03-06,drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c,wireless: brcmfmac: Use netif_rx().
+netif_rx_ni#5,netif_rx_ni,e77975e02b593cbcc1ab2325b1729614d01de71f,2022-03-06,drivers/net/plip/plip.c,slip/plip: Use netif_rx().
+netif_rx_ni#6,netif_rx_ni,4bcc4249b4cf4df17429a5299c456ba9e76de779,2022-03-07,drivers/staging/gdm724x/gdm_lte.c,staging: Use netif_rx().
+netif_rx_ni#7,netif_rx_ni,e1f9e434617fb28097223d9484de66218bc0b52d,2022-03-07,drivers/net/phy/micrel.c,net: phy: micrel: Use netif_rx().
+of_property_present#0,of_property_present,2f0cb4753dd2b5fe71d04407213e2ef253dcdd32,2023-02-17,drivers/of/property.c,of: Use of_property_present() helper
+of_property_present#1,of_property_present,538c7b5b5d8b5364454494e5fe4125b0b47195f1,2023-03-13,drivers/memory/atmel-ebi.c,memory: atmel-ebi: Use of_property_present() for testing DT property presence
+of_property_present#2,of_property_present,a3927e1a9f1c3b7d71d9c8215905397e55da4da3,2023-03-16,drivers/usb/phy/phy-tegra-usb.c,usb: Use of_property_present() for testing DT property presence
+of_property_present#3,of_property_present,3765af04f4fda327463e5b631a4a2d62ae7bb93f,2023-03-17,drivers/dma/of-dma.c,dmaengine: Use of_property_present() for testing DT property presence
+of_property_present#4,of_property_present,e1e0a32eae7fd9566769c612f0b074eaf64b9cea,2023-03-23,drivers/ata/ahci_mtk.c,ata: Use of_property_present() for testing DT property presence
+of_property_present#5,of_property_present,8c47b8253f4cfd8b4dbda8c9adc1d0b1d7f3009d,2023-04-04,drivers/firmware/arm_scmi/optee.c,firmware: Use of_property_present() for testing DT property presence
+of_property_present#6,of_property_present,10ce6b701c21e4951ded058e06508d0f68a908df,2023-04-21,drivers/virt/fsl_hypervisor.c,virt: fsl: Use of_property_present() for testing DT property presence
+of_property_present#7,of_property_present,ebba2fd5adc2d79afa10c00255a60c79665c091a,2023-08-16,sound/soc/samsung/odroid.c,ASoC: samsung: odroid: use of_property_present to check for property
+pci_alloc_irq_vectors#0,pci_alloc_irq_vectors,5fc8e85ff12ce0530ac658686902a0ee64600f56,2021-04-20,drivers/dma/idxd/init.c,dmaengine: idxd: cleanup pci interrupt vector allocation management
+pci_alloc_irq_vectors#1,pci_alloc_irq_vectors,ba79a32acfde1ffdaefc05b02420c4124b60dbd3,2021-09-17,drivers/crypto/qat/qat_common/adf_isr.c,crypto: qat - replace deprecated MSI API
+pci_alloc_irq_vectors#2,pci_alloc_irq_vectors,05018936a1fe07b92a612d1fd1511224ba8a1a34,2023-05-16,drivers/net/ethernet/intel/ice/ice_irq.c,ice: use preferred MSIX allocation api
+pci_alloc_irq_vectors#3,pci_alloc_irq_vectors,b9d9a025bf2fa93d421cc5e54bf1dfaa3a55d60a,2024-05-06,drivers/firewire/ohci.c,firewire: ohci: obsolete usage of deprecated API for MSI
+pci_dma_constants#0,pci_dma_constants,0c5a71dc6b8c037b51ad07e0267b9e4eca41652c,2020-12-03,drivers/media/pci/solo6x10/solo6x10-p2m.c,media: solo6x10: switch from 'pci_' to 'dma_' API
+pci_dma_constants#1,pci_dma_constants,41fb4c1ba7478fe34c7e094e124e4ee4513b9763,2021-01-19,drivers/net/ethernet/qlogic/qla3xxx.c,net/qla3xxx: switch from 'pci_' to 'dma_' API
+pci_dma_constants#2,pci_dma_constants,4489d8f528d4e465f858e1a01997801130c5f322,2021-08-23,drivers/net/ethernet/chelsio/cxgb3/sge.c,net: chelsio: switch from 'pci_' to 'dma_' API
+pci_dma_constants#3,pci_dma_constants,eb9c5c0d3a739549164e4cf1d95f58ff4da20640,2021-08-23,drivers/net/ethernet/mellanox/mlx4/en_rx.c,net/mellanox: switch from 'pci_' to 'dma_' API
+pci_dma_constants#4,pci_dma_constants,b048457c54e4dcf3e326ddd4974d5e3d2a74d03b,2021-08-24,drivers/mmc/host/tifm_sd.c,mmc: switch from 'pci_' to 'dma_' API
+pci_dma_constants#5,pci_dma_constants,ebe9e6514b40f8aac7387466b898541b84c4ef1f,2021-08-29,drivers/net/wireless/intel/iwlegacy/3945-mac.c,intel: switch from 'pci_' to 'dma_' API
+pci_dma_constants#6,pci_dma_constants,1932dc2f4cf6ac23e48e5fcc24d21adbe35691d1,2021-09-30,drivers/media/pci/ivtv/ivtv-queue.c,media: pci/ivtv: switch from 'pci_' to 'dma_' API
+pci_dma_constants#7,pci_dma_constants,4e541b06b0e8ae6ebd85a913dba8db43d3ce6fe3,2022-03-07,drivers/media/pci/ivtv/ivtv-queue.h,"media: Remove usage of the deprecated ""pci-dma-compat.h"" API"
+pci_dma_wrappers#0,pci_dma_wrappers,9ac05523d38d4c2f40c9e41fc1453146fcd74368,2020-11-21,sound/pci/emu10k1/emu10k1x.c,ALSA: emu10k1: Use dma_set_mask_and_coherent to simplify code
+pci_dma_wrappers#1,pci_dma_wrappers,01b660b87ebe65510b52cd161578d8a1f5de8483,2020-12-07,drivers/net/wireless/marvell/mwl8k.c,mwl8k: switch from 'pci_' to 'dma_' API
+pci_dma_wrappers#2,pci_dma_wrappers,7a77379fe1d36b83009a9aee68031e22792c4091,2021-04-06,drivers/media/pci/cx23885/cx23885-alsa.c,media: cx23885: switch from 'pci_' to 'dma_' API
+pci_dma_wrappers#3,pci_dma_wrappers,df70303dd14623829a4acdec539c929accb92e0e,2021-08-23,drivers/net/ethernet/broadcom/bnx2.c,net: broadcom: switch from 'pci_' to 'dma_' API
+pci_dma_wrappers#4,pci_dma_wrappers,27d57f85102b3746f19ccd7b79c3a7f8aa8b8714,2021-08-29,drivers/net/ethernet/toshiba/spider_net.c,net: spider_net: switch from 'pci_' to 'dma_' API
+pci_dma_wrappers#5,pci_dma_wrappers,064d0171d7ee5005020da631135d4d6dc4b72695,2021-09-27,drivers/net/fddi/skfp/skfddi.c,net: fddi: skfp: Fix a function name in comments
+pci_dma_wrappers#6,pci_dma_wrappers,d77143dd248e7d909975941f3097d7e36b7876cf,2021-10-26,drivers/dma/hisi_dma.c,dmaengine: hisi_dma: switch from 'pci_' to 'dma_' API
+pci_dma_wrappers#7,pci_dma_wrappers,4e541b06b0e8ae6ebd85a913dba8db43d3ce6fe3,2022-03-07,drivers/media/pci/cx18/cx18-queue.h,"media: Remove usage of the deprecated ""pci-dma-compat.h"" API"
+platform_remove_new#0,platform_remove_new,24644ae031e71491e729d415d88c3cea98288c39,2023-03-06,drivers/spi/spi-ar934x.c,spi: ar934x: Convert to platform remove callback returning void
+platform_remove_new#1,platform_remove_new,b8a148daa7969839c6bfbdd223dffa476dee4325,2023-03-20,sound/soc/fsl/imx-sgtl5000.c,ASoC: fsl: imx-sgtl5000: Convert to platform remove callback returning void
+platform_remove_new#2,platform_remove_new,0a44e5f60617eeb0aa4e7f75bda3943b448a9845,2023-04-11,drivers/media/platform/ti/omap/omap_vout.c,media: omap_vout: Convert to platform remove callback returning void
+platform_remove_new#3,platform_remove_new,e190a0c389e60178fba3d532abf936dcae223e7d,2023-06-05,drivers/i2c/busses/i2c-altera.c,i2c: Convert to platform remove callback returning void
+platform_remove_new#4,platform_remove_new,9cb1bcd4ea25b16035cb02b00b6c79d23a3a90f4,2023-09-23,drivers/iio/adc/ab8500-gpadc.c,iio: adc: ab8500-gpadc: Convert to platform remove callback returning void
+platform_remove_new#5,platform_remove_new,14914a115e807aa2f8025e451133627a64120ac3,2023-10-14,drivers/soc/fsl/qe/qmc.c,soc/fsl: cpm: qmc: Convert to platform remove callback returning void
+platform_remove_new#6,platform_remove_new,51a41ec6d36e586e978785709d33b22cc8ee455c,2023-12-06,drivers/scsi/bvme6000_scsi.c,scsi: bvme6000: Convert to platform remove callback returning void
+platform_remove_new#7,platform_remove_new,536a0ad609d9e424a36aa47a110dc39189aaec78,2024-05-14,drivers/bluetooth/hci_bcm.c,Bluetooth: hci_bcm: Convert to platform remove callback returning void
+pm_ops_macros#0,pm_ops_macros,e0d64ecc621715e9c7807e952b68475c62bbf630,2021-12-17,drivers/mmc/host/jz4740_mmc.c,mmc: jz4740: Use the new PM macros
+pm_ops_macros#1,pm_ops_macros,79f9fbe303520d2c32b70f04f2bb02cc2baaa4c3,2022-05-24,drivers/mailbox/qcom-ipcc.c,mailbox: qcom-ipcc: Fix -Wunused-function with CONFIG_PM_SLEEP=n
+pm_ops_macros#2,pm_ops_macros,2f61ff8272967c9bdcba810aa978170814b08f7c,2022-09-05,drivers/iio/pressure/icp10100.c,iio: pressure: icp10100: Switch from UNIVERSAL to DEFINE_RUNTIME_DEV_PM_OPS().
+pm_ops_macros#3,pm_ops_macros,32a97d3155a29e1fcd4ea5836c41ca38369e6dc8,2022-12-07,drivers/input/keyboard/adp5589-keys.c,Input: adp5589-keys - switch to DEFINE_SIMPLE_DEV_PM_OPS() and pm_sleep_ptr()
+pm_ops_macros#4,pm_ops_macros,18b8fe43d5c3e76361884b57a3b1c2acf6922c4b,2023-01-10,drivers/input/mouse/synaptics_i2c.c,Input: synaptics_i2c - switch to DEFINE_SIMPLE_DEV_PM_OPS() and pm_sleep_ptr()
+pm_ops_macros#5,pm_ops_macros,40be06463e3d7d26fb520b4b73ae6d86c1776d42,2023-01-27,drivers/input/misc/adxl34x-i2c.c,Input: adxl34x - unify dev_pm_ops using EXPORT_SIMPLE_DEV_PM_OPS()
+pm_ops_macros#6,pm_ops_macros,4ed924fc122f759e383df7eccd89a2e57d9c4c5d,2023-10-23,drivers/bluetooth/btmtksdio.c,Bluetooth: btmtksdio: enable bluetooth wakeup in system suspend
+pm_ops_macros#7,pm_ops_macros,9e993b3d722fb452e274e1f8694d8940db183323,2024-05-08,sound/pci/hda/hda_codec.c,ALSA: hda: codec: Reduce CONFIG_PM dependencies
+spi_get_chipselect#0,spi_get_chipselect,303feb3cc06ac0665d0ee9c1414941200e60e8a3,2023-02-01,drivers/spi/spi.c,spi: Add APIs in spi core to set/get spi->chip_select and spi->cs_gpiod
+spi_get_chipselect#1,spi_get_chipselect,25fd0550d9b9c92288a17fb7d605cdcdb4a65a64,2023-03-11,drivers/net/ethernet/adi/adin1110.c,net: Replace all spi->chip_select and spi->cs_gpiod references with function call
+spi_get_chipselect#2,spi_get_chipselect,0183f81fce154ae1d4df2bb28d22ad6612317148,2023-03-11,drivers/iio/imu/adis16400.c,iio: imu: Replace all spi->chip_select and spi->cs_gpiod references with function call
+spi_get_chipselect#3,spi_get_chipselect,caa9d3475b1c5566f0272273c147cc9b72f2be28,2023-03-11,drivers/staging/fbtft/fbtft-core.c,staging: Replace all spi->chip_select and spi->cs_gpiod references with function call
+spi_get_chipselect#4,spi_get_chipselect,06b5e53c8b2b016e06a53ab6f01006ca7bbfa5df,2023-03-11,sound/pci/hda/cs35l41_hda_spi.c,ALSA: hda: cs35l41: Replace all spi->chip_select references with function call
+spi_get_chipselect#5,spi_get_chipselect,4ae08845db4c1f759b8382bc7527ab8249230e7f,2023-12-07,drivers/mfd/tps6594-spi.c,mfd: tps6594: Use spi_get_chipselect() API to access spi->chip_select
+spi_get_chipselect#6,spi_get_chipselect,f05e2f61fe88092e0d341ea27644a84e3386358d,2023-12-07,sound/pci/hda/cs35l56_hda_spi.c,ALSA: hda/cs35l56: Use set/get APIs to access spi->chip_select
+spi_get_chipselect#7,spi_get_chipselect,be84be4a35fa99cca7e81e6dd21516a324cca413,2024-03-07,drivers/spi/spi.c,spi: Introduce SPI_INVALID_CS and is_valid_cs()
+strlcpy_strscpy#0,strlcpy_strscpy,75b1a8f9d62e50f05d0e4e9f3c8bcde32527ffc1,2021-01-08,sound/aoa/codecs/onyx.c,ALSA: Convert strlcpy to strscpy when return value is unused
+strlcpy_strscpy#1,strlcpy_strscpy,79d65cab7f8535d7e19a16651aa45ea674cf4069,2021-03-19,drivers/net/ethernet/huawei/hinic/hinic_ethtool.c,net: hinic: convert strlcpy to strscpy
+strlcpy_strscpy#2,strlcpy_strscpy,9a575c8c25ae2372112db6d6b3e553cd90e9f02b,2021-10-29,drivers/net/ethernet/broadcom/bnxt/bnxt_ethtool.c,bnxt_en: Refactor coredump functions
+strlcpy_strscpy#3,strlcpy_strscpy,2c34bb6dea481fa11048e26ffd1ce7400dbc2105,2022-08-21,drivers/infiniband/core/cma_configfs.c,IB: move from strlcpy with unused retval to strscpy
+strlcpy_strscpy#4,strlcpy_strscpy,5192e395c5cfa6f3d23165db38365ec7f8c5ee7a,2022-09-01,drivers/misc/altera-stapl/altera.c,misc: move from strlcpy with unused retval to strscpy
+strlcpy_strscpy#5,strlcpy_strscpy,37f1663c91934f664fb850306708094a324c227c,2023-05-17,drivers/scsi/qla2xxx/qla_init.c,scsi: qla2xxx: Replace all non-returning strlcpy() with strscpy()
+strlcpy_strscpy#6,strlcpy_strscpy,2af4aa3be58802cf00f834eeaad1243290bb1d4a,2023-06-01,drivers/most/configfs.c,staging: most: Replace all non-returning strlcpy with strscpy
+strlcpy_strscpy#7,strlcpy_strscpy,0d224b1088afef95f7069b7ca907cb199a5802ff,2023-12-06,drivers/s390/scsi/zfcp_fc.c,scsi: zfcp: Replace strlcpy() with strscpy()
+strncpy_strscpy#0,strncpy_strscpy,8fd9efca86d083bb6fe8676ed4edd1c626d19367,2020-10-30,drivers/scsi/libfc/fc_encode.h,scsi: libfc: Work around -Warray-bounds warning
+strncpy_strscpy#1,strncpy_strscpy,a43e3115fbea2f9ba040a183aab300e0abf9cb67,2023-01-09,drivers/s390/crypto/zcrypt_api.c,s390/zcrypt: use strscpy() to instead of strncpy()
+strncpy_strscpy#2,strncpy_strscpy,00fb28fd16adbfe7642905406290b7b7cea1a80c,2023-09-15,drivers/gpu/drm/nouveau/nvkm/core/firmware.c,drm/nouveau/core: refactor deprecated strncpy
+strncpy_strscpy#3,strncpy_strscpy,3b9333493b5fa69f2dce8eb96bbef32df1b65c4a,2023-10-05,drivers/net/can/sja1000/peak_pci.c,can: peak_pci: replace deprecated strncpy with strscpy
+strncpy_strscpy#4,strncpy_strscpy,a02527363abb33eae49b35955886b7f41d2bcf0f,2023-10-14,drivers/net/ethernet/qlogic/qed/qed_debug.c,qed: replace uses of strncpy
+strncpy_strscpy#5,strncpy_strscpy,70bd8e0d01f6c098a72bdd799907c5208ccb8dfe,2023-10-23,drivers/net/wireless/ti/wl1251/main.c,wifi: wl1251: replace deprecated strncpy with strscpy
+strncpy_strscpy#6,strncpy_strscpy,712b3f43ba0e5f86db69cf601ffb06085c606642,2023-12-06,drivers/scsi/ibmvscsi/ibmvscsi.c,scsi: ibmvscsi: Replace deprecated strncpy() with strscpy()
+strncpy_strscpy#7,strncpy_strscpy,91bcea421ecece579eb283eb811d9eb197693772,2024-04-25,drivers/video/fbdev/uvesafb.c,fbdev: uvesafb: replace deprecated strncpy with strscpy_pad
+sysfs_emit#0,sysfs_emit,1c7fd72687d619207e0f075dd1f1c749879d8021,2020-10-26,drivers/infiniband/core/sysfs.c,RDMA: Convert sysfs device * show functions to use sysfs_emit()
+sysfs_emit#1,sysfs_emit,af9a973040bd5c27dfa1c7b5e970b7cf9238b530,2021-04-20,drivers/hwmon/ina2xx.c,hwmon: (ina2xx) Convert sysfs sprintf/snprintf family to sysfs_emit
+sysfs_emit#2,sysfs_emit,fc4e78481afa33585195e896f0f9d9cec1129c80,2021-10-21,drivers/char/ipmi/ipmi_msghandler.c,char: ipmi: replace snprintf in show functions with sysfs_emit
+sysfs_emit#3,sysfs_emit,f63658a59c3d439c8ad7b290f8ec270980e0f384,2022-02-11,drivers/video/fbdev/omap2/omapfb/displays/panel-dsi-cm.c,video: fbdev: omapfb: panel-dsi-cm: Use sysfs_emit() instead of snprintf()
+sysfs_emit#4,sysfs_emit,8283fb57e46246ae998c6961c89a76ef7f14c6d9,2022-09-24,drivers/thunderbolt/domain.c,thunderbolt: Convert to use sysfs_emit()/sysfs_emit_at() APIs
+sysfs_emit#5,sysfs_emit,48ca6e5fa4ffc40a14fe45bd5499428a5a108a68,2023-01-28,drivers/fpga/fpga-bridge.c,"fpga: bridge: return errors in the show() method of the ""state"" attribute"
+sysfs_emit#6,sysfs_emit,7eaa48e9e497ecdddfbcd9323520908d6239a498,2024-01-30,drivers/scsi/3w-sas.c,scsi: 3w-sas: Remove snprintf() from sysfs call-backs and replace with sysfs_emit()
+sysfs_emit#7,sysfs_emit,7b1b5c7fff05bdf2dc21ee124907df1f8cc819ad,2024-05-22,drivers/vdpa/vdpa.c,vdpa: Convert sprintf/snprintf to sysfs_emit
+tasklet_setup#0,tasklet_setup,0f01dcb89b8b24b8d99d2ca25ed12676edae95ce,2020-11-07,drivers/net/wireless/ath/ath11k/pci.c,ath11k: convert tasklets to use new tasklet_setup() API
+tasklet_setup#1,tasklet_setup,5bb98b2cfc2bd995010e71ce3147bdbca4dce92a,2021-02-02,drivers/net/arcnet/arcnet.c,arcnet: use new tasklet API
+tasklet_setup#2,tasklet_setup,1999ad32d4ff00581007543adffc465694b2e77b,2021-02-02,drivers/net/usb/rtl8150.c,net: usb: rtl8150: use new tasklet API
+tasklet_setup#3,tasklet_setup,f3163f1cb87141c7a41a15a5d4c98b353f807b04,2021-02-02,drivers/net/usb/r8152.c,net: usb: r8152: use new tasklet API
+tasklet_setup#4,tasklet_setup,0c1a3e8b2e98e8e73453ff86c2ce727441005fb3,2021-02-08,drivers/mmc/host/wbsd.c,mmc: wbsd: Use new tasklet API
+tasklet_setup#5,tasklet_setup,82a5d372ed01806c002812d13978abb582866e48,2021-02-08,drivers/mmc/host/atmel-mci.c,mmc: atmel-mci: Use new tasklet API
+tasklet_setup#6,tasklet_setup,ddf116f96f8ff11fe02ac1925ba846976327a451,2021-02-08,drivers/mmc/host/s3cmci.c,mmc: s3cmci: Use new tasklet API
+tasklet_setup#7,tasklet_setup,2913fa4d7d4236f92a0a90810e9f239fe2781131,2021-03-24,drivers/gpu/drm/i915/gt/intel_execlists_submission.c,drm/i915/gt: use new tasklet API for execution list
+timer_delete#0,timer_delete,326534e837c731496bdf0e02a8a61e987eb3bed0,2023-07-03,drivers/net/wireguard/timers.c,wireguard: timers: move to using timer_delete_sync
+timer_delete#1,timer_delete,0f7352557a35ab7888bc7831411ec8a3cbe20d78,2024-01-18,drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c,wifi: brcmfmac: Fix use-after-free bug in brcmf_cfg80211_detach
+timer_delete#2,timer_delete,8d24790ed08ab4e619ce58ed4a1b353ab77ffdc5,2024-05-09,drivers/md/dm-delay.c,dm-delay: fix workqueue delay_timer race
+vm_flags_set#0,vm_flags_set,1c71222e5f2393b5ea1a41795c67589eea7e3490,2023-02-10,drivers/acpi/pfr_telemetry.c,mm: replace vma->vm_flags direct modifications with modifier calls

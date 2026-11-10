@@ -1,6 +1,8 @@
 # Kernel tree lives in the Docker volume "drivebench-linux"; never commit it.
 /linux/
 /work/
+# Private notes, never published
+/private/
 *.o
 *.ko
 *.cmd
