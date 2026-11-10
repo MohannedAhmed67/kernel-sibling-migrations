@@ -1,0 +1,35 @@
+migration,targets,ge1,ge1_pct,ge3_commits,ge3_commits_pct,ge1_by_date,ge1_by_date_pct,e1_committed_before_written,e1_committed_before_written_pct,e2_released_before_written,e2_released_before_written_pct,e3_released_before_written_other_author,e3_released_before_written_other_author_pct,median_days_since_latest_sibling_when_any,old_api_removed_by_v6.10,candidate_precision,precision_wilson95_low
+dev_err_probe,804,782,97.3,773,96.1,803,99.9,772,96.0,750,93.3,750,93.3,12.3,not checked,8/8,0.68
+device_get_match_data,30,29,96.7,27,90.0,29,96.7,29,96.7,29,96.7,28,93.3,52.8,no,8/8,0.68
+devm_clk_get_enabled,192,191,99.5,179,93.2,191,99.5,191,99.5,165,85.9,165,85.9,0,not checked,8/8,0.68
+devm_platform_ioremap,807,791,98.0,776,96.2,802,99.4,711,88.1,708,87.7,708,87.7,0,not checked,7/8,0.53
+dma_set_mask_and_coherent,34,33,97.1,12,35.3,33,97.1,33,97.1,11,32.4,11,32.4,38.7,not checked,8/8,0.68
+eth_hw_addr_set,300,291,97.0,210,70.0,163,54.3,140,46.7,0,0.0,0,0.0,0,not checked,8/8,0.68
+fallthrough,32,27,84.4,23,71.9,31,96.9,25,78.1,6,18.8,1,3.1,3.4,not checked,8/8,0.68
+gpiod_from_of_gpio,57,56,98.2,53,93.0,56,98.2,56,98.2,56,98.2,56,98.2,39.55,yes,8/8,0.68
+i2c_probe_new,1268,1265,99.8,1167,92.0,1265,99.8,1261,99.4,1260,99.4,17,1.3,29.2,yes,8/8,0.68
+ida_simple,124,122,98.4,119,96.0,123,99.2,122,98.4,122,98.4,122,98.4,25.6,no,8/8,0.68
+in_hardirq,4,0,0.0,0,0.0,2,50.0,0,0.0,0,0.0,0,0.0,,no,3/3,0.44
+irq_affinity_hint,16,15,93.8,13,81.2,11,68.8,4,25.0,4,25.0,4,25.0,0,not checked,8/8,0.68
+kmap_local,23,22,95.7,18,78.3,22,95.7,22,95.7,22,95.7,21,91.3,0,not checked,8/8,0.68
+kobj_default_groups,43,42,97.7,12,27.9,42,97.7,42,97.7,0,0.0,0,0.0,70.9,yes,8/8,0.68
+kstrto,3,2,66.7,0,0.0,2,66.7,1,33.3,1,33.3,1,33.3,402.5,not checked,3/3,0.44
+netif_rx_ni,38,37,97.4,33,86.8,23,60.5,23,60.5,0,0.0,0,0.0,0,yes,8/8,0.68
+of_property_present,81,80,98.8,3,3.7,80,98.8,80,98.8,1,1.2,1,1.2,25.1,not checked,8/8,0.68
+pci_alloc_irq_vectors,5,4,80.0,1,20.0,4,80.0,4,80.0,4,80.0,4,80.0,252.55,not checked,4/4,0.51
+pci_dma_constants,67,65,97.0,63,94.0,66,98.5,63,94.0,59,88.1,4,6.0,30.2,yes,8/8,0.68
+pci_dma_wrappers,196,187,95.4,174,88.8,195,99.5,174,88.8,153,78.1,153,78.1,6,yes,7/8,0.53
+platform_remove_new,2717,2636,97.0,2593,95.4,2716,100.0,1946,71.6,1352,49.8,584,21.5,0,not checked,8/8,0.68
+pm_ops_macros,434,433,99.8,429,98.8,433,99.8,432,99.5,374,86.2,374,86.2,0,not checked,8/8,0.68
+spi_get_chipselect,108,107,99.1,11,10.2,107,99.1,107,99.1,5,4.6,2,1.9,37.9,not checked,7/8,0.53
+strlcpy_strscpy,758,675,89.1,666,87.9,679,89.6,675,89.1,644,85.0,644,85.0,7.9,yes,8/8,0.68
+strncpy_strscpy,191,189,99.0,188,98.4,190,99.5,189,99.0,188,98.4,188,98.4,5.7,not checked,8/8,0.68
+sysfs_emit,454,430,94.7,421,92.7,432,95.2,421,92.7,411,90.5,411,90.5,12.45,not checked,8/8,0.68
+tasklet_setup,32,30,93.8,25,78.1,31,96.9,24,75.0,0,0.0,0,0.0,0,not checked,8/8,0.68
+"ALL main (27 migrations, pooled)",8818,8541,96.9,7989,90.6,8531,96.7,7547,85.6,6325,71.7,4249,48.2,0.9,,,
+MEDIAN across the 27 main migrations,,,97.0,,87.9,,97.7,,94.0,,80.0,,33.3,,,,
+ALL forced (old API removed by v6.10),2427,2327,95.9,2168,89.3,2326,95.8,2294,94.5,2172,89.5,874,36.0,25.3,,,
+ALL other (old API still present or not checked),6391,6214,97.2,5821,91.1,6205,97.1,5253,82.2,4153,65.0,3375,52.8,0,,,
+class_create_owner,121,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,,yes,1/1,0.21
+vm_flags_set,76,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,,not checked,1/1,0.21
+ALL main + single-commit migrations (sensitivity),9015,8541,94.7,7989,88.6,8531,94.6,7547,83.7,6325,70.2,4249,47.1,0.9,,,

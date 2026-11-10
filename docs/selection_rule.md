@@ -3,6 +3,13 @@
 Written on 2026-11-10, **before** any verification verdicts or H1/H2 results were seen. The git history of this
 file shows it was committed before `data/verification.csv` existed.
 
+> **Correction, added 2026-11-10 after an adversarial review of H1. The rules below are unchanged.**
+> 1. "Pre-registered" holds only partly. The rules were written *after* `data/migration_summary.csv` (commit counts,
+>    tree-wide concentration) was known; only the review verdicts and all H1 results came later.
+> 2. The text below says tree-wide migrations are "not excluded", but rule 2 (>= 3 distinct commits) does exclude
+>    the two single-commit migrations (`class_create_owner`, `vm_flags_set`). H1 therefore always reports them as
+>    a sensitivity row next to the headline (8541/9015 = 94.7% instead of 8541/8818 = 96.9%).
+
 ## Which migrations enter the study (`data/cases.csv`)
 A candidate migration from `data/migration_summary.csv` is **included** if both hold:
 1. **Verified precision >= 0.85:** of its sampled candidate conversions (`data/verify_sample.csv`, up to 8 spread

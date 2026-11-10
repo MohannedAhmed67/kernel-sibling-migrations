@@ -20,7 +20,7 @@ Those earlier "sibling" conversions are reviewed, real examples of the correct c
 |---|---|---|
 | 0 | Environment (pinned Docker toolchain, kernel clone) | done |
 | 1 | Find DRIVEBENCH artifacts (not public, see `docs/artifact_search.md`) / build our case list (`docs/phase1_cases.md`) | done |
-| 2 | H1 sibling coverage | — |
+| 2 | H1 sibling existence (`docs/phase2_h1.md`) | done |
 | 3 | H2 Coccinelle rules from siblings | — |
 
 ## Reproduce
