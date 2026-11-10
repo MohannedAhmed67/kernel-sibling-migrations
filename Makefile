@@ -1,7 +1,7 @@
 # Run every target inside the container:  docker compose run --rm dev make <target>
 LINUX ?= /linux/linux
 
-.PHONY: env clone blob-probe prefetch mine candidates api-events
+.PHONY: env clone blob-probe prefetch mine candidates api-events select
 
 env:            ## Phase 0: record toolchain + kernel-clone facts to results/env.txt
 	mkdir -p results && bash scripts/env_check.sh | tee results/env.txt
@@ -21,6 +21,9 @@ mine:           ## Phase 1: one pass over v5.10..v6.10 history -> data/mined_hit
 candidates:     ## Phase 1: candidate conversions + per-migration summary from data/mined_hits.csv
 	python3 scripts/build_cases.py
 	python3 scripts/sample_for_verification.py
+
+select:         ## Phase 1: apply pre-registered rule to stored verdicts -> data/cases.csv, data/conversions.csv
+	python3 scripts/select_cases.py
 
 api-events:     ## Phase 1: when each new API appeared / old API was removed (include/ history)
 	python3 scripts/api_events.py

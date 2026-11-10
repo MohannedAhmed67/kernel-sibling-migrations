@@ -1,0 +1,33 @@
+migration,included,reason,verified,sampled,precision,candidate_conversions,distinct_files,distinct_commits,first_commit_date,last_commit_date,share_in_largest_commit,new_api_status,new_api_commit,new_api_date,old_api_status,old_api_commit,old_api_date,old_api_removed_by_v6.10
+class_create_owner,no,only 1 commit(s),1,1,1.000,121,121,1,2023-03-17,2023-03-17,1.000,introduced in window,6e30a66433af,2023-03-17,removed in window,dcfbb67e48a2,2023-03-24,yes
+dev_err_probe,yes,meets rule,8,8,1.000,804,687,723,2020-10-26,2024-05-08,0.016,before v5.10,,,n/a,,,not checked
+device_get_match_data,yes,meets rule,8,8,1.000,30,30,30,2020-11-17,2024-05-02,0.033,before v5.10,,,still present at v6.10,,,no
+devm_clk_get_enabled,yes,meets rule,8,8,1.000,192,191,188,2022-06-16,2024-05-06,0.016,introduced in window,7ef9651e9792,2022-06-15,n/a,,,not checked
+devm_platform_ioremap,yes,meets rule,7,8,0.875,807,795,690,2020-10-16,2024-05-08,0.036,before v5.10,,,n/a,,,not checked
+dma_set_mask_and_coherent,yes,meets rule,8,8,1.000,34,34,17,2020-12-07,2022-12-07,0.529,before v5.10,,,n/a,,,not checked
+eth_hw_addr_set,yes,meets rule,8,8,1.000,300,253,33,2021-10-02,2021-11-22,0.253,introduced in window,48eab831ae8b,2021-09-05,n/a,,,not checked
+fallthrough,yes,meets rule,8,8,1.000,32,32,19,2020-11-07,2021-07-30,0.281,before v5.10,,,n/a,,,not checked
+gpiod_from_of_gpio,yes,meets rule,8,8,1.000,57,56,57,2021-01-12,2024-03-29,0.018,n/a,,,removed in window,40fc56ee608c,2023-01-30,yes
+i2c_probe_new,yes,meets rule,8,8,1.000,1268,1267,66,2023-03-09,2023-09-13,0.151,introduced in window,03c835f498b5,2023-03-09,removed in window,5eb1e6e459cf,2023-09-13,yes
+i2c_remove_void,no,precision 5/8 < 0.85,5,8,0.625,616,613,8,2021-03-22,2022-11-25,0.989,introduced in window,ed5c2f5fd10d,2022-08-16,removed in window,ed5c2f5fd10d,2022-08-16,yes
+ida_simple,yes,meets rule,8,8,1.000,124,119,91,2020-11-25,2024-05-22,0.065,before v5.10,,,still present at v6.10,,,no
+in_hardirq,yes,meets rule,3,3,1.000,4,4,3,2021-08-16,2021-08-20,0.500,introduced in window,15115830c887,2020-11-23,still present at v6.10,,,no
+irq_affinity_hint,yes,meets rule,8,8,1.000,16,16,15,2021-12-10,2024-02-26,0.125,introduced in window,65c7cdedeb30,2021-12-10,n/a,,,not checked
+kmap_local,yes,meets rule,8,8,1.000,23,23,22,2022-07-08,2023-12-15,0.087,introduced in window,f3ba3c710ac5,2020-11-24,n/a,,,not checked
+kobj_default_groups,yes,meets rule,8,8,1.000,43,39,30,2021-10-18,2022-01-29,0.070,before v5.10,,,removed in window,cdb4f26a63c3,2022-04-05,yes
+kstrto,yes,meets rule,3,3,1.000,3,3,3,2021-06-07,2023-08-21,0.333,before v5.10,,,n/a,,,not checked
+napi_weight,no,precision 3/8 < 0.85,3,8,0.375,145,122,28,2020-11-30,2022-09-29,0.628,introduced in window,58caed3dacb4,2022-05-03,n/a,,,not checked
+netif_rx_ni,yes,meets rule,8,8,1.000,38,38,15,2022-03-04,2022-03-07,0.237,n/a,,,removed in window,2655926aea9b,2022-03-07,yes
+of_property_present,yes,meets rule,8,8,1.000,81,79,40,2023-02-17,2023-08-16,0.074,introduced in window,9cbad37ce812,2023-02-17,n/a,,,not checked
+pci_alloc_irq_vectors,yes,meets rule,4,4,1.000,5,5,4,2021-04-20,2024-05-06,0.400,before v5.10,,,n/a,,,not checked
+pci_dma_constants,yes,meets rule,8,8,1.000,67,67,36,2020-12-03,2022-03-07,0.090,n/a,,,removed in window,7968778914e5,2022-03-30,yes
+pci_dma_wrappers,yes,meets rule,7,8,0.875,196,184,111,2020-11-21,2022-03-07,0.046,n/a,,,removed in window,7968778914e5,2022-03-30,yes
+platform_remove_new,yes,meets rule,8,8,1.000,2717,2699,2024,2023-03-06,2024-05-14,0.046,introduced in window,5c5a7680e67b,2023-01-17,n/a,,,not checked
+pm_ops_macros,yes,meets rule,8,8,1.000,434,433,393,2021-12-17,2024-05-08,0.028,introduced in window,1a3c7bb08826,2021-12-17,n/a,,,not checked
+spi_get_chipselect,yes,meets rule,7,8,0.875,108,105,13,2023-02-01,2024-03-07,0.806,introduced in window,303feb3cc06a,2023-02-01,n/a,,,not checked
+strlcpy_strscpy,yes,meets rule,8,8,1.000,758,747,148,2021-01-08,2023-12-06,0.263,before v5.10,,,removed in window,d26270061ae6,2024-01-19,yes
+strncpy_strscpy,yes,meets rule,8,8,1.000,191,187,181,2020-10-30,2024-04-25,0.021,before v5.10,,,n/a,,,not checked
+sysfs_emit,yes,meets rule,8,8,1.000,454,417,267,2020-10-26,2024-05-22,0.051,before v5.10,,,n/a,,,not checked
+tasklet_setup,yes,meets rule,8,8,1.000,32,32,26,2020-11-07,2021-03-24,0.156,before v5.10,,,n/a,,,not checked
+timer_delete,no,precision 2/3 < 0.85,2,3,0.667,3,3,3,2023-07-03,2024-05-09,0.333,introduced in window,9b13df3fb64e,2022-11-24,n/a,,,not checked
+vm_flags_set,no,only 1 commit(s),1,1,1.000,76,76,1,2023-02-10,2023-02-10,1.000,introduced in window,bc292ab00f6c,2023-02-09,n/a,,,not checked
