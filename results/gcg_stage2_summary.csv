@@ -1,0 +1,16 @@
+model,config,migration,tasks,tasks_passed,units_hit,units_need,extra,calls,seconds
+gemma3_4b,leaf_g_r3_s1,i2c_probe_new,1,0,0,40,0,4,4.9
+gemma3_4b,leaf_g_r3_s1,ida_simple,6,1,124,147,0,21,34.3
+gemma3_4b,leaf_g_r3_s1,pci_dma_wrappers,11,1,29,133,1,41,93.3
+gemma3_4b,leaf_g_r3_s1,platform_remove_new,3,0,20,100,290,12,9.5
+gemma3_4b,leaf_g_r3_s1,strlcpy_strscpy,1,0,0,94,0,4,8.7
+llama3.1_8b,leaf_g_r3_s1,i2c_probe_new,1,0,0,40,0,4,5.0
+llama3.1_8b,leaf_g_r3_s1,ida_simple,6,0,90,147,0,24,101.3
+llama3.1_8b,leaf_g_r3_s1,pci_dma_wrappers,11,3,25,133,3,40,74.2
+llama3.1_8b,leaf_g_r3_s1,platform_remove_new,3,0,0,100,858,12,27.7
+llama3.1_8b,leaf_g_r3_s1,strlcpy_strscpy,1,0,0,94,0,4,43.2
+qwen2.5-coder_7b,leaf_g_r3_s1,i2c_probe_new,1,1,40,40,0,2,1.7
+qwen2.5-coder_7b,leaf_g_r3_s1,ida_simple,6,1,89,147,5,22,33.6
+qwen2.5-coder_7b,leaf_g_r3_s1,pci_dma_wrappers,11,3,30,133,0,35,63.5
+qwen2.5-coder_7b,leaf_g_r3_s1,platform_remove_new,3,1,40,180,0,11,11.1
+qwen2.5-coder_7b,leaf_g_r3_s1,strlcpy_strscpy,1,1,94,94,0,1,5.2

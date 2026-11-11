@@ -1,0 +1,7 @@
+migration,buildable,manual,manual_exact,spinfer,spinfer_exact,gcg_gemma,gcg_gemma_exact,gcg_llama,gcg_llama_exact,gcg_qwen,gcg_qwen_exact
+i2c_probe_new,19,19,20,0,0,0,0,0,0,19,20
+ida_simple,20,14,14,9,9,9,9,0,0,6,6
+pci_dma_wrappers,20,6,5,2,2,0,0,0,0,0,0
+platform_remove_new,20,19,19,0,0,0,0,0,0,0,1
+strlcpy_strscpy,15,14,18,13,17,0,0,0,0,13,17
+ALL,94,72,76,24,28,9,9,0,0,38,44

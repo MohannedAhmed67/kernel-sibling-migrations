@@ -1,0 +1,6 @@
+migration,training_files,leaves,task_leaves,anchor_leaves,anchor_leaves_in_2plus_files,shapes,hunks
+ida_simple,20,9,6,6,5,37,74
+i2c_probe_new,20,7,1,1,1,16,27
+platform_remove_new,20,3,3,1,1,13,60
+strlcpy_strscpy,20,1,1,1,1,24,34
+pci_dma_wrappers,20,11,11,11,6,35,47

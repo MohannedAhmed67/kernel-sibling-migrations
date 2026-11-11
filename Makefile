@@ -1,7 +1,7 @@
 # Run every target inside the container:  docker compose run --rm dev make <target>
 LINUX ?= /linux/linux
 
-.PHONY: env clone blob-probe prefetch mine candidates api-events select h1 verify-h1 h2 h2-final
+.PHONY: env clone blob-probe prefetch mine candidates api-events select h1 verify-h1 h2 h2-final gcg-tree
 
 env:            ## Phase 0: record toolchain + kernel-clone facts to results/env.txt
 	mkdir -p results && bash scripts/env_check.sh | tee results/env.txt
@@ -41,3 +41,6 @@ h2-final:       ## Phase 3: rebuild final tables/chart from results/h2_rules.csv
 
 api-events:     ## Phase 1: when each new API appeared / old API was removed (include/ history)
 	python3 scripts/api_events.py
+
+gcg-tree:       ## Phase 5 stage 1: decompose training siblings into variant trees -> work/gcg/*/tree.json, results/gcg_tree_summary.csv
+	python3 scripts/gcg_decompose.py

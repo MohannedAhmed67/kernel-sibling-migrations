@@ -16,14 +16,17 @@ Line comparison (whitespace-normalised; multisets of removed '-' and added '+' l
 Compile: in a worktree at T^ (x86_64 allmodconfig with CONFIG_WERROR off) build the file's object with
   original, human and rule versions. If the ORIGINAL does not compile, the target is "not buildable".
 
-Outputs: results/h2_rules.csv (one row per target x source), results/h2_summary.csv,
+Outputs: results/<H2_OUT>_rules.csv (one row per target x source), results/<H2_OUT>_summary.csv (H2_OUT=h2),
          work/h2/eval/<migration>/<idx>/ (all versions and build logs; git-ignored)
 """
 import collections, csv, difflib, json, os, re, shutil, subprocess, sys
 from multiprocessing import Pool
 
 LINUX = os.environ.get("LINUX", "/linux/linux")
-SOURCES = [s for s in ("manual", "spinfer") if os.path.isdir(f"rules/{s}")]
+# H2_SOURCES (comma-separated rules/ folders) and H2_OUT (output prefix) let later rule sources be evaluated
+# with the same harness without overwriting the Phase-3 tables; the defaults reproduce Phase 3 exactly.
+SOURCES = [s for s in os.environ.get("H2_SOURCES", "manual,spinfer").split(",") if os.path.isdir(f"rules/{s}")]
+OUT = os.environ.get("H2_OUT", "h2")
 JOBS = int(os.environ.get("H2_JOBS", "4"))
 MIGS = {m["id"]: m for m in json.load(open("data/migrations.json"))["migrations"]}
 
@@ -152,7 +155,7 @@ def main():
               "line_recall", "line_precision", "old_api_left_rule", "old_api_left_human", "files_in_human_commit",
               "all_train_commits_are_ancestors", "notes"]
     os.makedirs("results", exist_ok=True)
-    with open("results/h2_rules.csv", "w", newline="") as f:
+    with open(f"results/{OUT}_rules.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n", extrasaction="ignore")
         w.writeheader(); w.writerows(sorted(allrows, key=lambda r: (r["migration"], r["source"], int(r["idx"]))))
     summarize(allrows)
@@ -174,7 +177,7 @@ def summarize(rows):
                     "rule_compiles_of_buildable": sum(r.get("build_rule") is True for r in buildable),
                     "human_compiles_of_buildable": sum(r["build_human"] is True for r in buildable),
                     "exact_or_subset_complete_and_compiles": len(good)})
-    with open("results/h2_summary.csv", "w", newline="") as f:
+    with open(f"results/{OUT}_summary.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(out[0]), lineterminator="\n")
         w.writeheader(); w.writerows(out)
     for o in out:

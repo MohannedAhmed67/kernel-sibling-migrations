@@ -1,0 +1,16 @@
+model,config,migration,candidates,tasks_kept,train_units_need,train_units_hit,train_extra
+gemma3_4b,leaf_g_r3_s1,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_g_r3_s1,ida_simple,3,L00 L01 L03,147,129,9
+gemma3_4b,leaf_g_r3_s1,pci_dma_wrappers,3,L00 L03,133,28,0
+gemma3_4b,leaf_g_r3_s1,platform_remove_new,1,,100,0,0
+gemma3_4b,leaf_g_r3_s1,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_g_r3_s1,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_g_r3_s1,ida_simple,2,L00 L03,147,92,6
+llama3.1_8b,leaf_g_r3_s1,pci_dma_wrappers,4,L02 L09,133,21,3
+llama3.1_8b,leaf_g_r3_s1,platform_remove_new,0,,100,0,0
+llama3.1_8b,leaf_g_r3_s1,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,leaf_g_r3_s1,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_g_r3_s1,ida_simple,4,L00 L01 L03,147,85,5
+qwen2.5-coder_7b,leaf_g_r3_s1,pci_dma_wrappers,4,L02 L03 L07 L09,133,30,0
+qwen2.5-coder_7b,leaf_g_r3_s1,platform_remove_new,1,L00,100,40,0
+qwen2.5-coder_7b,leaf_g_r3_s1,strlcpy_strscpy,1,L00,94,94,0
