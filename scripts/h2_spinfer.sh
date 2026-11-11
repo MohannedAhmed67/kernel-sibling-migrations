@@ -6,7 +6,9 @@ set -uo pipefail
 IMAGE="${SPINFER_IMAGE:-drivebench-spinfer:c47696a}"
 TIMEOUT="${SPINFER_TIMEOUT:-7200}"
 mkdir -p rules/spinfer results
-: > results/h2_spinfer_runs.txt
+RUNS="${SPINFER_RUNS:-results/h2_spinfer_runs.txt}"   # test set: SPINFER_RUNS=results/test_spinfer_runs.txt
+MIGS="${SPINFER_MIGS:-}"                              #           SPINFER_MIGS="mig1 mig2 ..."
+: > "$RUNS"
 # record the toolchain inside the Spinfer image
 { echo "image: $IMAGE"
   MSYS_NO_PATHCONV=1 docker run --rm --entrypoint sh "$IMAGE" -c \
@@ -23,7 +25,8 @@ run_one() {
   rc=$?
   secs=$(( $(date +%s) - start ))
   if [ -s "$d/spinfer.cocci" ]; then mv "$d/spinfer.cocci" "rules/spinfer/$mig.cocci"; status=rule; else status=no_rule; fi
-  echo "$mig rc=$rc seconds=$secs $status" | tee -a results/h2_spinfer_runs.txt
+  echo "$mig rc=$rc seconds=$secs $status" | tee -a "$RUNS"
 }
-for d in work/h2/*/train; do run_one "$d" & done   # one container per migration, in parallel
+if [ -n "$MIGS" ]; then DIRS=$(for m in $MIGS; do echo "work/h2/$m/train"; done); else DIRS=$(ls -d work/h2/*/train); fi
+for d in $DIRS; do run_one "$d" & done   # one container per migration, in parallel
 wait

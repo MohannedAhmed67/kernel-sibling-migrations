@@ -9,6 +9,9 @@ Writes results/h2_isolation_audit.txt.
 import glob, json, os, re, sys
 
 MIGS = ["ida_simple", "i2c_probe_new", "platform_remove_new", "strlcpy_strscpy", "pci_dma_wrappers"]
+if os.environ.get("AUDIT_MIGS"):          # test set: AUDIT_MIGS="mig1 mig2 ..." AUDIT_OUT=results/test_isolation_audit.txt
+    MIGS = os.environ["AUDIT_MIGS"].split()
+OUT = os.environ.get("AUDIT_OUT", "results/h2_isolation_audit.txt")
 FORBID = [r"DRIVEBENCH/data/", r"/work/data/", r"\bdata/(conversions|h2_split|cases|verification|mined)",
           r"DRIVEBENCH/results/", r"/work/results/", r"DRIVEBENCH/docs/", r"/work/docs/", r"DRIVEBENCH/scripts/", r"/work/scripts/",
           r"/linux/", r"\bgit\s", r"WebFetch|WebSearch"]
@@ -26,9 +29,11 @@ for path in sorted(glob.glob(os.path.join(tdir, "agent-*.jsonl"))):
         for block in msg.get("content") or []:
             if isinstance(block, dict) and block.get("type") == "tool_use":
                 inp = block.get("input") or {}
+                if block.get("name") == "SubagentHandback":  # the final report text, not a file access
+                    continue
                 if block.get("name") in ("Write", "Edit"):   # check where it writes, not the text it writes
                     inp = {"file_path": inp.get("file_path")}
-                calls.append((block.get("name"), json.dumps(inp, ensure_ascii=False)))
+                calls.append((block.get("name"), json.dumps(inp, ensure_ascii=False).replace("\\\\", "/")))  # Windows paths -> /
     text = " ".join(c[1] for c in calls)
     mig = next((m for m in MIGS if f"work/h2/{m}/" in text or f"rules/manual/{m}" in text), "?")
     bad = []
@@ -42,5 +47,5 @@ for path in sorted(glob.glob(os.path.join(tdir, "agent-*.jsonl"))):
     lines.extend(bad)
 lines.append(f"TOTAL violations: {bad_total}")
 os.makedirs("results", exist_ok=True)
-open("results/h2_isolation_audit.txt", "w", newline="\n").write("\n".join(lines) + "\n")
+open(OUT, "w", newline="\n").write("\n".join(lines) + "\n")
 print("\n".join(lines))

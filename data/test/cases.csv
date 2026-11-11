@@ -1,0 +1,15 @@
+migration,included,reason,new_api_status,new_api_date,conversions,distinct_commits,share_in_largest_commit,train,eligible_targets,verified
+hrtimer_setup,no,"split too small (train 20, eligible targets 2)",introduced in window,2024-11-07,103,76,0.039,20,2,
+secs_to_jiffies,yes,meets rule,introduced in window,2024-10-30,58,38,0.121,17,10,8/8
+iio_claim_direct,yes,meets rule,introduced in window,2025-02-17,89,69,0.169,20,51,8/8
+iio_push_with_ts,yes,meets rule,introduced in window,2025-05-21,109,26,0.312,20,22,8/8
+gpio_set_rv,yes,meets rule,introduced in window,2025-02-26,189,189,0.005,20,168,8/8
+timer_container_of,no,"only 1 commit(s); split too small (train 20, eligible targets 0)",introduced in window,2025-06-08,571,1,1.000,20,0,
+devm_mmc_alloc_host,no,"new API not new (present at v6.10); split too small (train 12, eligible targets 2)",present at v6.10,,39,39,0.026,12,2,
+devm_platform_profile,no,"split too small (train 4, eligible targets 0)",introduced in window,2024-12-29,12,12,0.083,4,0,
+pcim_request_all_regions,yes,meets rule,introduced in window,2024-10-30,59,49,0.051,18,17,8/8
+snd_soc_component_to_dapm,no,"split too small (train 20, eligible targets 2)",introduced in window,2025-09-18,113,113,0.009,20,2,
+ethtool_rx_ring_count,yes,meets rule,introduced in window,2025-09-18,50,49,0.040,15,30,8/8
+aligned_s64,no,"split too small (train 20, eligible targets 1)",introduced in window,2024-09-30,71,16,0.183,20,1,
+devm_kmemdup_array,yes,meets rule,introduced in window,2025-02-24,23,16,0.348,7,16,7/8
+irq_domain_create,no,"new API not new (present at v6.10); split too small (train 20, eligible targets 6)",present at v6.10,,171,32,0.398,20,6,

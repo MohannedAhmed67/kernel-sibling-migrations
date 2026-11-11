@@ -8,11 +8,15 @@
 #   leaf_gnofix_r3 + guidance: minimal-edit patterns, context, interface, error hints, lint, stall handling
 #   leaf_g_r3      + deterministic auto-repair
 #   leaf_gc_r3     + generality critic (stage 2) and compile critic with repair (stage 4)  = full framework
-# Usage: MODELS="qwen2.5-coder:7b" SEEDS="1 2 3" MIGS="..." bash scripts/gcg_ablate.sh
+# Usage: MODELS="qwen2.5-coder:7b" SEEDS="1 2 3" MIGS="..." SET=test bash scripts/gcg_ablate.sh
+# Dev and test migrations share run directories (work/gcg/runs/<model>/<config>_s<seed>/<migration>/); a run is
+# marked done per migration set (DONE for the dev set, DONE_<SET> otherwise) and only its own migrations are redone.
 set -uo pipefail
 MODELS="${MODELS:-qwen2.5-coder:7b llama3.1:8b gemma3:4b}"
 SEEDS="${SEEDS:-1 2 3}"
 MIGS="${MIGS:-ida_simple i2c_probe_new platform_remove_new strlcpy_strscpy pci_dma_wrappers}"
+SET="${SET:-dev}"
+if [ "$SET" = dev ]; then MARK=DONE; SFX=""; else MARK="DONE_$SET"; SFX="_$SET"; fi
 declare -A CFG=(
   [whole_u_r0]="--mode whole --unguided --rounds 0"
   [whole_u_r3]="--mode whole --unguided --rounds 3"
@@ -27,16 +31,17 @@ for model in $MODELS; do
   for seed in $SEEDS; do
     for c in $ORDER; do
       run="work/gcg/runs/$mdir/${c}_s$seed"
-      if [ -f "$run/DONE" ] && [ "$(cat "$run/DONE")" = "$MIGS" ]; then echo "skip $run"; continue; fi
-      echo "=== $model $c seed $seed  $(date -u +%FT%TZ)"
-      rm -rf "$run"
-      python3 scripts/gcg_leaf.py --model "$model" --seed "$seed" ${CFG[$c]} --migration $MIGS > "work/gcg/logs_${mdir}_${c}_s$seed.txt" 2>&1 \
-        && echo "$MIGS" > "$run/DONE" || echo "FAILED $run (see work/gcg/logs_${mdir}_${c}_s$seed.txt)"
+      log="work/gcg/logs${SFX}_${mdir}_${c}_s$seed.txt"
+      if [ -f "$run/$MARK" ] && [ "$(cat "$run/$MARK")" = "$MIGS" ]; then echo "skip $run ($SET)"; continue; fi
+      echo "=== $model $c seed $seed $SET  $(date -u +%FT%TZ)"
+      for m in $MIGS; do rm -rf "${run:?}/$m"; done
+      python3 scripts/gcg_leaf.py --model "$model" --seed "$seed" ${CFG[$c]} --migration $MIGS > "$log" 2>&1 \
+        && echo "$MIGS" > "$run/$MARK" || echo "FAILED $run (see $log)"
     done
     for c in $ORDER; do python3 scripts/gcg_compose.py --config "${c}_s$seed" > /dev/null || echo "compose failed ${c}_s$seed"; done
     python3 scripts/gcg_critic.py --model "$model" --config "leaf_gc_r3_s$seed" --migration $MIGS \
-      > "work/gcg/logs_${mdir}_critic_s$seed.txt" 2>&1 || echo "critic failed $model seed $seed"
-    grep "final=" "work/gcg/logs_${mdir}_critic_s$seed.txt"
+      > "work/gcg/logs${SFX}_${mdir}_critic_s$seed.txt" 2>&1 || echo "critic failed $model seed $seed"
+    grep "final=" "work/gcg/logs${SFX}_${mdir}_critic_s$seed.txt"
   done
 done
 python3 scripts/gcg_report.py > /dev/null

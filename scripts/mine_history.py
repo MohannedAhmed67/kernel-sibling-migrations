@@ -14,9 +14,11 @@ from multiprocessing import Pool
 LINUX = os.environ.get("LINUX", "/linux/linux")
 PATHS = ["drivers", "sound"]
 TAGS = [f"v5.{i}" for i in range(10, 20)] + [f"v6.{i}" for i in range(0, 11)]
-OUT = "data/mined_hits.csv"
+OUT = os.environ.get("MINE_OUT", "data/mined_hits.csv")
+if os.environ.get("MINE_TAGS"):      # test set: MINE_TAGS="v6.10 v6.11 ... v7.4-rc2"
+    TAGS = os.environ["MINE_TAGS"].split()
 
-with open("data/migrations.json") as f:
+with open(os.environ.get("MINE_MIGRATIONS", "data/migrations.json")) as f:
     MIGS = json.load(f)["migrations"]
 PAT = [(m["id"], re.compile(m["old"]), re.compile(m["new"])) for m in MIGS]
 PREFILTER = re.compile("|".join(f"(?:{m['old']})|(?:{m['new']})" for m in MIGS))

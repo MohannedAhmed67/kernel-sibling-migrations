@@ -1,0 +1,36 @@
+\section{Introduction}
+\label{sec:intro}
+
+When a Linux kernel API changes, the drivers that use it are converted one after another, often over months and by
+different developers. The earlier conversions are free, reviewed examples for the later ones: in a pilot study of
+27 API migrations in Linux v5.10--v6.10, an earlier conversion of another file by the same migration (a
+\emph{sibling migration}) existed in the target's git history for 96.9\% of 8{,}818 conversions~\cite{ahmed2026siblings}.
+The natural way to reuse such examples in the kernel is a Coccinelle semantic patch~\cite{padioleau2008documenting}:
+a rule that kernel maintainers can read, review and apply tree-wide, unlike a stream of per-file edits from a
+language model.
+
+Writing such rules automatically from examples is an old problem. Spinfer~\cite{serrano2020spinfer} infers them
+with dedicated heuristics, and recent work prompts frontier LLMs to write them~\cite{yusuf2025howfar}, finding
+that LLM-written patches are often syntactically invalid and that both approaches struggle when the examples
+contain several variants of a change. Frontier APIs are also a poor fit for kernel workflows: maintainers cannot
+inspect them, and they have likely seen the very migrations they are evaluated on.
+
+We ask whether \emph{small open models running on a laptop} can write correct migration rules when the work is
+structured for them. We adapt guided code generation (GCG)~\cite{almorsi2025gcg}, a decomposition framework
+previously shown to help an 8B model on HumanEval, to semantic patches: the training siblings are decomposed into
+a tree of change variants; the model writes one small rule per variant under test feedback from the siblings
+themselves; deterministic components repair mechanical SmPL errors and generalise driver-specific names; rules are
+composed greedily; and a compile critic either repairs or rejects a rule whose output does not build.
+
+\paragraph{Contributions.}
+\begin{itemize}
+  \item A guided framework for semantic-patch generation with 4--8B local models (Section~\ref{sec:method}), whose
+    every step except rule writing is deterministic and auditable.
+  \item A pre-registered, contamination-free test set: \testMigrations{} Linux API migrations whose new API first
+    appeared after all three models' training cutoffs, with \testTargets{} held-out driver conversions
+    (Section~\ref{sec:setup}).
+  \item An evaluation that compiles every candidate output on x86\_64 \texttt{allmodconfig} and reports an automatic,
+    judgement-free success metric, three seeds per configuration, and an ablation of every component
+    (Section~\ref{sec:results}).
+\end{itemize}
+All code, prompts, model responses and results are released.\footnote{\url{https://github.com/MohannedAhmed67/kernel-sibling-migrations}}

@@ -1,16 +1,271 @@
 model,config,migration,candidates,tasks_kept,train_units_need,train_units_hit,train_extra
+gemma3_4b,whole_u_r0_s2,i2c_probe_new,0,,40,0,0
+gemma3_4b,whole_u_r0_s2,ida_simple,0,,147,0,0
+gemma3_4b,whole_u_r0_s2,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,whole_u_r0_s2,platform_remove_new,0,,100,0,0
+gemma3_4b,whole_u_r0_s2,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,whole_u_r0_s2,i2c_probe_new,0,,40,0,0
+llama3.1_8b,whole_u_r0_s2,ida_simple,0,,147,0,0
+llama3.1_8b,whole_u_r0_s2,pci_dma_wrappers,0,,133,0,0
+llama3.1_8b,whole_u_r0_s2,platform_remove_new,0,,100,0,0
+llama3.1_8b,whole_u_r0_s2,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,whole_u_r0_s2,i2c_probe_new,0,,40,0,0
+qwen2.5-coder_7b,whole_u_r0_s2,ida_simple,0,,147,0,0
+qwen2.5-coder_7b,whole_u_r0_s2,pci_dma_wrappers,1,,133,0,0
+qwen2.5-coder_7b,whole_u_r0_s2,platform_remove_new,0,,100,0,0
+qwen2.5-coder_7b,whole_u_r0_s2,strlcpy_strscpy,1,WHOLE,94,94,0
+gemma3_4b,whole_u_r3_s2,i2c_probe_new,0,,40,0,0
+gemma3_4b,whole_u_r3_s2,ida_simple,0,,147,0,0
+gemma3_4b,whole_u_r3_s2,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,whole_u_r3_s2,platform_remove_new,0,,100,0,0
+gemma3_4b,whole_u_r3_s2,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,whole_u_r3_s2,i2c_probe_new,0,,40,0,0
+llama3.1_8b,whole_u_r3_s2,ida_simple,0,,147,0,0
+llama3.1_8b,whole_u_r3_s2,pci_dma_wrappers,0,,133,0,0
+llama3.1_8b,whole_u_r3_s2,platform_remove_new,0,,100,0,0
+llama3.1_8b,whole_u_r3_s2,strlcpy_strscpy,1,WHOLE,94,10,0
+qwen2.5-coder_7b,whole_u_r3_s2,i2c_probe_new,0,,40,0,0
+qwen2.5-coder_7b,whole_u_r3_s2,ida_simple,0,,147,0,0
+qwen2.5-coder_7b,whole_u_r3_s2,pci_dma_wrappers,1,,133,0,0
+qwen2.5-coder_7b,whole_u_r3_s2,platform_remove_new,0,,100,0,0
+qwen2.5-coder_7b,whole_u_r3_s2,strlcpy_strscpy,1,WHOLE,94,94,0
+gemma3_4b,leaf_u_r3_s2,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_u_r3_s2,ida_simple,0,,147,0,0
+gemma3_4b,leaf_u_r3_s2,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,leaf_u_r3_s2,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_u_r3_s2,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_u_r3_s2,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_u_r3_s2,ida_simple,1,L01,147,26,0
+llama3.1_8b,leaf_u_r3_s2,pci_dma_wrappers,5,L02 L03 L06 L09 L10,133,35,1
+llama3.1_8b,leaf_u_r3_s2,platform_remove_new,1,,100,0,0
+llama3.1_8b,leaf_u_r3_s2,strlcpy_strscpy,1,L00,94,10,0
+qwen2.5-coder_7b,leaf_u_r3_s2,i2c_probe_new,0,,40,0,0
+qwen2.5-coder_7b,leaf_u_r3_s2,ida_simple,3,L00 L02 L03,147,99,9
+qwen2.5-coder_7b,leaf_u_r3_s2,pci_dma_wrappers,2,L08,133,2,0
+qwen2.5-coder_7b,leaf_u_r3_s2,platform_remove_new,1,,100,0,0
+qwen2.5-coder_7b,leaf_u_r3_s2,strlcpy_strscpy,1,L00,94,94,0
+gemma3_4b,leaf_gnofix_r3_s2,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_gnofix_r3_s2,ida_simple,0,,147,0,0
+gemma3_4b,leaf_gnofix_r3_s2,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,leaf_gnofix_r3_s2,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_gnofix_r3_s2,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_gnofix_r3_s2,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_gnofix_r3_s2,ida_simple,4,L00 L01 L03 L04,147,48,6
+llama3.1_8b,leaf_gnofix_r3_s2,pci_dma_wrappers,5,L02 L05 L09 L10,133,12,2
+llama3.1_8b,leaf_gnofix_r3_s2,platform_remove_new,0,,100,0,0
+llama3.1_8b,leaf_gnofix_r3_s2,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s2,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s2,ida_simple,3,L01 L04,147,43,7
+qwen2.5-coder_7b,leaf_gnofix_r3_s2,pci_dma_wrappers,3,L00 L03 L05,133,49,1
+qwen2.5-coder_7b,leaf_gnofix_r3_s2,platform_remove_new,3,L00,100,40,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s2,strlcpy_strscpy,0,,94,0,0
+gemma3_4b,leaf_g_r3_s2,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_g_r3_s2,ida_simple,1,L03,147,2,0
+gemma3_4b,leaf_g_r3_s2,pci_dma_wrappers,1,L00,133,14,0
+gemma3_4b,leaf_g_r3_s2,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_g_r3_s2,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_g_r3_s2,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_g_r3_s2,ida_simple,5,L00 L01 L03 L04,147,48,6
+llama3.1_8b,leaf_g_r3_s2,pci_dma_wrappers,7,L02 L03 L05 L09 L10,133,18,2
+llama3.1_8b,leaf_g_r3_s2,platform_remove_new,1,,100,0,0
+llama3.1_8b,leaf_g_r3_s2,strlcpy_strscpy,1,L00,94,44,0
+qwen2.5-coder_7b,leaf_g_r3_s2,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_g_r3_s2,ida_simple,5,L00 L01 L03 L04,147,93,9
+qwen2.5-coder_7b,leaf_g_r3_s2,pci_dma_wrappers,5,L00 L03 L05 L07 L09,133,53,1
+qwen2.5-coder_7b,leaf_g_r3_s2,platform_remove_new,3,L00,100,40,0
+qwen2.5-coder_7b,leaf_g_r3_s2,strlcpy_strscpy,1,L00,94,60,0
+gemma3_4b,leaf_gc_r3_s2,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_gc_r3_s2,ida_simple,1,L03,147,2,0
+gemma3_4b,leaf_gc_r3_s2,pci_dma_wrappers,2,L00 L03,133,18,0
+gemma3_4b,leaf_gc_r3_s2,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_gc_r3_s2,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_gc_r3_s2,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_gc_r3_s2,ida_simple,5,L00 L01 L03 L04,147,48,6
+llama3.1_8b,leaf_gc_r3_s2,pci_dma_wrappers,7,L02 L03 L05 L09 L10,133,18,2
+llama3.1_8b,leaf_gc_r3_s2,platform_remove_new,1,,100,0,0
+llama3.1_8b,leaf_gc_r3_s2,strlcpy_strscpy,1,L00,94,44,0
+qwen2.5-coder_7b,leaf_gc_r3_s2,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_gc_r3_s2,ida_simple,5,L00 L01 L03 L04,147,93,9
+qwen2.5-coder_7b,leaf_gc_r3_s2,pci_dma_wrappers,5,L00 L03 L05 L07 L09,133,53,1
+qwen2.5-coder_7b,leaf_gc_r3_s2,platform_remove_new,3,L00,100,40,0
+qwen2.5-coder_7b,leaf_gc_r3_s2,strlcpy_strscpy,1,L00,94,60,0
+gemma3_4b,whole_u_r0_s3,i2c_probe_new,0,,40,0,0
+gemma3_4b,whole_u_r0_s3,ida_simple,0,,147,0,0
+gemma3_4b,whole_u_r0_s3,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,whole_u_r0_s3,platform_remove_new,0,,100,0,0
+gemma3_4b,whole_u_r0_s3,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,whole_u_r0_s3,i2c_probe_new,0,,40,0,0
+llama3.1_8b,whole_u_r0_s3,ida_simple,0,,147,0,0
+llama3.1_8b,whole_u_r0_s3,pci_dma_wrappers,0,,133,0,0
+llama3.1_8b,whole_u_r0_s3,platform_remove_new,0,,100,0,0
+llama3.1_8b,whole_u_r0_s3,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,whole_u_r0_s3,i2c_probe_new,1,WHOLE,40,40,0
+qwen2.5-coder_7b,whole_u_r0_s3,ida_simple,0,,147,0,0
+qwen2.5-coder_7b,whole_u_r0_s3,pci_dma_wrappers,0,,133,0,0
+qwen2.5-coder_7b,whole_u_r0_s3,platform_remove_new,0,,100,0,0
+qwen2.5-coder_7b,whole_u_r0_s3,strlcpy_strscpy,0,,94,0,0
+gemma3_4b,whole_u_r3_s3,i2c_probe_new,0,,40,0,0
+gemma3_4b,whole_u_r3_s3,ida_simple,0,,147,0,0
+gemma3_4b,whole_u_r3_s3,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,whole_u_r3_s3,platform_remove_new,0,,100,0,0
+gemma3_4b,whole_u_r3_s3,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,whole_u_r3_s3,i2c_probe_new,0,,40,0,0
+llama3.1_8b,whole_u_r3_s3,ida_simple,0,,147,0,0
+llama3.1_8b,whole_u_r3_s3,pci_dma_wrappers,0,,133,0,0
+llama3.1_8b,whole_u_r3_s3,platform_remove_new,0,,100,0,0
+llama3.1_8b,whole_u_r3_s3,strlcpy_strscpy,1,WHOLE,94,4,0
+qwen2.5-coder_7b,whole_u_r3_s3,i2c_probe_new,1,WHOLE,40,40,0
+qwen2.5-coder_7b,whole_u_r3_s3,ida_simple,0,,147,0,0
+qwen2.5-coder_7b,whole_u_r3_s3,pci_dma_wrappers,1,,133,0,0
+qwen2.5-coder_7b,whole_u_r3_s3,platform_remove_new,0,,100,0,0
+qwen2.5-coder_7b,whole_u_r3_s3,strlcpy_strscpy,0,,94,0,0
+gemma3_4b,leaf_u_r3_s3,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_u_r3_s3,ida_simple,0,,147,0,0
+gemma3_4b,leaf_u_r3_s3,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,leaf_u_r3_s3,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_u_r3_s3,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_u_r3_s3,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_u_r3_s3,ida_simple,3,L00 L03 L04,147,22,0
+llama3.1_8b,leaf_u_r3_s3,pci_dma_wrappers,4,L02 L06 L09 L10,133,25,1
+llama3.1_8b,leaf_u_r3_s3,platform_remove_new,1,,100,0,0
+llama3.1_8b,leaf_u_r3_s3,strlcpy_strscpy,1,L00,94,4,0
+qwen2.5-coder_7b,leaf_u_r3_s3,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_u_r3_s3,ida_simple,3,L00 L04,147,116,28
+qwen2.5-coder_7b,leaf_u_r3_s3,pci_dma_wrappers,1,,133,0,0
+qwen2.5-coder_7b,leaf_u_r3_s3,platform_remove_new,1,,100,0,0
+qwen2.5-coder_7b,leaf_u_r3_s3,strlcpy_strscpy,0,,94,0,0
+gemma3_4b,leaf_gnofix_r3_s3,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_gnofix_r3_s3,ida_simple,0,,147,0,0
+gemma3_4b,leaf_gnofix_r3_s3,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,leaf_gnofix_r3_s3,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_gnofix_r3_s3,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_gnofix_r3_s3,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_gnofix_r3_s3,ida_simple,5,L00 L01 L03 L04,147,73,7
+llama3.1_8b,leaf_gnofix_r3_s3,pci_dma_wrappers,3,L03 L05 L10,133,21,9
+llama3.1_8b,leaf_gnofix_r3_s3,platform_remove_new,0,,100,0,0
+llama3.1_8b,leaf_gnofix_r3_s3,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s3,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s3,ida_simple,3,L01 L04,147,43,7
+qwen2.5-coder_7b,leaf_gnofix_r3_s3,pci_dma_wrappers,4,L00 L03 L05,133,49,1
+qwen2.5-coder_7b,leaf_gnofix_r3_s3,platform_remove_new,1,L00,100,40,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s3,strlcpy_strscpy,1,L00,94,94,0
+gemma3_4b,leaf_g_r3_s3,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_g_r3_s3,ida_simple,1,L03,147,2,0
+gemma3_4b,leaf_g_r3_s3,pci_dma_wrappers,1,L00,133,14,0
+gemma3_4b,leaf_g_r3_s3,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_g_r3_s3,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_g_r3_s3,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_g_r3_s3,ida_simple,5,L00 L01 L03 L04,147,77,5
+llama3.1_8b,leaf_g_r3_s3,pci_dma_wrappers,5,L02 L03 L10,133,37,3
+llama3.1_8b,leaf_g_r3_s3,platform_remove_new,0,,100,0,0
+llama3.1_8b,leaf_g_r3_s3,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,leaf_g_r3_s3,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_g_r3_s3,ida_simple,5,L00 L01 L03 L04,147,93,9
+qwen2.5-coder_7b,leaf_g_r3_s3,pci_dma_wrappers,6,L00 L03 L05 L07 L09,133,53,1
+qwen2.5-coder_7b,leaf_g_r3_s3,platform_remove_new,1,L00,100,40,0
+qwen2.5-coder_7b,leaf_g_r3_s3,strlcpy_strscpy,1,L00,94,94,0
+gemma3_4b,leaf_gc_r3_s3,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_gc_r3_s3,ida_simple,1,L03,147,2,0
+gemma3_4b,leaf_gc_r3_s3,pci_dma_wrappers,1,L00,133,14,0
+gemma3_4b,leaf_gc_r3_s3,platform_remove_new,1,,100,0,0
+gemma3_4b,leaf_gc_r3_s3,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_gc_r3_s3,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_gc_r3_s3,ida_simple,5,L00 L01 L03 L04,147,77,5
+llama3.1_8b,leaf_gc_r3_s3,pci_dma_wrappers,5,L02 L03 L10,133,37,3
+llama3.1_8b,leaf_gc_r3_s3,platform_remove_new,0,,100,0,0
+llama3.1_8b,leaf_gc_r3_s3,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,leaf_gc_r3_s3,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_gc_r3_s3,ida_simple,5,L00 L01 L03 L04,147,93,9
+qwen2.5-coder_7b,leaf_gc_r3_s3,pci_dma_wrappers,6,L00 L03 L05 L07 L09,133,53,1
+qwen2.5-coder_7b,leaf_gc_r3_s3,platform_remove_new,1,L00,100,40,0
+qwen2.5-coder_7b,leaf_gc_r3_s3,strlcpy_strscpy,1,L00,94,94,0
+gemma3_4b,whole_u_r0_s1,i2c_probe_new,0,,40,0,0
+gemma3_4b,whole_u_r0_s1,ida_simple,0,,147,0,0
+gemma3_4b,whole_u_r0_s1,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,whole_u_r0_s1,platform_remove_new,0,,100,0,0
+gemma3_4b,whole_u_r0_s1,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,whole_u_r0_s1,i2c_probe_new,0,,40,0,0
+llama3.1_8b,whole_u_r0_s1,ida_simple,0,,147,0,0
+llama3.1_8b,whole_u_r0_s1,pci_dma_wrappers,0,,133,0,0
+llama3.1_8b,whole_u_r0_s1,platform_remove_new,0,,100,0,0
+llama3.1_8b,whole_u_r0_s1,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,whole_u_r0_s1,i2c_probe_new,1,WHOLE,40,40,0
+qwen2.5-coder_7b,whole_u_r0_s1,ida_simple,0,,147,0,0
+qwen2.5-coder_7b,whole_u_r0_s1,pci_dma_wrappers,0,,133,0,0
+qwen2.5-coder_7b,whole_u_r0_s1,platform_remove_new,0,,100,0,0
+qwen2.5-coder_7b,whole_u_r0_s1,strlcpy_strscpy,1,WHOLE,94,94,0
+gemma3_4b,whole_u_r3_s1,i2c_probe_new,0,,40,0,0
+gemma3_4b,whole_u_r3_s1,ida_simple,0,,147,0,0
+gemma3_4b,whole_u_r3_s1,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,whole_u_r3_s1,platform_remove_new,0,,100,0,0
+gemma3_4b,whole_u_r3_s1,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,whole_u_r3_s1,i2c_probe_new,0,,40,0,0
+llama3.1_8b,whole_u_r3_s1,ida_simple,0,,147,0,0
+llama3.1_8b,whole_u_r3_s1,pci_dma_wrappers,0,,133,0,0
+llama3.1_8b,whole_u_r3_s1,platform_remove_new,0,,100,0,0
+llama3.1_8b,whole_u_r3_s1,strlcpy_strscpy,1,WHOLE,94,4,0
+qwen2.5-coder_7b,whole_u_r3_s1,i2c_probe_new,1,WHOLE,40,40,0
+qwen2.5-coder_7b,whole_u_r3_s1,ida_simple,0,,147,0,0
+qwen2.5-coder_7b,whole_u_r3_s1,pci_dma_wrappers,0,,133,0,0
+qwen2.5-coder_7b,whole_u_r3_s1,platform_remove_new,0,,100,0,0
+qwen2.5-coder_7b,whole_u_r3_s1,strlcpy_strscpy,1,WHOLE,94,94,0
+gemma3_4b,leaf_u_r3_s1,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_u_r3_s1,ida_simple,0,,147,0,0
+gemma3_4b,leaf_u_r3_s1,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,leaf_u_r3_s1,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_u_r3_s1,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_u_r3_s1,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_u_r3_s1,ida_simple,4,L00 L01 L03 L04,147,26,0
+llama3.1_8b,leaf_u_r3_s1,pci_dma_wrappers,0,,133,0,0
+llama3.1_8b,leaf_u_r3_s1,platform_remove_new,1,,100,0,0
+llama3.1_8b,leaf_u_r3_s1,strlcpy_strscpy,1,L00,94,4,0
+qwen2.5-coder_7b,leaf_u_r3_s1,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_u_r3_s1,ida_simple,2,L01 L04,147,44,8
+qwen2.5-coder_7b,leaf_u_r3_s1,pci_dma_wrappers,2,L02,133,14,0
+qwen2.5-coder_7b,leaf_u_r3_s1,platform_remove_new,1,,100,0,0
+qwen2.5-coder_7b,leaf_u_r3_s1,strlcpy_strscpy,1,L00,94,94,0
+gemma3_4b,leaf_gnofix_r3_s1,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_gnofix_r3_s1,ida_simple,0,,147,0,0
+gemma3_4b,leaf_gnofix_r3_s1,pci_dma_wrappers,0,,133,0,0
+gemma3_4b,leaf_gnofix_r3_s1,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_gnofix_r3_s1,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_gnofix_r3_s1,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_gnofix_r3_s1,ida_simple,3,L02 L03 L04,147,8,2
+llama3.1_8b,leaf_gnofix_r3_s1,pci_dma_wrappers,4,L02 L03 L09,133,8,0
+llama3.1_8b,leaf_gnofix_r3_s1,platform_remove_new,0,,100,0,0
+llama3.1_8b,leaf_gnofix_r3_s1,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s1,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s1,ida_simple,2,L01,147,33,1
+qwen2.5-coder_7b,leaf_gnofix_r3_s1,pci_dma_wrappers,2,L02 L03,133,26,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s1,platform_remove_new,1,L00,100,40,0
+qwen2.5-coder_7b,leaf_gnofix_r3_s1,strlcpy_strscpy,1,L00,94,94,0
 gemma3_4b,leaf_g_r3_s1,i2c_probe_new,0,,40,0,0
 gemma3_4b,leaf_g_r3_s1,ida_simple,3,L00 L01 L03,147,129,9
-gemma3_4b,leaf_g_r3_s1,pci_dma_wrappers,3,L00 L03,133,28,0
-gemma3_4b,leaf_g_r3_s1,platform_remove_new,1,,100,0,0
+gemma3_4b,leaf_g_r3_s1,pci_dma_wrappers,1,L00,133,14,0
+gemma3_4b,leaf_g_r3_s1,platform_remove_new,0,,100,0,0
 gemma3_4b,leaf_g_r3_s1,strlcpy_strscpy,0,,94,0,0
 llama3.1_8b,leaf_g_r3_s1,i2c_probe_new,0,,40,0,0
-llama3.1_8b,leaf_g_r3_s1,ida_simple,2,L00 L03,147,92,6
+llama3.1_8b,leaf_g_r3_s1,ida_simple,1,L03,147,4,2
 llama3.1_8b,leaf_g_r3_s1,pci_dma_wrappers,4,L02 L09,133,21,3
 llama3.1_8b,leaf_g_r3_s1,platform_remove_new,0,,100,0,0
 llama3.1_8b,leaf_g_r3_s1,strlcpy_strscpy,0,,94,0,0
 qwen2.5-coder_7b,leaf_g_r3_s1,i2c_probe_new,1,L00,40,40,0
-qwen2.5-coder_7b,leaf_g_r3_s1,ida_simple,4,L00 L01 L03,147,85,5
+qwen2.5-coder_7b,leaf_g_r3_s1,ida_simple,5,L00 L01 L03 L04,147,87,5
 qwen2.5-coder_7b,leaf_g_r3_s1,pci_dma_wrappers,4,L02 L03 L07 L09,133,30,0
 qwen2.5-coder_7b,leaf_g_r3_s1,platform_remove_new,1,L00,100,40,0
 qwen2.5-coder_7b,leaf_g_r3_s1,strlcpy_strscpy,1,L00,94,94,0
+gemma3_4b,leaf_gc_r3_s1,i2c_probe_new,0,,40,0,0
+gemma3_4b,leaf_gc_r3_s1,ida_simple,3,L00 L01 L03,147,129,9
+gemma3_4b,leaf_gc_r3_s1,pci_dma_wrappers,1,L00,133,14,0
+gemma3_4b,leaf_gc_r3_s1,platform_remove_new,0,,100,0,0
+gemma3_4b,leaf_gc_r3_s1,strlcpy_strscpy,0,,94,0,0
+llama3.1_8b,leaf_gc_r3_s1,i2c_probe_new,0,,40,0,0
+llama3.1_8b,leaf_gc_r3_s1,ida_simple,1,L03,147,4,2
+llama3.1_8b,leaf_gc_r3_s1,pci_dma_wrappers,4,L02 L09,133,21,3
+llama3.1_8b,leaf_gc_r3_s1,platform_remove_new,0,,100,0,0
+llama3.1_8b,leaf_gc_r3_s1,strlcpy_strscpy,0,,94,0,0
+qwen2.5-coder_7b,leaf_gc_r3_s1,i2c_probe_new,1,L00,40,40,0
+qwen2.5-coder_7b,leaf_gc_r3_s1,ida_simple,5,L00 L01 L03 L04,147,87,5
+qwen2.5-coder_7b,leaf_gc_r3_s1,pci_dma_wrappers,4,L02 L03 L07 L09,133,30,0
+qwen2.5-coder_7b,leaf_gc_r3_s1,platform_remove_new,1,L00,100,40,0
+qwen2.5-coder_7b,leaf_gc_r3_s1,strlcpy_strscpy,1,L00,94,94,0

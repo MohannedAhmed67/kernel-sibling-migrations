@@ -4,3 +4,10 @@ i2c_probe_new,20,7,1,1,1,16,27
 platform_remove_new,20,3,3,1,1,13,60
 strlcpy_strscpy,20,1,1,1,1,24,34
 pci_dma_wrappers,20,11,11,11,6,35,47
+secs_to_jiffies,17,1,1,1,1,22,28
+iio_claim_direct,20,6,4,2,2,13,76
+iio_push_with_ts,20,3,1,1,1,15,22
+gpio_set_rv,20,13,4,1,1,34,73
+pcim_request_all_regions,18,4,1,1,1,12,27
+ethtool_rx_ring_count,15,13,5,2,2,43,46
+devm_kmemdup_array,7,2,1,1,1,9,9

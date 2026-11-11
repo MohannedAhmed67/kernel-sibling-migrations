@@ -1,0 +1,9 @@
+agent-a206cb44af8128bb9.jsonl migration=ethtool_rx_ring_count tool_calls=142 violations=0
+agent-a26ab3df0cb9a8c03.jsonl migration=iio_claim_direct tool_calls=32 violations=0
+agent-a470b29ea06cbf4f8.jsonl migration=secs_to_jiffies tool_calls=3 violations=0
+agent-ab9820ea5bda7c9d3.jsonl migration=gpio_set_rv tool_calls=81 violations=1
+    Bash: {"command": "cd /c/Data/Research/MBZUAI/CS/DRIVEBENCH/work/h2/gpio_set_rv/train && for d in */; do git --no-pager diff --no-index /dev/null /dev/null 2>/dev/null; done; awk 'FNR==1{f=FILENAME} /^/+/ {  <- ['\\bgit\\s']
+agent-abe6dbb56506b2003.jsonl migration=pcim_request_all_regions tool_calls=22 violations=0
+agent-adca6af3f1968cdf1.jsonl migration=devm_kmemdup_array tool_calls=58 violations=0
+agent-aee492f25820f9dff.jsonl migration=iio_push_with_ts tool_calls=15 violations=0
+TOTAL violations: 1

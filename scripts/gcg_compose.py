@@ -147,7 +147,7 @@ def main():
     rows = []
     for mdir in sorted(glob.glob(f"work/gcg/runs/*/{args.config}")):
         model = os.path.basename(os.path.dirname(mdir))
-        for mig in sorted(os.listdir(mdir)):
+        for mig in sorted(d for d in os.listdir(mdir) if os.path.isdir(f"{mdir}/{d}")):
             tree = json.load(open(f"work/gcg/{mig}/tree.json"))
             final, row = compose(model, args.config, mig, tree)
             rows.append(row)

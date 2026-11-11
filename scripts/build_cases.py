@@ -13,9 +13,12 @@ Outputs
 """
 import csv, collections, datetime as dt
 
-HITS = "data/mined_hits.csv"
-CONV = "data/conversions_candidates.csv"
-SUMM = "data/migration_summary.csv"
+import os
+
+D = os.environ.get("CASES_DIR", "data")          # data/test for the test set
+HITS = f"{D}/mined_hits.csv"
+CONV = f"{D}/conversions_candidates.csv"
+SUMM = f"{D}/migration_summary.csv"
 
 
 def iso(ts):

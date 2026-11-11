@@ -16,6 +16,9 @@ import csv, json, math, os, subprocess
 
 LINUX = os.environ.get("LINUX", "/linux/linux")
 MIGRATIONS = ["ida_simple", "i2c_probe_new", "platform_remove_new", "strlcpy_strscpy", "pci_dma_wrappers"]
+D = os.environ.get("SPLIT_DIR", "data")          # test set: SPLIT_DIR=data/test SPLIT_MIGRATIONS="a b c"
+if os.environ.get("SPLIT_MIGRATIONS"):
+    MIGRATIONS = os.environ["SPLIT_MIGRATIONS"].split()
 TRAIN_FRAC, MAX_TRAIN, N_TARGETS = 0.30, 20, 20
 
 
@@ -25,10 +28,10 @@ def git(*a, check=True):
 
 
 at = {}
-for r in csv.DictReader(open("data/mined_hits.csv", newline="")):
+for r in csv.DictReader(open(f"{D}/mined_hits.csv", newline="")):
     at[r["commit"]] = int(r["author_time"])
 
-rows = [r for r in csv.DictReader(open("data/conversions.csv", newline="")) if r["migration"] in MIGRATIONS]
+rows = [r for r in csv.DictReader(open(f"{D}/conversions.csv", newline="")) if r["migration"] in MIGRATIONS]
 out = []
 for mig in MIGRATIONS:
     conv = sorted((r for r in rows if r["migration"] == mig and r["file"].endswith(".c")),
@@ -68,7 +71,7 @@ for mig in MIGRATIONS:
     print(f"{mig}: {len(conv)} .c conversions, train={len(train)} (cut {train[-1]['commit_date']}), "
           f"eligible targets={len(eligible)}, sampled={len(targets)}", flush=True)
 
-with open("data/h2_split.csv", "w", newline="") as f:
+with open(f"{D}/h2_split.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(out[0]), lineterminator="\n")
     w.writeheader(); w.writerows(out)
-print("wrote data/h2_split.csv")
+print(f"wrote {D}/h2_split.csv")

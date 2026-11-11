@@ -1,0 +1,578 @@
+migration,commit,author_date,commit_date,commit_time,file,old_removed,old_added,new_added,files_converted_in_commit,subject
+devm_kmemdup_array,86068aca754880715960a218410749b929c037bd,2025-02-12,2025-02-24,1740391732,drivers/pinctrl/pxa/pinctrl-pxa2xx.c,2,0,2,1,pinctrl: pxa2xx: use devm_kmemdup_array()
+devm_kmemdup_array,91bfcc7a2fdb5f7833fa8f2a1919eaef0e6a98dd,2025-02-12,2025-02-24,1740391732,drivers/pinctrl/intel/pinctrl-tangier.c,1,0,1,1,pinctrl: tangier: use devm_kmemdup_array()
+devm_kmemdup_array,a0d78eec88395e67117a3453f55a4fc3c7265cf2,2025-02-12,2025-02-24,1740391732,drivers/iio/adc/xilinx-xadc-core.c,1,0,1,1,iio: adc: xilinx-xadc-core: use devm_kmemdup_array()
+devm_kmemdup_array,b8c38ccb2ca52b9a38cfeb9f89abab5d6e713221,2025-02-12,2025-02-24,1740391732,drivers/input/keyboard/ipaq-micro-keys.c,1,0,1,1,input: ipaq-micro-keys: use devm_kmemdup_array()
+devm_kmemdup_array,cdcc09a495a4fa60f1c612db207d78b82b6c4531,2025-02-12,2025-02-24,1740391732,drivers/input/sparse-keymap.c,1,0,1,1,input: sparse-keymap: use devm_kmemdup_array()
+devm_kmemdup_array,d795fb90d6c63ef3182b49c766a6fef75b4f790d,2025-02-12,2025-02-24,1740391732,drivers/pinctrl/intel/pinctrl-cherryview.c,1,0,1,1,pinctrl: cherryview: use devm_kmemdup_array()
+devm_kmemdup_array,76d5fb0e58d8e30e9a10d3259b64ffc6bac89029,2025-02-21,2025-02-25,1740444638,drivers/power/supply/sc27xx_fuel_gauge.c,1,0,1,1,power: supply: sc27xx: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/da7219.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/es8336.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/nau8825.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/rt274.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/rt286.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/rt298.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/rt5663.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,2025-02-28,2025-02-28,1740751257,sound/soc/intel/avs/boards/rt5682.c,1,0,1,8,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,3e706be02befae55b50b240d4360b5993f9879a8,2025-02-28,2025-02-28,1740751258,sound/soc/codecs/hdac_hdmi.c,1,0,1,1,ASoC: hdac_hdmi: use devm_kmemdup_array()
+devm_kmemdup_array,69aaab0e65e9bd7601740c1e14cc6de86dafb621,2025-02-28,2025-02-28,1740751259,sound/soc/codecs/tlv320dac33.c,1,0,1,1,ASoC: tlv320dac33: use devm_kmemdup_array()
+devm_kmemdup_array,d9d71a6e2d19a2f3ccebea0092b8ddc1e935886f,2025-02-28,2025-02-28,1740751260,sound/soc/codecs/uda1380.c,1,0,1,1,ASoC: uda1380: use devm_kmemdup_array()
+devm_kmemdup_array,6ddd1159825c516b8f64fda83177c161434141f5,2025-02-28,2025-02-28,1740751266,drivers/regulator/devres.c,1,0,1,1,regulator: devres: use devm_kmemdup_array()
+devm_kmemdup_array,c5c4ce6612bb25ce6d6936d8ade96fcba635da54,2025-02-28,2025-02-28,1740751267,drivers/regulator/cros-ec-regulator.c,1,0,1,1,regulator: cros-ec: use devm_kmemdup_array()
+devm_kmemdup_array,338b505d564c1ea04d5ad0495dd25098a475f168,2025-06-10,2025-06-24,1750752035,drivers/clk/renesas/rzv2h-cpg.c,1,0,1,1,clk: renesas: rzv2h: Use devm_kmemdup_array()
+devm_kmemdup_array,ab315f7288b75c289cf4a81d18d6b21e13022364,2025-08-27,2025-09-06,1757145443,drivers/crypto/caam/ctrl.c,1,0,1,1,crypto: caam - switch to use devm_kmemdup_array()
+devm_kmemdup_array,fcac0f23d4d20b11014a39f8e2527cdc12ec9c82,2025-12-23,2025-12-26,1766727178,drivers/net/wireless/realtek/rtw88/main.c,2,1,2,1,wifi: rtw88: Fix inadvertent sharing of struct ieee80211_supported_band data
+ethtool_rx_ring_count,483446690a625c325149c6d14283b9782aaefffe,2025-09-17,2025-09-18,1758204459,drivers/net/virtio_net.c,1,0,1,1,net: virtio_net: add get_rxrings ethtool callback for RX ring queries
+ethtool_rx_ring_count,c04956cccb78cc233a20cc18f663689671f03c65,2025-11-05,2025-11-06,1762467995,drivers/net/ethernet/broadcom/tg3.c,1,0,1,1,tg3: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,f455d3f02d8998edb20a0accac5eeee769bd6fcd,2025-11-13,2025-11-15,1763172142,drivers/net/ethernet/intel/ixgbe/ixgbe_ethtool.c,1,0,2,1,net: ixgbe: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,04ca7a69a35b060ecee60a9923e9891f5dd92eca,2025-11-12,2025-11-15,1763172261,drivers/net/ethernet/broadcom/bnx2x/bnx2x_ethtool.c,1,0,2,1,net: bnx2x: convert to use get_rx_ring_count
+ethtool_rx_ring_count,467c3f008d0cafe8c21af7ad9f3036c1a15ec13d,2025-11-13,2025-11-18,1763427452,drivers/net/ethernet/mellanox/mlx4/en_ethtool.c,1,0,1,1,mlx4: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,945499665f63197801b64fabb0bccf9d15ed09bf,2025-11-13,2025-11-18,1763427452,drivers/net/ethernet/mellanox/mlx5/core/en_ethtool.c,2,0,1,2,mlx5: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,945499665f63197801b64fabb0bccf9d15ed09bf,2025-11-13,2025-11-18,1763427452,drivers/net/ethernet/mellanox/mlx5/core/ipoib/ethtool.c,2,0,1,2,mlx5: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,672cb5c2a9584802ad43d61209d5e24cccee823d,2025-11-18,2025-11-20,1763612061,drivers/net/vmxnet3/vmxnet3_ethtool.c,1,0,1,1,net: vmxnet3: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,a8ff4842da50b5f4ea03d5d38a2ee93b701fe8e6,2025-11-21,2025-11-25,1764042150,drivers/net/hyperv/netvsc_drv.c,1,0,1,1,net: hyperv: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,20c20f05cf50719a667f1a1747a0267fa09addc4,2025-11-21,2025-11-25,1764042302,drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c,1,0,1,1,net: mvpp2: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,737e14c5dce3764125bb56de1b343f0e4d21492d,2025-11-21,2025-11-25,1764042302,drivers/net/ethernet/marvell/mvneta.c,1,0,1,1,net: mvneta: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,873a1942fbc622694ef21b43eb567bdcd163ab86,2025-11-25,2025-11-27,1764205749,drivers/net/ethernet/intel/idpf/idpf_ethtool.c,1,0,1,1,idpf: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,8e8c00e1d2130c7d174b799cd5ebc4b41f325aa8,2025-11-25,2025-11-27,1764205749,drivers/net/ethernet/intel/ice/ice_ethtool.c,1,0,1,1,ice: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,a8acbcbaf6d0c33555cc043ce3f006aaec0ccb3f,2025-11-25,2025-11-27,1764205749,drivers/net/ethernet/intel/i40e/i40e_ethtool.c,1,0,1,1,i40e: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,fe0a3d7d1dca4b8d37710becf10ffd7fcfe2741e,2025-11-25,2025-11-27,1764205749,drivers/net/ethernet/intel/iavf/iavf_ethtool.c,1,0,1,1,iavf: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,3399fd519dd4f8fd8451cf18eb7f2eef0b47e39a,2025-11-25,2025-11-27,1764205750,drivers/net/ethernet/intel/ixgbevf/ethtool.c,1,0,1,1,ixgbevf: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,73d834cd17741839a3bb2a753cc83dfd3fdda13a,2025-11-25,2025-11-27,1764205750,drivers/net/ethernet/intel/fm10k/fm10k_ethtool.c,1,0,1,1,fm10k: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,768ce58dddb26c591a2b77a659f779e730f1796c,2025-11-25,2025-11-27,1764205750,drivers/net/ethernet/intel/igc/igc_ethtool.c,1,0,1,1,igc: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,d6c744f46816994d9e8b7e9f37065caba6664e86,2025-11-25,2025-11-27,1764205750,drivers/net/ethernet/intel/igb/igb_ethtool.c,1,0,1,1,igb: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,73880e66b79a6c950c0388559e2d425da2c37bd6,2025-11-26,2025-11-28,1764295793,drivers/net/ethernet/cavium/thunder/nicvf_ethtool.c,1,0,1,1,net: thunder: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,335d78c6161b18e95f72404ee3e210e64b5f5adc,2025-11-27,2025-11-29,1764388582,drivers/net/ethernet/broadcom/genet/bcmgenet.c,1,0,1,1,net: bcmgenet: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,bba18f3ba7cc1ca47428bc563fcc34e9e2ce0bf8,2025-11-27,2025-11-29,1764388582,drivers/net/ethernet/broadcom/bnxt/bnxt_ethtool.c,1,0,1,1,net: bnxt: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,b2d63392690156285e53562ed91b87131c9a97ac,2025-11-28,2025-12-01,1764618885,drivers/net/ethernet/freescale/dpaa2/dpaa2-ethtool.c,1,0,1,1,net: dpaa2: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,ca8df5b877d4b027fcd3968c0519af2b33de4e8a,2025-11-28,2025-12-01,1764618885,drivers/net/ethernet/freescale/enetc/enetc_ethtool.c,2,0,4,1,net: enetc: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,d3fbfb8b2c4a352bf9167809d2e2e8f8e685d348,2025-11-28,2025-12-01,1764618885,drivers/net/ethernet/freescale/gianfar_ethtool.c,1,0,1,1,net: gianfar: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,48b27ea6239a797b286919d549e8d8a5a54d89f3,2026-01-05,2026-01-07,1767748500,drivers/net/ethernet/google/gve/gve_ethtool.c,1,0,1,1,net: gve: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,959728f9931e754deb10b51bf208a5e567f9034b,2026-01-08,2026-01-10,1768076183,drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c,1,0,1,1,net: stmmac: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,08cbb4a3de08e17df3ad00ad7ee02345cb90dd3d,2026-01-09,2026-01-10,1768076465,drivers/net/ethernet/huawei/hinic/hinic_ethtool.c,1,0,2,1,net: hinic: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,623b213825fdee1a3047774593f2fa2435947756,2026-01-09,2026-01-10,1768076465,drivers/net/ethernet/marvell/octeontx2/nic/otx2_ethtool.c,1,0,2,1,net: octeontx2: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,2103a5ed1b5b83f708da3dd9c2e5c8ddbd3ea7ce,2026-01-09,2026-01-10,1768076466,drivers/net/ethernet/hisilicon/hns/hns_ethtool.c,1,0,1,1,net: hns: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,415a9d10d1802123249fffc3a553b8c813a2af88,2026-01-09,2026-01-10,1768076466,drivers/net/ethernet/cisco/enic/enic_ethtool.c,1,0,1,1,net: enic: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,5baf736ba4f3cd64d3a664c2c5c259375418d424,2026-01-09,2026-01-10,1768076466,drivers/net/ethernet/sun/niu.c,1,0,1,1,net: niu: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,983d4b8ec519bf10cb174b8aefd0257b46cf4396,2026-01-09,2026-01-10,1768076466,drivers/net/ethernet/fungible/funeth/funeth_ethtool.c,1,0,1,1,net: funeth: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,a64f302022ba2f7e7b1cc185cbc95b454ae4ae8f,2026-01-09,2026-01-10,1768076466,drivers/net/ethernet/qlogic/qede/qede_ethtool.c,1,0,2,1,net: qede: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,cf8c4e1f08ec6c5dac24916378b8e006b30582ff,2026-01-09,2026-01-10,1768076466,drivers/net/ethernet/hisilicon/hns3/hns3_ethtool.c,1,0,2,1,net: hns3: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,e33bd8dd7f1f81110e22cd9605ef6f9de0235815,2026-01-15,2026-01-18,1768702215,drivers/net/ethernet/mediatek/mtk_eth_soc.c,1,0,1,1,net: mediatek: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,efa375c44090faf214d351a873cc90b7903080b2,2026-01-15,2026-01-18,1768702215,drivers/net/ethernet/engleder/tsnep_ethtool.c,1,0,1,1,net: tsnep: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,05ba3044865d81b2248b06c3f60a8d6f1ab5360f,2026-01-15,2026-01-18,1768702216,drivers/net/ethernet/microchip/lan743x_ethtool.c,1,0,1,1,net: lan743x: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,289f714a084c1f6f7359fc2c22dd37db5bc88fb7,2026-01-15,2026-01-18,1768702216,drivers/net/ethernet/amazon/ena/ena_ethtool.c,1,0,1,1,net: ena: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,507353bf84fc1d10f375b7f9303039937ea89e2b,2026-01-15,2026-01-18,1768702216,drivers/net/ethernet/amd/xgbe/xgbe-ethtool.c,1,0,1,1,net: xgbe: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,c4279332f479a811e4c3c413eb4cd71bc8463288,2026-01-15,2026-01-18,1768702216,drivers/net/ethernet/wangxun/txgbe/txgbe_ethtool.c,1,0,1,1,net: txgbe: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,ceec168d03db09f85c208d3ce536ccd715791665,2026-01-15,2026-01-18,1768702216,drivers/net/ethernet/chelsio/cxgb4/cxgb4_ethtool.c,1,0,1,1,net: cxgb4: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,d1c7ed5dfa35d142b5aec4cf9b28eb40f1240fc3,2026-01-15,2026-01-18,1768702216,drivers/net/ethernet/cadence/macb_main.c,1,0,1,1,net: macb: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,3eb72257183595877c81887ceb14b82313621d9f,2026-01-22,2026-01-23,1769194385,drivers/net/ethernet/microsoft/mana/mana_ethtool.c,1,0,1,1,net: mana: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,46f4ad55605e725c2bf2c4da7ddff121d23083e8,2026-01-22,2026-01-23,1769194385,drivers/net/ethernet/netronome/nfp/nfp_net_ethtool.c,1,0,1,1,net: nfp: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,489a5b81abbc4e1a29303dea27d1d5cc75276ea1,2026-01-22,2026-01-23,1769194385,drivers/net/ethernet/aquantia/atlantic/aq_ethtool.c,1,0,1,1,net: atlantic: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,8bd5cee9891a1c9c87e49ea3a34a74e588d78e2d,2026-01-22,2026-01-23,1769194385,drivers/net/ethernet/pensando/ionic/ionic_ethtool.c,1,0,1,1,net: ionic: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,8f2a880d652e5c78d798a21cf69319c073a9c1b1,2026-01-22,2026-01-23,1769194385,drivers/net/ethernet/emulex/benet/be_ethtool.c,1,0,1,1,net: benet: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,ea28b02da84ce8495b06648b22270fd602553da2,2026-01-22,2026-01-23,1769194385,drivers/net/ethernet/meta/fbnic/fbnic_ethtool.c,1,0,1,1,net: fbnic: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,f584347c1a2ba44ba589688100de7b482f04d00f,2026-01-22,2026-01-23,1769194386,drivers/net/ethernet/sfc/falcon/ethtool.c,1,0,1,1,net: sfc: falcon: convert to use .get_rx_ring_count
+gpio_set_rv,4b28762caa7b85609ee1a9a5e1038ae7bbd24892,2025-02-20,2025-02-26,1740565060,drivers/gpio/gpio-latch.c,2,0,2,1,gpio: latch: use value returning setters
+gpio_set_rv,9080b5d1b9c259645cd0e3694ffba85ccdd25352,2025-02-20,2025-02-26,1740565060,drivers/gpio/gpio-mvebu.c,1,0,1,1,gpio: mvebu: use value returning setters
+gpio_set_rv,97c9b59f6658671f3f13f57de1352ec9d16ad13d,2025-02-20,2025-02-26,1740565060,drivers/gpio/gpio-max77650.c,1,0,1,1,gpio: max77650: use value returning setters
+gpio_set_rv,f01436c2a038fe8d7b69a5fe701ab98028ce5cc4,2025-02-20,2025-02-26,1740565060,drivers/gpio/gpio-davinci.c,1,0,1,1,gpio: davinci: use value returning setters
+gpio_set_rv,56f16c9f26ef2b36b09268a87f54c9f33eef3179,2025-03-03,2025-03-10,1741603932,drivers/gpio/gpio-74x164.c,1,0,1,1,gpio: 74x164: use new line value setter callbacks
+gpio_set_rv,65a0b13d92a044fc86a6842a72572fbcdc8fc4e8,2025-03-03,2025-03-10,1741603932,drivers/gpio/gpio-altera-a10sr.c,1,0,1,1,gpio: altera-a10sr: use new line value setter callbacks
+gpio_set_rv,33dbb118e89d109ad522f461d058766a4aa07414,2025-03-03,2025-03-10,1741603933,drivers/gpio/gpio-amd-fch.c,1,0,1,1,gpio: amd-fch: use new line value setter callbacks
+gpio_set_rv,460560100a2c993b46c84b659a9b09ba2238bb08,2025-03-03,2025-03-10,1741603933,drivers/gpio/gpio-aspeed-sgpio.c,1,0,1,1,gpio: aspeed-sgpio: use new line value setter callbacks
+gpio_set_rv,53f2a240401bf945ca8b6bc9a1f1ef9429284584,2025-03-03,2025-03-10,1741603933,drivers/gpio/gpio-amd8111.c,1,0,1,1,gpio: amd8111: use new line value setter callbacks
+gpio_set_rv,74ab452321414ba90dc7b2c614bbce1222a6c62b,2025-03-03,2025-03-10,1741603933,drivers/gpio/gpio-arizona.c,1,0,1,1,gpio: arizona: use new line value setter callbacks
+gpio_set_rv,adf5412d66e848c74178ab28a0278ad90237ee8d,2025-03-03,2025-03-10,1741603933,drivers/gpio/gpio-altera.c,1,0,1,1,gpio: altera: use new line value setter callbacks
+gpio_set_rv,c72e61b51207f7a82e4efebf0cd21efe2352f363,2025-03-03,2025-03-10,1741603933,drivers/gpio/gpio-aspeed.c,1,0,1,1,gpio: aspeed: use new line value setter callbacks
+gpio_set_rv,588dfcdb162855b954f92fce73a12e3fa86ded01,2025-03-10,2025-03-17,1742196461,drivers/gpio/gpio-cs5535.c,1,0,1,1,gpio: cs5535: use new line value setter callbacks
+gpio_set_rv,68f5b74e0db7ab57885ad4ec05f7418cac8f4063,2025-03-10,2025-03-17,1742196461,drivers/gpio/gpio-creg-snps.c,1,0,1,1,gpio: creg-snps: use new line value setter callbacks
+gpio_set_rv,7bd2bb7901a67f6b14c913596acb471351f500a5,2025-03-10,2025-03-17,1742196461,drivers/gpio/gpio-bd71815.c,1,0,1,1,gpio: bd71815: use new line value setter callbacks
+gpio_set_rv,8a050f738d41d337fb73ef582916328dc5bd73e1,2025-03-10,2025-03-17,1742196461,drivers/gpio/gpio-bd71828.c,1,0,1,1,gpio: bd71828: use new line value setter callbacks
+gpio_set_rv,96498b83b3ded5f01207775d681374d62111d548,2025-03-10,2025-03-17,1742196461,drivers/gpio/gpio-crystalcove.c,1,0,1,1,gpio: crystalcove: use new line value setter callbacks
+gpio_set_rv,d5cc72803b146c811b01f9a5b91e97337adf5784,2025-03-10,2025-03-17,1742196461,drivers/gpio/gpio-bcm-kona.c,1,0,1,1,gpio: bcm-kona: use new line value setter callbacks
+gpio_set_rv,fe7667f2085ee7d66a6a34e6bf6830be7e641b52,2025-03-10,2025-03-17,1742196461,drivers/gpio/gpio-bd9571mwv.c,1,0,1,1,gpio: bd9571mwv: use new line value setter callbacks
+gpio_set_rv,2eb5dc9a4b0d193b27289281faa05aadab978b41,2025-03-10,2025-03-17,1742196462,drivers/gpio/gpio-da9055.c,1,0,1,1,gpio: da9055: use new line value setter callbacks
+gpio_set_rv,489c19cee3b9fd58e7967dbc4e54cdf212b073a0,2025-03-10,2025-03-17,1742196462,drivers/gpio/gpio-da9052.c,1,0,1,1,gpio: da9052: use new line value setter callbacks
+gpio_set_rv,936df52c29b0d422665c5e84b0cffae61611411b,2025-04-08,2025-04-08,1744110342,drivers/regulator/rpi-panel-attiny-regulator.c,1,0,1,1,regulator: rpi-panel-attiny: use new GPIO line value setter callbacks
+gpio_set_rv,5e21900ef64244fadeddc9015e8b8307d116764a,2025-04-08,2025-04-08,1744110970,drivers/spi/spi-xcomm.c,1,0,1,1,spi: xcomm: use new GPIO line value setter callbacks
+gpio_set_rv,29ba3b6037dcf73f0fc563611ea81669fb2a3f37,2025-04-08,2025-04-11,1744369511,drivers/platform/x86/barco-p50-gpio.c,1,0,1,1,platform/x86: barco-p50: use new GPIO line value setter callbacks
+gpio_set_rv,88f67f2a99f061cb938812db3deb965504cf5c5c,2025-04-08,2025-04-11,1744369514,drivers/platform/x86/silicom-platform.c,1,0,1,1,platform/x86: silicom: use new GPIO line value setter callbacks
+gpio_set_rv,2318a488683ab904ccb5604222d457a3c32b8fdc,2025-04-08,2025-04-11,1744383145,drivers/tty/serial/max310x.c,1,0,1,1,serial: max310x: use new GPIO line value setter callbacks
+gpio_set_rv,a5482409a435a2d0e30bd0e179f662860b0e6c6b,2025-04-08,2025-04-11,1744383145,drivers/tty/serial/sc16is7xx.c,1,0,1,1,serial: sc16is7xx: use new GPIO line value setter callbacks
+gpio_set_rv,cf16c640143161ed5d4b196e38b7aa3fc7787510,2025-04-08,2025-04-13,1744572194,sound/soc/soc-ac97.c,1,0,1,1,ASoC: soc-ac97: use new GPIO line value setter callbacks
+gpio_set_rv,60631801abb7112c8a086dabca89d5fbb06d7d1c,2025-04-08,2025-04-13,1744572195,sound/soc/ti/davinci-mcasp.c,1,0,1,1,ASoC: ti: davinci-mcasp:: use new GPIO line value setter callbacks
+gpio_set_rv,403dddbdcb49a77ba8873b0a15a9ae683aec2cee,2025-04-08,2025-04-13,1744572196,sound/soc/codecs/wm8962.c,1,0,1,1,ASoC: codecs: wm8962: use new GPIO line value setter callbacks
+gpio_set_rv,a336078f23343931db99bbda857965c5b7ebefd9,2025-04-08,2025-04-13,1744572197,sound/soc/codecs/wm5100.c,1,0,1,1,ASoC: codecs: wm5100: use new GPIO line value setter callbacks
+gpio_set_rv,317349ce80aaa404abfa0bbbcf99876736d8c237,2025-04-08,2025-04-13,1744572198,sound/soc/codecs/rt5677.c,1,0,1,1,ASoC: codecs: rt5677: use new GPIO line value setter callbacks
+gpio_set_rv,a8d4913690479217832ab1e73f4c5af0b52a0f27,2025-04-08,2025-04-13,1744572199,sound/soc/codecs/wm8996.c,1,0,1,1,ASoC: codecs: wm8996: use new GPIO line value setter callbacks
+gpio_set_rv,346d3632303aa67c698b0b05e0126ebd29ac99f3,2025-04-08,2025-04-13,1744572200,sound/soc/codecs/tlv320adc3xxx.c,1,0,1,1,ASoC: codecs: tlv320adc3xxx: use new GPIO line value setter callbacks
+gpio_set_rv,b0cf20b43363fb04851c4773a107f7ecb9731883,2025-04-08,2025-04-13,1744572201,sound/soc/codecs/idt821034.c,1,0,1,1,ASoC: codecs: idt821034: use new GPIO line value setter callbacks
+gpio_set_rv,c849a7cfdcd14333604fdf60bedb2e183b4164bd,2025-04-08,2025-04-13,1744572202,sound/soc/codecs/peb2466.c,1,0,1,1,ASoC: codecs: peb2466: use new GPIO line value setter callbacks
+gpio_set_rv,127c53d620cb134adbbdd7d43a369f3940f71172,2025-04-08,2025-04-13,1744572203,sound/soc/codecs/wm8903.c,1,0,1,1,ASoC: codecs: wm8903: use new GPIO line value setter callbacks
+gpio_set_rv,db81f6fa2771681249ca1d23366c893f3535fe10,2025-04-08,2025-04-13,1744572203,sound/soc/codecs/zl38060.c,1,0,1,1,ASoC: codecs: zl38060: use new GPIO line value setter callbacks
+gpio_set_rv,8d2e914482311f7746fe7b0e520bd42794d6aed8,2025-04-08,2025-04-13,1744572204,sound/pci/hda/cirrus_scodec_test.c,1,0,1,1,ALSA: hda: cirrus_scodec_test: use new GPIO line value setter callbacks
+gpio_set_rv,29f1d5cac294dbc0e9ebb9d1fea4e2c1c1d2e5f4,2025-04-08,2025-04-14,1744610596,drivers/pwm/pwm-pca9685.c,1,0,1,1,pwm: pca9685: Use new GPIO line value setter callbacks
+gpio_set_rv,4f15389ba3a019221229ddd33aadb029ff82d053,2025-04-08,2025-04-15,1744753689,drivers/pinctrl/nomadik/pinctrl-abx500.c,1,0,1,1,pinctrl: abx500: use new GPIO line value setter callbacks
+gpio_set_rv,9e8c4a2e4c91f2ffcbd0a9a3f80a041ccf97127d,2025-04-08,2025-04-15,1744753689,drivers/pinctrl/pinctrl-rk805.c,1,0,1,1,pinctrl: rk805: use new GPIO line value setter callbacks
+gpio_set_rv,d843a4263502e780295556fffa2351672904e782,2025-04-08,2025-04-15,1744753689,drivers/pinctrl/pinctrl-at91-pio4.c,1,0,1,1,pinctrl: at91-pio4: use new GPIO line value setter callbacks
+gpio_set_rv,18ef5d5b4d243b8cbee951b677107f6174e1b2cd,2025-04-08,2025-04-15,1744753690,drivers/pinctrl/meson/pinctrl-meson.c,1,0,1,1,pinctrl: meson: use new GPIO line value setter callbacks
+gpio_set_rv,e1d2a8ec9a582deb7efb99399e5c01225b661545,2025-04-08,2025-04-15,1744753690,drivers/pinctrl/meson/pinctrl-amlogic-a4.c,1,0,1,1,pinctrl: amlogic-a4: use new GPIO line value setter callbacks
+gpio_set_rv,21d3c6531b113b1aaecd99ae90dddd55c20f372b,2025-04-07,2025-04-16,1744818762,drivers/gpio/gpio-eic-sprd.c,1,0,1,1,gpio: eic-sprd: use new line value setter callbacks
+gpio_set_rv,afb4aed832f9000a5d15ecd28a7b2faa5789d28d,2025-04-07,2025-04-16,1744818762,drivers/gpio/gpio-dln2.c,1,0,1,1,gpio: dln2: use new line value setter callbacks
+gpio_set_rv,bcdd5b37640cc577cd93d20f00519e70d7add8a6,2025-04-07,2025-04-16,1744818763,drivers/gpio/gpio-exar.c,1,0,1,1,gpio: exar: use new line value setter callbacks
+gpio_set_rv,089f1cad358dc616fb678f5db56d78e759afbc94,2025-04-08,2025-04-17,1744875555,drivers/pinctrl/pinctrl-ocelot.c,1,0,1,1,pinctrl: ocelot: use new GPIO line value setter callbacks
+gpio_set_rv,17bb810d74613be4ca907bcfd432d08637fe641f,2025-04-10,2025-04-17,1744875555,drivers/pinctrl/qcom/pinctrl-lpass-lpi.c,1,0,1,1,pinctrl: qcom: lpass-lpi: use new GPIO line value setter callbacks
+gpio_set_rv,1c3f1c1d8375eeceae7aa00e225cecfed5383170,2025-04-10,2025-04-17,1744875555,drivers/pinctrl/qcom/pinctrl-spmi-gpio.c,1,0,1,1,pinctrl: qcom: spmi-gpio: use new GPIO line value setter callbacks
+gpio_set_rv,454071ac3cd6ac2a39ce3b7468deb02eedf674a7,2025-04-10,2025-04-17,1744875555,drivers/pinctrl/qcom/pinctrl-ssbi-mpp.c,1,0,1,1,pinctrl: qcom: ssbi-mpp: use new GPIO line value setter callbacks
+gpio_set_rv,4dc41ae5c0a9db6a859c5879429171e6fa6de061,2025-04-10,2025-04-17,1744875555,drivers/pinctrl/qcom/pinctrl-msm.c,1,0,1,1,pinctrl: qcom: msm: use new GPIO line value setter callbacks
+gpio_set_rv,88c7e0bb9ee84b7bef781e09ae6a3308e405bd94,2025-04-08,2025-04-17,1744875555,drivers/pinctrl/pinctrl-sx150x.c,1,0,1,1,pinctrl: sx150x: use new GPIO line value setter callbacks
+gpio_set_rv,b9b4e5bd53f83cee689b4927cf32c65b1e749c74,2025-04-10,2025-04-17,1744875555,drivers/pinctrl/qcom/pinctrl-spmi-mpp.c,1,0,1,1,pinctrl: qcom: spmi-mpp: use new GPIO line value setter callbacks
+gpio_set_rv,cd5a048c1a175b52ff890514652f8aeb648bdedd,2025-04-10,2025-04-17,1744875555,drivers/pinctrl/qcom/pinctrl-ssbi-gpio.c,1,0,1,1,pinctrl: qcom: ssbi-gpio: use new GPIO line value setter callbacks
+gpio_set_rv,8bf15cf9f9fca825fc03fb13d166f0ebdc2a0232,2025-04-07,2025-04-17,1744891134,drivers/gpio/gpio-f7188x.c,1,0,1,1,gpio: f7188: use new line value setter callbacks
+gpio_set_rv,96af71338208bdb2c53de0876cf50001e20afc84,2025-04-07,2025-04-17,1744891134,drivers/gpio/gpio-graniterapids.c,1,0,1,1,gpio: graniterapids: use new line value setter callbacks
+gpio_set_rv,d170eef8d4b07f653fd5158f5b35b7bc0cbfbd07,2025-04-07,2025-04-17,1744891134,drivers/gpio/gpio-gw-pld.c,1,0,1,1,gpio: gw-pld: use new line value setter callbacks
+gpio_set_rv,3bb36fe0587aa23b8fd739c3df9ff02049cc7789,2025-04-09,2025-04-22,1745345402,drivers/iio/adc/ad4130.c,1,0,1,1,iio: adc: ad4130: use new GPIO line value setter callbacks
+gpio_set_rv,6c6881af0172c7dfab633346f05347e6fd30c610,2025-04-09,2025-04-22,1745345402,drivers/iio/adc/ti-ads7950.c,1,0,1,1,iio: adc: ti-ads7950: use new GPIO line value setter callbacks
+gpio_set_rv,8a2d2326f5ef42e34bd2c946ae74d6ff7c2f2767,2025-04-09,2025-04-22,1745345402,drivers/iio/dac/ad5592r-base.c,1,0,1,1,iio: dac: ad5592r: use new GPIO line value setter callbacks
+gpio_set_rv,a34b88b48a15f5d49207966fa78e14e71e16ac6c,2025-04-07,2025-04-22,1745345402,drivers/iio/adc/rohm-bd79124.c,1,0,1,1,iio: bd79124: Use set_rv and set_multiple_rv
+gpio_set_rv,b8b3ea642911dacd0b99bc7196e8f6e64a48393d,2025-04-09,2025-04-22,1745345402,drivers/iio/addac/ad74413r.c,1,0,1,1,iio: addac: ad74413r: use new GPIO line value setter callbacks
+gpio_set_rv,c3c8492cecf03811782e7c81fcaf5304866c4f48,2025-04-09,2025-04-22,1745345402,drivers/iio/addac/ad74115.c,1,0,1,1,iio: addac: ad74115: use new GPIO line value setter callbacks
+gpio_set_rv,9c47e45de1f7633bd3bbf54bf36cd9a385db2232,2025-04-07,2025-04-23,1745417907,drivers/hwmon/pmbus/ucd9000.c,1,0,1,1,hwmon: (pmbus/ucd9000) Use new GPIO line value setter callbacks
+gpio_set_rv,e894b6442a9692dd55f01c4edccee459163665a4,2025-04-07,2025-04-23,1745417907,drivers/hwmon/ltc2992.c,1,0,1,1,hwmon: (ltc2992) Use new GPIO line value setter callbacks
+gpio_set_rv,04668774f67f56df311d8ebe919b704ccd219ba3,2025-04-07,2025-04-24,1745483229,drivers/i2c/muxes/i2c-mux-ltc4306.c,1,0,1,1,i2c: mux: ltc4306: use new GPIO line value setter callbacks
+gpio_set_rv,6485543488a6d35e9f24c6f50cb63710446d8aab,2025-04-23,2025-04-24,1745489275,drivers/hid/hid-cp2112.c,1,0,1,1,HID: cp2112: use new line value setter callbacks
+gpio_set_rv,9815a423613327be32f524a5162779ce4900c5b4,2025-04-23,2025-04-24,1745489275,drivers/hid/hid-mcp2200.c,1,0,1,1,HID: mcp2200: use new line value setter callbacks
+gpio_set_rv,ec08e2c67077aed212ba1539c15085689013844a,2025-04-24,2025-04-29,1745915459,drivers/pinctrl/pinctrl-amd.c,1,0,1,1,pinctrl: amd: use new GPIO line value setter callbacks
+gpio_set_rv,fa10247914c8e19d22f41bef4bb8708927498fd1,2025-04-24,2025-04-29,1745915659,drivers/pinctrl/pinctrl-axp209.c,1,0,1,1,pinctrl: axp209: use new GPIO line value setter callbacks
+gpio_set_rv,059f5470797edcdc4407cc1d5960f12690a1e476,2025-04-24,2025-04-29,1745915685,drivers/pinctrl/actions/pinctrl-owl.c,1,0,1,1,pinctrl: owl: use new GPIO line value setter callbacks
+gpio_set_rv,43c8981b02cd4921dd3b02710a126b11aa94c497,2025-04-24,2025-04-29,1745915685,drivers/pinctrl/stm32/pinctrl-stm32.c,1,0,1,1,pinctrl: stm32: use new GPIO line value setter callbacks
+gpio_set_rv,8657c6ee9b2ab40778dfdad7e38b25e34c32a709,2025-04-24,2025-04-29,1745915685,drivers/pinctrl/pinctrl-stmfx.c,1,0,1,1,pinctrl: stmfx: use new GPIO line value setter callbacks
+gpio_set_rv,b0dfc1bd6f97a130037fe59973202a7cf84280b0,2025-04-24,2025-04-29,1745915685,drivers/pinctrl/pinctrl-at91.c,1,0,1,1,pinctrl: at91: use new GPIO line value setter callbacks
+gpio_set_rv,eac1183a175e425eab8d23ccc160d8cc935eba72,2025-04-24,2025-04-29,1745915685,drivers/pinctrl/pinctrl-ingenic.c,1,0,1,1,pinctrl: ingenic: use new GPIO line value setter callbacks
+gpio_set_rv,8152769f9fb65ef945ff5076c486cd6b2831468d,2025-04-24,2025-04-29,1745915686,drivers/pinctrl/mvebu/pinctrl-armada-37xx.c,1,0,1,1,pinctrl: armada-37xx: use new GPIO line value setter callbacks
+gpio_set_rv,9e4c444755b1525e9cb0798ca2dccbb18b0c0393,2025-04-24,2025-04-29,1745915686,drivers/pinctrl/samsung/pinctrl-samsung.c,1,0,1,1,pinctrl: samsung: use new GPIO line value setter callbacks
+gpio_set_rv,e52254e5ced72a64f2b3585c8640d6e75469dc5e,2025-04-24,2025-04-29,1745915686,drivers/pinctrl/pinctrl-pistachio.c,1,0,1,1,pinctrl: pistachio: use new GPIO line value setter callbacks
+gpio_set_rv,145c4d7052fd15d20e5165305b3296a026a40747,2025-04-23,2025-04-30,1746001678,drivers/gpio/gpio-loongson-64bit.c,1,0,1,1,gpio: loongson-64bit: use new line value setter callbacks
+gpio_set_rv,722332f58aa82b92c857b053426dd46e09988e38,2025-04-23,2025-04-30,1746001678,drivers/gpio/gpio-ljca.c,1,0,1,1,gpio: ljca: use new line value setter callbacks
+gpio_set_rv,ba2ce44332142a86bb0e9246d40b97d6cc191c5d,2025-04-23,2025-04-30,1746001678,drivers/gpio/gpio-logicvc.c,1,0,1,1,gpio: logicvc: use new line value setter callbacks
+gpio_set_rv,ef877a159072ca31ed183b086c41fb9951521886,2025-04-23,2025-04-30,1746001678,drivers/gpio/gpio-it87.c,1,0,1,1,gpio: it87: use new line value setter callbacks
+gpio_set_rv,127da457c4e01bd6e4b8a126aaf1be1a6c03fc0b,2025-04-23,2025-04-30,1746001679,drivers/gpio/gpio-lp3943.c,1,0,1,1,gpio: lp3943: use new line value setter callbacks
+gpio_set_rv,23a5fa371c7725ec8ba5d21cd1c97bfb9080ea45,2025-04-25,2025-05-09,1746777885,drivers/pinctrl/mediatek/pinctrl-mtk-common.c,1,0,1,1,pinctrl: mediatek: common: use new GPIO line value setter callbacks
+gpio_set_rv,941a099ddc438ee51f175f98dbc744000469640f,2025-04-25,2025-05-09,1746777952,drivers/pinctrl/bcm/pinctrl-bcm2835.c,2,0,2,1,pinctrl: bcm2835: use new GPIO line value setter callbacks
+gpio_set_rv,1938913798082cd284ab59afcdf68c2bb5ba1686,2025-05-06,2025-05-13,1747142134,drivers/gpio/gpio-max730x.c,1,0,1,1,gpio: max730x: use new GPIO line value setter callbacks
+gpio_set_rv,1a7b6b536d509203325bccd88ae42499b45f5765,2025-05-06,2025-05-13,1747142134,drivers/gpio/gpio-lpc32xx.c,5,0,5,1,gpio: lpc32xx: use new GPIO line value setter callbacks
+gpio_set_rv,2e6b7f5ffe08d42196b31322e6443a9874c79a03,2025-05-06,2025-05-13,1747142134,drivers/gpio/gpio-madera.c,1,0,1,1,gpio: madera: use new GPIO line value setter callbacks
+gpio_set_rv,30d15b8949828811e9df3dafc12e3d523ed6e154,2025-05-06,2025-05-13,1747142134,drivers/gpio/gpio-lp873x.c,1,0,1,1,gpio: lp873x: use new GPIO line value setter callbacks
+gpio_set_rv,4f71abfef92d9e302c7c62744fa806076b3ba819,2025-05-06,2025-05-13,1747142134,drivers/gpio/gpio-lpc18xx.c,1,0,1,1,gpio: lpc18xx: use new GPIO line value setter callbacks
+gpio_set_rv,978d23c1db9a303f2fab817de28087ada5859a9a,2025-05-06,2025-05-13,1747142134,drivers/gpio/gpio-lp87565.c,1,0,1,1,gpio: lp87565: use new GPIO line value setter callbacks
+gpio_set_rv,51227589e8388b452b4315907d2de5f7d5a06e87,2025-05-06,2025-05-13,1747142135,drivers/gpio/gpio-mc33880.c,1,0,1,1,gpio: mc33880: use new GPIO line value setter callbacks
+gpio_set_rv,8f9da4401b82faa788b663402ea699ccfd756597,2025-05-06,2025-05-13,1747142135,drivers/gpio/gpio-max77620.c,1,0,1,1,gpio: max77620: use new GPIO line value setter callbacks
+gpio_set_rv,dff5a31dcbd260eb61f0128876910809f04f1e3b,2025-05-06,2025-05-13,1747142135,drivers/gpio/gpio-mb86s7x.c,1,0,1,1,gpio: mb86s7x: use new GPIO line value setter callbacks
+gpio_set_rv,2aafd2e41cf1434c680ea7410333a079a15747c3,2025-04-23,2025-05-14,1747211099,drivers/leds/leds-pca955x.c,1,0,1,1,leds: pca955x: Use new GPIO line value setter callbacks
+gpio_set_rv,e1cc2c8cc7ccccb52814d10c98de1252f8a7ae61,2025-04-23,2025-05-14,1747211100,drivers/leds/leds-pca9532.c,1,0,1,1,leds: pca9532: Use new GPIO line value setter callbacks
+gpio_set_rv,d1d3205730735b652303a82ba49fcfef7c20510d,2025-04-23,2025-05-14,1747211101,drivers/leds/leds-tca6507.c,1,0,1,1,leds: tca6507: Use new GPIO line value setter callbacks
+gpio_set_rv,3745b5ca35298885035fd5e3a133be7292cbe2fc,2025-04-07,2025-05-23,1747986491,drivers/mfd/sm501.c,1,0,1,1,mfd: sm501: Use new GPIO line value setter callbacks
+gpio_set_rv,651974212cacef4ad24c4f97d52b6761f2219e96,2025-04-07,2025-05-23,1747986492,drivers/mfd/tps65010.c,1,0,1,1,mfd: tps65010: Use new GPIO line value setter callbacks
+gpio_set_rv,cf5c739af8ff024a211ece4381ea71874428607b,2025-04-07,2025-05-23,1747986493,drivers/mfd/ucb1x00-core.c,1,0,1,1,mfd: ucb1x00: Use new GPIO line value setter callbacks
+gpio_set_rv,2be358790e15c34668f3694d4c3d1f2c5f29a709,2025-04-08,2025-05-31,1748679841,drivers/video/fbdev/via/via-gpio.c,1,0,1,1,fbdev: via: use new GPIO line value setter callbacks
+gpio_set_rv,241d79f02538fa19ad3441d27c0ee9e18aa9fd3b,2025-06-10,2025-06-11,1749630450,drivers/pinctrl/intel/pinctrl-intel.c,1,0,1,1,pinctrl: intel: use new GPIO line value setter callbacks
+gpio_set_rv,4863d750fdc0d29b68530355b216dfc6d7b52c9a,2025-06-10,2025-06-11,1749630450,drivers/pinctrl/intel/pinctrl-baytrail.c,1,0,1,1,pinctrl: baytrail: use new GPIO line value setter callbacks
+gpio_set_rv,83ab731cb26b5ec3a37be6a672e0b3bdc0ae84c7,2025-06-10,2025-06-11,1749630450,drivers/pinctrl/intel/pinctrl-cherryview.c,1,0,1,1,pinctrl: cherryview: use new GPIO line value setter callbacks
+gpio_set_rv,1cf74da68cffc91b00de7a188aca091f1b956a1f,2025-06-10,2025-06-13,1749806513,drivers/soc/renesas/pwc-rzv2m.c,1,0,1,1,soc: renesas: pwc-rzv2m: Use new GPIO line value setter callbacks
+gpio_set_rv,c5eab2dfdb671383f685627fac156c1a245e5474,2025-06-11,2025-06-13,1749806747,drivers/pinctrl/renesas/pinctrl-rza1.c,1,0,1,1,pinctrl: renesas: rza1: Use new GPIO line value setter callbacks
+gpio_set_rv,d2fb02624020767f1ee53be0f0f30ef964dbd845,2025-06-11,2025-06-13,1749806754,drivers/pinctrl/renesas/pinctrl-rza2.c,1,0,1,1,pinctrl: renesas: rza2: Use new GPIO line value setter callbacks
+gpio_set_rv,367864935785382bab95f5e5a691535d28f5a21b,2025-06-14,2025-06-16,1750060341,drivers/gpio/gpio-raspberrypi-exp.c,1,0,1,1,gpio: raspberrypi-exp: use new GPIO line value setter callbacks
+gpio_set_rv,98df1626ae036c1ba8c844c9fd995ab8f23bbe37,2025-06-10,2025-06-17,1750119025,drivers/gpu/drm/bridge/ti-sn65dsi86.c,1,0,1,1,drm/bridge: ti-sn65dsi86: use new GPIO line value setter callbacks
+gpio_set_rv,13518ae3203fdbb86d05b9e9916d4907cea518a4,2025-06-16,2025-06-17,1750149312,drivers/media/dvb-frontends/cxd2820r_core.c,1,0,1,1,media: dvb-frontends/cxd2820r: use new GPIO line value setter callbacks
+gpio_set_rv,bb4954b4abf61ae9d0ff230e035f95ea8fb22457,2025-06-16,2025-06-17,1750149312,drivers/media/pci/solo6x10/solo6x10-gpio.c,1,0,1,1,media: solo6x10: use new GPIO line value setter callbacks
+gpio_set_rv,3aa3628f8168df9fe154b09b1710d3314b9fa4b7,2025-06-10,2025-06-17,1750151370,drivers/gpio/gpio-mpfs.c,1,0,1,1,gpio: mpfs: use new GPIO line value setter callbacks
+gpio_set_rv,b454580cf11b45a9da22821543f1455a6a31c5ee,2025-06-10,2025-06-17,1750151370,drivers/gpio/gpio-moxtet.c,1,0,1,1,gpio: moxtet: use new GPIO line value setter callbacks
+gpio_set_rv,d27746181905c256eced857f4b2c051ac44b0b45,2025-06-10,2025-06-17,1750151370,drivers/gpio/gpio-mm-lantiq.c,1,0,1,1,gpio: mm-lantiq: use new GPIO line value setter callbacks
+gpio_set_rv,e63d9fbe9f148b44f2fdc211941f2d4485022549,2025-06-10,2025-06-17,1750151370,drivers/gpio/gpio-mpsse.c,1,0,1,1,gpio: mpsse: use new GPIO line value setter callbacks
+gpio_set_rv,0e1a8930c941e3a7bea25928b254ece8caa5135d,2025-06-10,2025-06-17,1750151371,drivers/gpio/gpio-npcm-sgpio.c,1,0,1,1,gpio: npcm-sgpio: use new GPIO line value setter callbacks
+gpio_set_rv,57065d62e672bce193f186c7b759f928b9a90ca0,2025-06-10,2025-06-17,1750151371,drivers/gpio/gpio-omap.c,1,0,1,1,gpio: omap: use new GPIO line value setter callbacks
+gpio_set_rv,f3763403a6bbc3a18379fe4c415bda899a111d55,2025-06-10,2025-06-17,1750151371,drivers/gpio/gpio-palmas.c,1,0,1,1,gpio: palmas: use new GPIO line value setter callbacks
+gpio_set_rv,c73832445bf22bb9185506dd7f1cbe9edc0216a1,2025-06-16,2025-06-18,1750208650,drivers/net/dsa/vitesse-vsc73xx-core.c,1,0,1,1,net: dsa: vsc73xx: use new GPIO line value setter callbacks
+gpio_set_rv,76ba1bb25cbbf836961839fee28554b84949462f,2025-06-12,2025-06-18,1750248329,drivers/pinctrl/cirrus/pinctrl-lochnagar.c,1,0,1,1,pinctrl: cirrus: lochnagar: use new GPIO line value setter callbacks
+gpio_set_rv,e52c741907fb9a3ca9433775d4d7c70e6c3a8078,2025-06-12,2025-06-18,1750248329,drivers/pinctrl/cirrus/pinctrl-cs42l43.c,1,0,1,1,pinctrl: cirrus: cs42l43: use new GPIO line value setter callbacks
+gpio_set_rv,17037b6f76e2019d554ebbe2591a107166d54f2b,2025-06-12,2025-06-18,1750248383,drivers/pinctrl/starfive/pinctrl-starfive-jh7110.c,1,0,1,1,pinctrl: starfive: jh7110: use new GPIO line value setter callbacks
+gpio_set_rv,48773aa04b49ade6435c5f571501f7f2882b15fb,2025-06-12,2025-06-18,1750248383,drivers/pinctrl/starfive/pinctrl-starfive-jh7100.c,1,0,1,1,pinctrl: starfive: jh7100: use new GPIO line value setter callbacks
+gpio_set_rv,0f7ccc85d8e3559c91bd219a027b75d2d6c44305,2025-06-12,2025-06-18,1750248517,drivers/pinctrl/pinctrl-xway.c,1,0,1,1,pinctrl: xway: use new GPIO line value setter callbacks
+gpio_set_rv,1a0a2c079b98d8b4c092ec97970bf12c9d94ba42,2025-06-12,2025-06-18,1750248517,drivers/pinctrl/pinctrl-da9062.c,1,0,1,1,pinctrl: da9062: use new GPIO line value setter callbacks
+gpio_set_rv,72c236f78edae3b500af3efa44b1504a3a9b6b60,2025-06-12,2025-06-18,1750248517,drivers/pinctrl/pinctrl-apple-gpio.c,1,0,1,1,pinctrl: apple: use new GPIO line value setter callbacks
+gpio_set_rv,8766f8e7f1ee2d5c8697ddcdc7b94e096982b433,2025-06-12,2025-06-18,1750248517,drivers/pinctrl/pinctrl-mcp23s08.c,1,0,1,1,pinctrl: mcp23s08: use new GPIO line value setter callbacks
+gpio_set_rv,a23b8eab75a74ffcfb79676bb61ef557e1a4fb8d,2025-06-12,2025-06-18,1750248517,drivers/pinctrl/vt8500/pinctrl-wmt.c,1,0,1,1,pinctrl: wmt: use new GPIO line value setter callbacks
+gpio_set_rv,dfdbce964904daa4b6e874d11cf2e95f5f76213d,2025-06-12,2025-06-18,1750248517,drivers/pinctrl/pinctrl-pic32.c,1,0,1,1,pinctrl: pic32: use new GPIO line value setter callbacks
+gpio_set_rv,fd81c42a830f5a82fc08403aa69909c532af33e5,2025-06-12,2025-06-18,1750248517,drivers/pinctrl/pinctrl-st.c,1,0,1,1,pinctrl: st: use new GPIO line value setter callbacks
+gpio_set_rv,b8cd87c0e999b4689b1cab8906790ece5d00ab75,2025-06-12,2025-06-18,1750248518,drivers/pinctrl/pinctrl-as3722.c,1,0,1,1,pinctrl: as3722: use new GPIO line value setter callbacks
+gpio_set_rv,d9727b48515b656e641173fb07462a5d93d493da,2025-06-12,2025-06-18,1750248518,drivers/pinctrl/spear/pinctrl-plgpio.c,1,0,1,1,pinctrl: spear: use new GPIO line value setter callbacks
+gpio_set_rv,9da895e97057ad946b2e727694af3fa5ee51d527,2025-06-10,2025-06-19,1750317305,drivers/platform/cznic/turris-omnia-mcu-gpio.c,1,0,1,1,platform: cznic: use new GPIO line value setter callbacks
+gpio_set_rv,a0cfbc67d71c763357a8847305e3d5254028c0da,2025-06-22,2025-06-23,1750663064,drivers/gpio/gpio-ts5500.c,1,0,1,1,gpio: ts5500: use new GPIO line value setter callbacks
+gpio_set_rv,40b71f1171da13664e9677fbd993d9098315d71e,2025-06-19,2025-06-23,1750663545,drivers/gpio/gpio-pca9570.c,1,0,1,1,gpio: pca9570: use new GPIO line value setter callbacks
+gpio_set_rv,201e0f24a5b73fa73606ae2261d155f00cb6d577,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-pl061.c,1,0,1,1,gpio: pl061: use new GPIO line value setter callbacks
+gpio_set_rv,309ea5811136a06f572c7abbeae2dcf773629a5e,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-rc5t583.c,1,0,1,1,gpio: rc5t583: use new GPIO line value setter callbacks
+gpio_set_rv,4027438be823abdcfb50ee2abed06fa4e6af4b7c,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-pcf857x.c,1,0,1,1,gpio: pcf857x: use new GPIO line value setter callbacks
+gpio_set_rv,6731ad96e8770595d4a6ceb07e587b07d22da110,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-rockchip.c,1,0,1,1,gpio: rockchip: use new GPIO line value setter callbacks
+gpio_set_rv,76033f1f927cd93907c1e9eb3f86e54015e4366d,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-rdc321x.c,1,0,1,1,gpio: rdc321x: use new GPIO line value setter callbacks
+gpio_set_rv,cb908f3699fb137e28017a8fdf506c35762b3eb6,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-sa1100.c,1,0,1,1,gpio: sa1100: use new GPIO line value setter callbacks
+gpio_set_rv,d68ddf651dd2faea5cdc6f6656148b739c38645b,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-rtd.c,1,0,1,1,gpio: rtd: use new GPIO line value setter callbacks
+gpio_set_rv,f1ff31c8ef80f4720ebf7854e6af6204dddd9ce3,2025-06-19,2025-06-23,1750663546,drivers/gpio/gpio-pxa.c,1,0,1,1,gpio: pxa: use new GPIO line value setter callbacks
+gpio_set_rv,83e927b50591cd8ae6f70c8e7401c9a64b3a8484,2025-06-19,2025-06-24,1750754448,drivers/usb/serial/ftdi_sio.c,1,0,1,1,USB: serial: ftdi_sio: use new GPIO line value setter callbacks
+gpio_set_rv,bdf2ab177e2fca85394fce86629f5e35aa7fa33a,2025-06-19,2025-06-24,1750754451,drivers/usb/serial/cp210x.c,1,0,1,1,USB: serial: cp210x: use new GPIO line value setter callbacks
+gpio_set_rv,4aaadf94aab09ccc95f14f75e11e045a1530d364,2025-06-10,2025-06-28,1751073059,drivers/input/touchscreen/ad7879.c,1,0,1,1,Input: ad7879 - use new GPIO line value setter callbacks
+gpio_set_rv,687f0d0ee5cf3f9efd69e58da8f22e10590cd76c,2025-06-10,2025-06-28,1751073064,drivers/input/keyboard/adp5588-keys.c,1,0,1,1,Input: adp5588 - use new GPIO line value setter callbacks
+gpio_set_rv,43a8440f396951eaae85db478b30a53aea8cda7d,2025-06-10,2025-06-28,1751073069,drivers/input/keyboard/adp5589-keys.c,1,0,1,1,Input: adp5589 - use new GPIO line value setter callbacks
+gpio_set_rv,70c8f51ff68147176a41d549587a67ea377ed2e2,2025-06-25,2025-07-02,1751447137,drivers/gpio/gpio-spear-spics.c,1,0,1,1,gpio: spear-spics: use new GPIO line value setter callbacks
+gpio_set_rv,883c7eb2c4a9e143b2662ba754f9c16fb31adced,2025-06-25,2025-07-02,1751447137,drivers/gpio/gpio-sch.c,1,0,1,1,gpio: sch: use new GPIO line value setter callbacks
+gpio_set_rv,df213abe6913cae8d1d69efa66b725831f63e663,2025-06-25,2025-07-02,1751447137,drivers/gpio/gpio-sama5d2-piobu.c,1,0,1,1,gpio: sama5d2-piobu: use new GPIO line value setter callbacks
+gpio_set_rv,e932e894aec6ee22d7314f74e0a27db244a14fdb,2025-06-25,2025-07-02,1751447137,drivers/gpio/gpio-sch311x.c,1,0,1,1,gpio: sch311x: use new GPIO line value setter callbacks
+gpio_set_rv,ae35dd91ad2ea4ae446e74364edd6428a26f5080,2025-06-25,2025-07-02,1751447138,drivers/gpio/gpio-sprd.c,1,0,1,1,gpio: sprd: use new GPIO line value setter callbacks
+gpio_set_rv,b033bc5a9a7d95b8dc206dd7455a033b0670d8e7,2025-06-25,2025-07-02,1751447138,drivers/gpio/gpio-tc3589x.c,1,0,1,1,gpio: tc3589x: use new GPIO line value setter callbacks
+gpio_set_rv,c203705c9b46ad0b66ef3bdc93ec9073b00efed1,2025-06-25,2025-07-02,1751447138,drivers/gpio/gpio-syscon.c,1,0,1,1,gpio: syscon: use new GPIO line value setter callbacks
+gpio_set_rv,c9148553ac13565ad06d83d7baebef133245ebe6,2025-06-25,2025-07-02,1751447138,drivers/gpio/gpio-stmpe.c,1,0,1,1,gpio: stmpe: use new GPIO line value setter callbacks
+gpio_set_rv,e87dff29ff6b919f64ca25b066c44bbacdc08ac3,2025-06-25,2025-07-02,1751447138,drivers/gpio/gpio-stp-xway.c,1,0,1,1,gpio: stp-xway: use new GPIO line value setter callbacks
+gpio_set_rv,f3c9b6a51cb31a8816feb801c8c8a2265432143e,2025-06-25,2025-07-02,1751447138,drivers/gpio/gpio-tangier.c,1,0,1,1,gpio: tangier: use new GPIO line value setter callbacks
+gpio_set_rv,527db0a8811697968df30797eae2e1d5f8b6964c,2025-06-23,2025-07-07,1751872912,drivers/gpio/gpio-reg.c,1,0,1,1,gpio: reg: use new GPIO line value setter callbacks
+gpio_set_rv,871e1aee00298fccbda04eacd9e3bb5f46f446b9,2025-07-02,2025-07-07,1751874329,drivers/gpio/gpio-tegra186.c,1,0,1,1,gpio: tegra186: use new GPIO line value setter callbacks
+gpio_set_rv,8a81d128e1377a7662d0913bc5013eb8a90c3e33,2025-07-02,2025-07-07,1751874329,drivers/gpio/gpio-tegra.c,1,0,1,1,gpio: tegra: use new GPIO line value setter callbacks
+gpio_set_rv,2a5be7a80b3b1036fba5dae13dd55c97fb7eabaa,2025-07-02,2025-07-07,1751874330,drivers/gpio/gpio-tps65086.c,1,0,1,1,gpio: tps65086: use new GPIO line value setter callbacks
+gpio_set_rv,4ca81a1f3a46603986cbdd11348433b0746ce483,2025-07-02,2025-07-07,1751874330,drivers/gpio/gpio-tps65218.c,1,0,1,1,gpio: tps65218: use new GPIO line value setter callbacks
+gpio_set_rv,4ffdd9d8a37eaf4e25855e1038b9e1091401c252,2025-07-02,2025-07-07,1751874330,drivers/gpio/gpio-tpic2810.c,1,0,1,1,gpio: tpic2810: use new GPIO line value setter callbacks
+gpio_set_rv,e3ec7ad5ab139ad9e0ed8931ba562f95698c3b2f,2025-07-02,2025-07-07,1751874330,drivers/gpio/gpio-tps6586x.c,1,0,1,1,gpio: tps6586x: use new GPIO line value setter callbacks
+gpio_set_rv,fc0e4091afa9b6c02f1cc2ddec75b248c25cefe6,2025-07-02,2025-07-07,1751874330,drivers/gpio/gpio-tps65219.c,1,0,1,1,gpio: tps65219: use new GPIO line value setter callbacks
+gpio_set_rv,0446ce284bebe192be6e0da6e969379dc3dac587,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-twl4030.c,1,0,1,1,gpio: twl4030: use new GPIO line value setter callbacks
+gpio_set_rv,22cbcfe36e9724fda06ca873e20777d863445ab8,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-tps65912.c,1,0,1,1,gpio: tps65912: use new GPIO line value setter callbacks
+gpio_set_rv,3e498b3c7b96a17037b5777c56ccff33d3bfbca5,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-tps65910.c,1,0,1,1,gpio: tps65910: use new GPIO line value setter callbacks
+gpio_set_rv,55e2d1eec110f1278324882714b64465e4e58ced,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-viperboard.c,2,0,2,1,gpio: viperboard: use new GPIO line value setter callbacks
+gpio_set_rv,77ba4640cc1564f29b280040b312688b79039c4c,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-twl6040.c,1,0,1,1,gpio: twl6040: use new GPIO line value setter callbacks
+gpio_set_rv,e41e51f07b1c8a642fed121d01da37c1c2994f89,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-tps68470.c,1,0,1,1,gpio: tps68470: use new GPIO line value setter callbacks
+gpio_set_rv,e502df58b5e3767c00e887744b6eff43b7fde3ea,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-virtio.c,1,0,1,1,gpio: virtio: use new GPIO line value setter callbacks
+gpio_set_rv,ed8497dc6683cd285ef4335a315d398524c4af52,2025-07-07,2025-07-13,1752396304,drivers/gpio/gpio-ts4900.c,1,0,1,1,gpio: ts4900: use new GPIO line value setter callbacks
+gpio_set_rv,023a24f83edf9abe0fbb66929d286cec5a09afbb,2025-07-09,2025-07-15,1752566081,drivers/gpio/gpio-wm831x.c,1,0,1,1,gpio: wm831x: use new GPIO line value setter callbacks
+gpio_set_rv,0933fc87f31da17871d6cf255dd9a3de86658685,2025-07-09,2025-07-15,1752566081,drivers/gpio/gpio-xgene.c,1,0,1,1,gpio: xgene: use new GPIO line value setter callbacks
+gpio_set_rv,1919ea19a4ff8d534fb2789453a69f86f70a493b,2025-07-09,2025-07-15,1752566081,drivers/gpio/gpio-xilinx.c,1,0,1,1,gpio: xilinx: use new GPIO line value setter callbacks
+gpio_set_rv,47b427311d959fd3235485c08f367cd14df282ab,2025-07-09,2025-07-15,1752566081,drivers/gpio/gpio-wm8994.c,1,0,1,1,gpio: wm8994: use new GPIO line value setter callbacks
+gpio_set_rv,dd94adf7da36281b5d1bc40ee8ac265082576f4c,2025-07-09,2025-07-15,1752566081,drivers/gpio/gpio-winbond.c,1,0,1,1,gpio: winbond: use new GPIO line value setter callbacks
+gpio_set_rv,f7a680e9c2e512f903c385ed1a71732389788aa0,2025-07-09,2025-07-15,1752566081,drivers/gpio/gpio-wm8350.c,1,0,1,1,gpio: wm8350: use new GPIO line value setter callbacks
+gpio_set_rv,383a02f6d421bf7703703aeb3e7270426b2fc30c,2025-07-09,2025-07-15,1752566082,drivers/gpio/gpio-xtensa.c,1,0,1,1,gpio: xtensa: use new GPIO line value setter callbacks
+gpio_set_rv,ae8bcae8487293cb1de201734ab4779a2438618a,2025-07-09,2025-07-15,1752566082,drivers/gpio/gpio-xra1403.c,1,0,1,1,gpio: xra1403: use new GPIO line value setter callbacks
+gpio_set_rv,ee6e05eb5fe27a45678848fb92a2a5db6b3fea84,2025-07-09,2025-07-15,1752566082,drivers/gpio/gpio-zevio.c,1,0,1,1,gpio: zevio: use new GPIO line value setter callbacks
+gpio_set_rv,26b6443826d98ac1f5c780788549b8df30e12fa2,2025-07-15,2025-07-16,1752654368,drivers/gpio/gpio-wcove.c,1,0,1,1,gpio: wcove: use new GPIO line value setter callbacks
+gpio_set_rv,74896eae7e040e1b2a381efc8df0c839023dbf16,2025-07-17,2025-07-18,1752824111,drivers/misc/ti_fpc202.c,1,0,1,1,misc: ti-fpc202: use new GPIO line value setter callbacks
+gpio_set_rv,63149542dcf4468ed15469035740a937cf9ff88a,2025-07-17,2025-07-19,1752939400,drivers/pinctrl/nuvoton/pinctrl-ma35.c,1,0,1,1,pinctrl: ma35: use new GPIO line value setter callbacks
+gpio_set_rv,83d92eae8d44e320a414b76fcba8186fa739f3e8,2025-07-19,2025-07-21,1753113855,drivers/pinctrl/pinctrl-rp1.c,1,0,1,1,pinctrl: rp1: use new GPIO line value setter callbacks
+iio_claim_direct,403f0f9b3609b88fa2beb774893867a238f51a64,2025-02-09,2025-02-17,1739797050,drivers/iio/chemical/scd30_core.c,1,0,1,1,iio: chemical: scd30: Switch to sparse friendly claim/release_direct()
+iio_claim_direct,bcbd26d8662b75b5e602ccf71544d8bea5dded6b,2025-02-09,2025-02-17,1739797051,drivers/iio/temperature/tmp006.c,1,0,3,1,iio: temperature: tmp006: Stop using iio_device_claim_direct_scoped()
+iio_claim_direct,27ac40b6275d223def7c7102efd7d61ccab2b07a,2025-02-09,2025-02-17,1739797336,drivers/iio/adc/rtq6056.c,1,0,2,1,iio: adc: rtq6056: Stop using iio_device_claim_direct_scoped()
+iio_claim_direct,18a53d40122df92933d57aba2ce114aab473f73e,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/msa311.c,2,0,2,1,iio: accel: msa311: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3cb26cba4a603f6488314d7f9cc8e5d928aed128,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/adxl372.c,1,0,1,5,iio: accel: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3cb26cba4a603f6488314d7f9cc8e5d928aed128,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/adxl380.c,1,0,1,5,iio: accel: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3cb26cba4a603f6488314d7f9cc8e5d928aed128,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/bma180.c,1,0,1,5,iio: accel: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3cb26cba4a603f6488314d7f9cc8e5d928aed128,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/bmi088-accel-core.c,1,0,1,5,iio: accel: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3cb26cba4a603f6488314d7f9cc8e5d928aed128,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/fxls8962af-core.c,3,0,3,5,iio: accel: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,6c21fc09c3e60c018997c80331cdac5f1603558b,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/kionix-kx022a.c,2,0,2,1,iio: accel: kx022a: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,9ab72adb90392e23701db04da6103335d4176c9f,2025-02-17,2025-03-04,1741094268,drivers/iio/accel/mma8452.c,2,0,2,1,iio: accel: mma8452: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e493763302ce70bcb76d3882bfb57c2c299a79d8,2025-02-17,2025-03-04,1741094268,drivers/iio/adc/stm32-dfsdm-adc.c,3,0,3,1,iio: adc: stm32-dfsdm: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,15bed4f0cbf149232b0e17d64a178230b2f21be9,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad7606.c,2,0,2,1,iio: adc: ad7606: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,4758f987d3a1b0e7f7b559fb864db02ae2474231,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad7192.c,2,0,2,1,iio: adc: ad7192: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,4d47f64ca82e0bfb9c2fffe37761685e7e09e13b,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad7793.c,1,0,1,1,iio: adc: ad7793: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,5ff6b02d9bb821e020910029857f150efeaa9d26,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad4030.c,3,0,3,1,iio: adc: ad4030: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,6eedf172d964be30364c3d8ac30751a6ce4815d8,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad_sigma_delta.c,1,0,1,1,iio: adc: ad_sigma_delta: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,85e840ced7a89cbd7c401f299eb337db5f41acd0,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad7791.c,1,0,1,1,iio: adc: ad7791: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,bbd841f9d02c7a32243441e49496f0f915e536df,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad799x.c,2,0,2,1,iio: adc: ad799x: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e76750f50aaae66817ffc92417a0ac11c57dede6,2025-02-17,2025-03-04,1741094269,drivers/iio/adc/ad7768-1.c,1,0,1,1,iio: adc: ad7768-1: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,01528347680ffdbbd5aeb42726359320fdc6e464,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/max11410.c,3,0,3,1,iio: adc: max11410: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,173386d036336e8e75356ec89673a3f468f60b16,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/at91-sama5d2_adc.c,4,0,4,1,iio: adc: at91-sama5d2: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7173.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7266.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7298.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7380.c,8,0,8,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7476.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7887.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7923.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ad7944.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/dln2-adc.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/stm32-adc.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ti-adc084s021.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ti-adc108s102.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ti-ads1298.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ti-ads131e08.c,2,0,2,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/ti-tlc4541.c,1,0,1,15,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,71dfa35f7bee255d041d234603fb7afe8c0ddcb4,2025-02-17,2025-03-04,1741094270,drivers/iio/adc/max1027.c,1,0,1,1,iio: adc: max1027: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,354eedf0083f4d7b22743b84e9419a560e862377,2025-03-09,2025-04-22,1745345395,drivers/iio/light/apds9306.c,1,0,1,1,iio: light: apds9306: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3ba3800286bb8881d323659fd019cf6b746580d9,2025-03-09,2025-04-22,1745345395,drivers/iio/adc/ti-ads1100.c,1,0,1,1,iio: adc: ti-ads1100: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,403443117b0234b8dfe834a077fbac693e6c9d7e,2025-03-09,2025-04-22,1745345395,drivers/iio/light/gp2ap020a00f.c,1,0,1,1,iio: light: gp2ap020a00f: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,5fe8331928c6138292b81d4761a8370d75b393fa,2025-03-09,2025-04-22,1745345395,drivers/iio/adc/vf610_adc.c,1,0,1,1,iio: adc: vf610: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,c86f8e8f9f56dcda51f785c0b0fd318a9af13bfb,2025-03-09,2025-04-22,1745345395,drivers/iio/adc/rcar-gyroadc.c,1,0,1,1,iio: adc: rcar: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,d793d614dc3f771901d3d10c5079830743dec897,2025-03-09,2025-04-22,1745345395,drivers/iio/light/isl29125.c,1,0,1,1,iio: light: isl29125: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e6d364b4086226964fe9e67632e1ba5c27406171,2025-03-09,2025-04-22,1745345395,drivers/iio/adc/mxs-lradc-adc.c,2,0,2,1,iio: adc: mxs-lradc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,ee4ef2cbf40ec3297220aff7958f1bb465475ca4,2025-03-09,2025-04-22,1745345395,drivers/iio/adc/ti-ads1015.c,2,0,2,1,iio: adc: ti-ads1015: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,2983ad971d02489a753df6ea44027c231baad555,2025-03-09,2025-04-22,1745345396,drivers/iio/light/ltr501.c,3,0,3,1,iio: light: ltr501: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,43622f88b06d04fee68e131ed81f69873c8a3e98,2025-03-09,2025-04-22,1745345396,drivers/iio/light/si1145.c,3,0,3,1,iio: light: si1145: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,565e9c17e4dc4ce870c9d2b8c988a50744fff9e6,2025-03-09,2025-04-22,1745345396,drivers/iio/light/st_uvis25_core.c,1,0,1,1,iio: light: st_uvis25: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,6025d20bc3ed7f4748742b30ca131bac0da6b254,2025-03-09,2025-04-22,1745345396,drivers/iio/light/as73211.c,2,0,2,1,iio: light: as73211: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,65a6ce5aeb82f1446fef4bd915319f5414ddecfa,2025-03-09,2025-04-22,1745345396,drivers/iio/light/tcs3414.c,1,0,1,1,iio: light: tcs3414: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,7e8c0ec196e789ea5a47e86bba0be4ce8345f447,2025-03-09,2025-04-22,1745345396,drivers/iio/light/opt4060.c,1,0,1,1,iio: light: opt4060: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,8d7c205ff9ff8fedd86d704c21f80471f0de7547,2025-03-09,2025-04-22,1745345396,drivers/iio/light/vcnl4000.c,3,0,3,1,iio: light: vcnl4000: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,abce31c33db6c2c8632214e126fde2e6423279cf,2025-03-09,2025-04-22,1745345396,drivers/iio/light/tcs3472.c,1,0,1,1,iio: light: tcs3472: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e08acc4c82a3305c1c9c57d2f148d4d21ae949ce,2025-03-09,2025-04-22,1745345396,drivers/iio/light/rohm-bu27034.c,2,0,2,1,iio: light: rohm-bu27034: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e0dc0feb991b07df6b4b80d5fd417a3967b8ebb7,2025-03-09,2025-04-22,1745345396,drivers/iio/light/rpr0521.c,1,0,1,1,iio: light: rpr0521: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,cac2bc675bcfa1441283fd0f438a709dba419840,2025-03-09,2025-04-22,1745345397,drivers/iio/light/vcnl4035.c,1,0,1,1,iio: light: vcnl4035: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,36ee4794dd791e69f9402d5dc4a52968af36a936,2025-03-31,2025-04-22,1745345398,drivers/iio/addac/ad74115.c,1,0,1,1,iio: addac: ad74115: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3976dc8323408f2b10d03f271d1f1b8f6eacd41b,2025-03-31,2025-04-22,1745345398,drivers/iio/chemical/atlas-sensor.c,1,0,1,1,iio: chemical: atlas-sensor: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,ba22e78635f9610276ef60d8361c3b1337cbff57,2025-03-31,2025-04-22,1745345398,drivers/iio/chemical/scd4x.c,1,0,1,1,iio: chemical: scd4x: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e9786c540804c354cd503864208f6ca54fea73b8,2025-03-31,2025-04-22,1745345398,drivers/iio/chemical/ccs811.c,1,0,1,1,iio: chemical: ccs811: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,0ceb75d0afae08ea917bbd0c195403549151c05b,2025-03-31,2025-04-22,1745345399,drivers/iio/common/scmi_sensors/scmi_iio.c,1,0,1,1,iio: common: scmi: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,0d51e888e03074591a83ea6458d58a25e303d90a,2025-03-31,2025-04-22,1745345399,drivers/iio/humidity/hdc100x.c,1,0,1,1,iio: humidity: hdc100x: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,35a34861ce8f719a32dc375a8c200dcf4774f21e,2025-03-31,2025-04-22,1745345399,drivers/iio/humidity/hdc2010.c,2,0,2,1,iio: humidity: hdc2010: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,4455bc5c303ba93720f5944b7230698661514651,2025-03-31,2025-04-22,1745345399,drivers/iio/imu/inv_mpu6050/inv_mpu_core.c,2,0,2,1,iio: imu: inv_mpu6050: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,59d3109aabf10af0451fff862e9bc0a3bd48f0b7,2025-03-31,2025-04-22,1745345399,drivers/iio/imu/smi240.c,1,0,1,1,iio: imu: smi240: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,6c9dc1e8f296effd17f36a4653f6928c17a16dce,2025-03-31,2025-04-22,1745345399,drivers/iio/health/max30102.c,1,0,1,1,iio: health: max30102: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,ca75b9fb28d6c61f45be36269e0f2ef4f0cd17e0,2025-03-31,2025-04-22,1745345399,drivers/iio/humidity/hts221_core.c,2,0,2,1,iio: humidity: hts211: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,cbff19a382bbedd2a247ca9fc52fc1a884f13ac3,2025-03-31,2025-04-22,1745345399,drivers/iio/imu/inv_icm42600/inv_icm42600_accel.c,3,0,3,3,iio: imu: inv_icm42600: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,cbff19a382bbedd2a247ca9fc52fc1a884f13ac3,2025-03-31,2025-04-22,1745345399,drivers/iio/imu/inv_icm42600/inv_icm42600_gyro.c,3,0,3,3,iio: imu: inv_icm42600: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,cbff19a382bbedd2a247ca9fc52fc1a884f13ac3,2025-03-31,2025-04-22,1745345399,drivers/iio/imu/inv_icm42600/inv_icm42600_temp.c,1,0,1,3,iio: imu: inv_icm42600: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,f664ab98b2385c53b60cada81da576fb5cf2c6f6,2025-03-31,2025-04-22,1745345399,drivers/iio/common/st_sensors/st_sensors_core.c,1,0,1,1,iio: common: st_sensors: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,fcc065fdf52fc8da44b17125449838118a4aeeff,2025-03-31,2025-04-22,1745345399,drivers/iio/gyro/adxrs290.c,2,0,2,1,iio: gyro: adxrs290: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,0daeba3edabf61a273779280153903e6a0bca4be,2025-03-31,2025-04-22,1745345400,drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_shub.c,2,0,2,1,iio: imu: st_lsm6dsx: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1bfa7698bc9f5ec510d6082dc8f4fd4a58059764,2025-03-31,2025-04-22,1745345400,drivers/iio/pressure/ms5611_core.c,1,0,1,1,iio: pressure: ms5611: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,587895606e1193cecc16adc650d7d20b719fa86c,2025-03-31,2025-04-22,1745345400,drivers/iio/magnetometer/mag3110.c,2,0,2,1,iio: magnetometer: mag3110: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,66024cb953d2a89078374cff459c0cefaa4c576b,2025-03-31,2025-04-22,1745345400,drivers/iio/pressure/zpa2326.c,2,0,2,1,iio: pressure: zpa2326: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,71a998e791d828eae5dee08fa838d29a1297d80b,2025-03-31,2025-04-22,1745345400,drivers/iio/pressure/rohm-bm1390.c,1,0,1,1,iio: pressure: rohm-bm1390: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,74fc7aacda0f97758df9b2a0ddfe385a6d0e1f35,2025-03-31,2025-04-22,1745345400,drivers/iio/pressure/dlhl60d.c,1,0,1,1,iio: pressure: dlhl60d: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,a332a90eacd1fe6e5031f9b4dd0007c1f0375f02,2025-03-31,2025-04-22,1745345400,drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_core.c,2,0,2,1,iio: imu: st_lsm6dsx: Switch to sparse friendly claim/release_direct()
+iio_claim_direct,b2a3a51000a71cd33337b05b5a3df78ba89a6727,2025-03-31,2025-04-22,1745345400,drivers/iio/pressure/icp10100.c,2,0,2,1,iio: pressure: icp10100: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,d2de91b3eded57bc02a59ce154080cade7e7917b,2025-03-31,2025-04-22,1745345400,drivers/iio/pressure/mpl3115.c,1,0,1,1,iio: pressure: mpl3115: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e0a4d6a93eb10ab255cd50fcc5375cc788e32ec5,2025-03-31,2025-04-22,1745345400,drivers/iio/magnetometer/rm3100-core.c,1,0,1,1,iio: magnetometer: rm3100: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,0ed4424478d36c8301dd4fbc18a49eafb5e67569,2025-03-31,2025-04-22,1745345401,drivers/iio/proximity/sx9500.c,1,0,1,1,iio: proximity: sx9500: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3332487099013f48108080f9c8ffeaddbef3724e,2025-03-31,2025-04-22,1745345401,drivers/iio/temperature/maxim_thermocouple.c,1,0,1,1,iio: temp: maxim_thermocouple: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,3e3f57659b3d1affc21c8315164fc60e3d2ed7c5,2025-03-31,2025-04-22,1745345401,drivers/iio/proximity/pulsedlight-lidar-lite-v2.c,1,0,1,1,iio: proximity: pulsed-light: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,5d1dff5b45b7e81206ada46ae996f58129a68a7c,2025-03-31,2025-04-22,1745345401,drivers/iio/industrialio-core.c,2,0,1,1,iio: Adjust internals of handling of direct mode claiming to suit new API.
+iio_claim_direct,692760702f80abb227cb6cd1f961cf13a4088b4c,2025-03-31,2025-04-22,1745345401,drivers/staging/iio/impedance-analyzer/ad5933.c,4,0,4,1,staging: iio: ad5933: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,9dc7ed3bfe437b3a9fc5399fbe594a4b054eeeec,2025-03-31,2025-04-22,1745345401,drivers/iio/proximity/hx9023s.c,1,0,1,1,iio: proximity: hx9023s: Switch to sparse friendly iio_device_claim/release_direct()
+iio_push_with_ts,175c3f72154e4ef64ba56b0ee35110082ea475b4,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/irsd200.c,1,0,1,1,iio: proximity: irsd200: Use a struct for scan and iio_push_to_buffers_with_ts()
+iio_push_with_ts,1a715f5a47269a8d0088020198c3bfde9b34454d,2025-04-13,2025-05-21,1747833626,drivers/iio/temperature/hid-sensor-temperature.c,1,0,1,3,iio: temperature: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,1a715f5a47269a8d0088020198c3bfde9b34454d,2025-04-13,2025-05-21,1747833626,drivers/iio/temperature/maxim_thermocouple.c,1,0,1,3,iio: temperature: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,1a715f5a47269a8d0088020198c3bfde9b34454d,2025-04-13,2025-05-21,1747833626,drivers/iio/temperature/tmp006.c,1,0,1,3,iio: temperature: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,2d1168263bcb84c38f3475f2336b30ede4235ae1,2025-04-13,2025-05-21,1747833626,drivers/iio/dummy/iio_simple_dummy_buffer.c,1,0,1,1,iio: dummy: Switch to iio_push_to_buffers_with_ts() and provide size of storage
+iio_push_with_ts,4d15307225ff15ed7352c01e570fdcca9bf0fe2c,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-ads131e08.c,1,0,1,1,iio: adc: ti-ads131e08: Use new iio_push_to_buffers_with_ts() to provide length sanity check.
+iio_push_with_ts,838a65c1d650b72849fe79ec4d52583542d7e346,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/hid-sensor-accel-3d.c,1,0,1,1,iio: accel: hid: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,85eb82b3c2a4af98fce7f9a578d5970425ca36a8,2025-04-13,2025-05-21,1747833626,drivers/iio/resolver/ad2s1210.c,1,0,1,1,iio: resolver: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad4000.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad4030.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad4695.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7266.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7298.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7380.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7476.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7606.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7768-1.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7779.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ad7923.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/dln2-adc.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ina2xx-adc.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/max1118.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/max11410.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/max1363.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/mcp3911.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/mxs-lradc-adc.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/pac1921.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/rockchip_saradc.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/rtq6056.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/stm32-adc.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-adc081c.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-adc0832.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-adc084s021.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-adc12138.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-ads1015.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-ads1119.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-ads124s08.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-ads8688.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-lmp92064.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-tlc4541.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/ti-tsc2046.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,2025-04-13,2025-05-21,1747833626,drivers/iio/adc/vf610_adc.c,1,0,1,34,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/atlas-sensor.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/bme680_core.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/ccs811.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/ens160_core.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/pms7003.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/scd30_core.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/scd4x.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,cb4691913d9edafe1d126548dfcdc748733da00b,2025-04-13,2025-05-21,1747833626,drivers/iio/chemical/sps30.c,1,0,1,8,iio: chemical: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/adxl355_core.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/bma180.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/bma220_spi.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/bma400_core.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/fxls8962af-core.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/kxcjk-1013.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/kxsd9.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/mma7455_core.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/mma8452.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/msa311.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/mxc4005.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/sca3300.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/stk8312.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,2025-04-13,2025-05-21,1747833626,drivers/iio/accel/stk8ba50.c,1,0,1,14,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/as3935.c,1,0,1,7,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/hx9023s.c,1,0,1,7,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/mb1232.c,1,0,1,7,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/pulsedlight-lidar-lite-v2.c,1,0,1,7,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/srf08.c,1,0,1,7,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/sx_common.c,1,0,1,7,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,2025-04-13,2025-05-21,1747833626,drivers/iio/proximity/vl53l0x-i2c.c,1,0,1,7,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,77e8a16a7d820af111679952ded15a795471abdd,2025-04-13,2025-05-21,1747833627,drivers/iio/pressure/bmp280-core.c,5,0,5,6,iio: pressure: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,77e8a16a7d820af111679952ded15a795471abdd,2025-04-13,2025-05-21,1747833627,drivers/iio/pressure/hid-sensor-press.c,1,0,1,6,iio: pressure: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,77e8a16a7d820af111679952ded15a795471abdd,2025-04-13,2025-05-21,1747833627,drivers/iio/pressure/hsc030pa.c,1,0,1,6,iio: pressure: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,77e8a16a7d820af111679952ded15a795471abdd,2025-04-13,2025-05-21,1747833627,drivers/iio/pressure/mpl3115.c,1,0,1,6,iio: pressure: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,77e8a16a7d820af111679952ded15a795471abdd,2025-04-13,2025-05-21,1747833627,drivers/iio/pressure/rohm-bm1390.c,1,0,1,6,iio: pressure: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,77e8a16a7d820af111679952ded15a795471abdd,2025-04-13,2025-05-21,1747833627,drivers/iio/pressure/zpa2326.c,1,0,1,6,iio: pressure: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/af8133j.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/ak8974.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/ak8975.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/als31300.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/bmc150_magn.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/hmc5843.h,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/hmc5843_core.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/mag3110.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/rm3100-core.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,2025-04-13,2025-05-21,1747833627,drivers/iio/magnetometer/yamaha-yas530.c,1,0,1,10,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,ea85f5e2391dd551cea30863d4806d3264a8ec38,2025-08-02,2025-08-16,1755355854,drivers/iio/light/acpi-als.c,1,0,1,1,iio: light: acpi-als: Use iio_push_to_buffers_with_ts() to allow runtime source size check
+iio_push_with_ts,656c45811d33b07f0bfcd8bd803976c73a6951cc,2025-08-02,2025-08-16,1755355914,drivers/iio/light/adjd_s311.c,1,0,1,1,iio: light: adjd_s311: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,f0ffec3b4fa7e430f92302ee233c79aeb021fe14,2025-08-02,2025-08-16,1755355966,drivers/iio/light/isl29125.c,1,0,1,1,iio: light: isl29125: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,596081d33bd872e5148439f2da0172fcc56d956f,2025-08-02,2025-08-16,1755356097,drivers/iio/light/max44000.c,1,0,1,1,iio: light: max44000: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,cb8453db633071ae2b8fefd4be37d74e925d16f5,2025-08-02,2025-08-16,1755356157,drivers/iio/light/st_uvis25_core.c,1,0,1,1,iio: light: st_uvis25: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,7cacdd9380e4f8e3dd8cbb410f79061fb078ccdb,2025-08-02,2025-08-16,1755356207,drivers/iio/light/tcs3414.c,1,0,1,1,iio: light: tcs3414: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,66c556aa8358cd71979da9738a810e6074918daa,2025-08-02,2025-08-16,1755356246,drivers/iio/light/tcs3472.c,1,0,1,1,iio: light: tcs3472: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,2bbaf41ac9f70092bbd48d779a176d2ee6a0131f,2025-08-02,2025-08-16,1755356374,drivers/iio/light/vl6180.c,1,0,1,1,iio: light: vl6180: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/bh1745.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/hid-sensor-als.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/ltr501.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/opt4060.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/rohm-bu27034.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/rpr0521.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/si1145.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/vcnl4000.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,1ab10737fcc9cc7aca6f3d49911c0fd953dc5aed,2025-08-02,2025-08-16,1755356417,drivers/iio/light/veml6030.c,1,0,1,9,iio: light: Simple conversions to iio_push_to_buffers_with_ts()
+iio_push_with_ts,2a0935ac4bac0607b5d70cc408d83cb43f20cb88,2025-09-05,2025-10-14,1760447257,drivers/media/pci/mgb4/mgb4_trigger.c,1,0,1,1,media: pci: mg4b: use iio_push_to_buffers_with_ts()
+iio_push_with_ts,70d734e95d20f071b5f736b2d831e4141b37e40f,2026-08-18,2026-08-30,1788133935,drivers/iio/accel/kionix-kx022a.c,2,0,2,1,iio: accel: kionix-kx022a: use iio_push_to_buffers_with_ts()
+iio_push_with_ts,8e9443b8fcf658ada1488acb3074b224f2a420d0,2026-08-21,2026-08-30,1788133937,drivers/iio/gyro/itg3200_buffer.c,1,0,1,1,iio: gyro: itg3200: use iio_push_to_buffers_with_ts()
+iio_push_with_ts,c35823da902b779802522cd7a3effd1b70dacba3,2026-08-21,2026-08-30,1788133937,drivers/iio/gyro/bmg160_core.c,1,0,1,1,iio: gyro: bmg160: use iio_push_to_buffers_with_ts()
+iio_push_with_ts,c7ddb2d59f02aab475ceb15e13bca5fb084bec40,2026-08-21,2026-08-30,1788133937,drivers/iio/gyro/adxrs290.c,1,0,1,1,iio: gyro: adxrs290: use iio_push_to_buffers_with_ts()
+pcim_request_all_regions,23812bbd7d5fe27b6b2e0fe5a8ba4c6f37f26671,2025-04-17,2025-04-17,1744889142,drivers/spi/spi-cavium-thunderx.c,1,0,1,1,spi: spi-cavium-thunderx: Use non-hybrid PCI devres API
+pcim_request_all_regions,d981e7b3f25fbabca9cdd02aa2a8f16d6f235fc2,2025-04-17,2025-04-17,1744889143,drivers/spi/spi-pci1xxxx.c,1,0,1,1,spi: pci1xxxx: Use non-hybrid PCI devres API
+pcim_request_all_regions,2707ddc9c542230b983ecc8a898bdf4f4771e227,2025-04-23,2025-04-24,1745479293,sound/pci/ens1370.c,1,0,1,1,ALSA: ens1370: Use pure devres PCI
+pcim_request_all_regions,5063eb3b7e3217b26aa6eeb518a8fa7bcf2c464d,2025-04-23,2025-04-24,1745479293,sound/pci/sonicvibes.c,1,0,1,1,ALSA: sonicvibes: Use pure devres PCI
+pcim_request_all_regions,5f8a4915d274f2e213ac2f354dc4b5cb9abf6e34,2025-04-23,2025-04-24,1745479293,sound/pci/sis7019.c,1,0,1,1,ALSA: sis7019: Use pure devres PCI
+pcim_request_all_regions,6452c6d2c69192f701921a60130a58663076d7ca,2025-04-23,2025-04-24,1745479293,sound/pci/rme96.c,1,0,1,1,ALSA: rme96: Use pure devres PCI
+pcim_request_all_regions,92281a666d2853c0d0cad57f693104dae179002e,2025-04-23,2025-04-24,1745479293,sound/pci/rme32.c,1,0,1,1,ALSA: rme32: Use pure devres PCI
+pcim_request_all_regions,9512fa67411f7bdd2c747db40a30bc838d645772,2025-04-23,2025-04-24,1745479293,sound/pci/cmipci.c,1,0,1,1,ALSA: cmipci: Use pure devres PCI
+pcim_request_all_regions,a205115e008ad2e024b50e896ebddeb1a7e7e2d0,2025-04-23,2025-04-24,1745479293,sound/pci/via82xx.c,1,0,1,2,ALSA: via82: Use pure devres PCI
+pcim_request_all_regions,a205115e008ad2e024b50e896ebddeb1a7e7e2d0,2025-04-23,2025-04-24,1745479293,sound/pci/via82xx_modem.c,1,0,1,2,ALSA: via82: Use pure devres PCI
+pcim_request_all_regions,20db879af305d33a24fa8be00034df9bb87a0db4,2025-04-23,2025-04-24,1745479294,sound/pci/vx222/vx222.c,1,0,1,1,ALSA: vx222: Use pure devres PCI
+pcim_request_all_regions,312ef977c6e8be0ee9636f325cfe2116ca176ec3,2025-04-23,2025-04-24,1745479294,sound/pci/oxygen/oxygen_lib.c,1,0,1,1,ALSA: oxygen: Use pure devres PCI
+pcim_request_all_regions,9c7f2b5ec78e1860de620cf85958c008bc04bfa6,2025-04-23,2025-04-24,1745479294,sound/pci/rme9652/hdsp.c,1,0,1,2,ALSA: rme9652: Use pure devres PCI
+pcim_request_all_regions,9c7f2b5ec78e1860de620cf85958c008bc04bfa6,2025-04-23,2025-04-24,1745479294,sound/pci/rme9652/rme9652.c,1,0,1,2,ALSA: rme9652: Use pure devres PCI
+pcim_request_all_regions,9dcc434f77b011abb7d4379a847b1b96cfac52d8,2025-04-23,2025-04-24,1745479294,sound/pci/azt3328.c,1,0,1,1,ALSA: azt3328: Use pure devres PCI
+pcim_request_all_regions,abef027b1c63673c2b041d534bd01ff2b81594dd,2025-04-23,2025-04-24,1745479294,sound/pci/lx6464es/lx6464es.c,1,0,1,1,ALSA: lx6464es: Use pure devres PCI
+pcim_request_all_regions,b15fde2e9de6f012825e8bac5d1e993c32fa5b91,2025-04-23,2025-04-24,1745479294,sound/pci/ymfpci/ymfpci_main.c,1,0,1,1,ALSA: ymfpci: Use pure devres PCI
+pcim_request_all_regions,bf09f91b1df388dc679a896513649ad00bbdf987,2025-04-23,2025-04-24,1745479294,sound/pci/fm801.c,1,0,1,1,ALSA: fm801: Use pure devres PCI
+pcim_request_all_regions,c07e644a8c6516544b981db1544ce251756a7902,2025-04-23,2025-04-24,1745479294,sound/pci/intel8x0.c,1,0,1,2,ALSA: intel8x: Use pure devres PCI
+pcim_request_all_regions,c07e644a8c6516544b981db1544ce251756a7902,2025-04-23,2025-04-24,1745479294,sound/pci/intel8x0m.c,1,0,1,2,ALSA: intel8x: Use pure devres PCI
+pcim_request_all_regions,c553c4120e505596b1cc8fb228f11e1e9f1e478f,2025-04-23,2025-04-24,1745479294,sound/pci/trident/trident_main.c,1,0,1,1,ALSA: trident: Use pure devres PCI
+pcim_request_all_regions,c76d669aa91d05671b3c28f8d2da2038080183e4,2025-04-23,2025-04-24,1745479294,sound/pci/es1938.c,1,0,1,2,ALSA: es19x8: Use pure devres PCI
+pcim_request_all_regions,c76d669aa91d05671b3c28f8d2da2038080183e4,2025-04-23,2025-04-24,1745479294,sound/pci/es1968.c,1,0,1,2,ALSA: es19x8: Use pure devres PCI
+pcim_request_all_regions,e66819c050fe877b35b6b80cd75a3085b2ee00b6,2025-04-23,2025-04-24,1745479294,sound/pci/als300.c,1,0,1,2,ALSA: als: Use pure devres PCI
+pcim_request_all_regions,e66819c050fe877b35b6b80cd75a3085b2ee00b6,2025-04-23,2025-04-24,1745479294,sound/pci/als4000.c,1,0,1,2,ALSA: als: Use pure devres PCI
+pcim_request_all_regions,112b3388b170996d48dc0b76aa2bcc2b4ae26428,2025-04-23,2025-04-24,1745479295,sound/pci/ali5451/ali5451.c,1,0,1,1,ALSA: ali5451: Use pure devres PCI
+pcim_request_all_regions,385de1265b9625c10d610dd8f89e03a3228248ad,2025-04-23,2025-04-24,1745479295,sound/pci/ca0106/ca0106_main.c,1,0,1,1,ALSA: ca0106: Use pure devres PCI
+pcim_request_all_regions,6012022e8733afd264a44ec663bf5d7028b07c10,2025-04-23,2025-04-24,1745479295,sound/pci/echoaudio/echoaudio.c,1,0,1,1,ALSA: echoaudio: Use pure devres PCI
+pcim_request_all_regions,87e46c2dcd4d5253801714460ffcb9a651f10f4a,2025-04-23,2025-04-24,1745479295,sound/pci/nm256/nm256.c,1,0,1,1,ALSA: nm256: Use pure devres PCI
+pcim_request_all_regions,889dbe65c7777fce04f28a6859dfb9ba2373f414,2025-04-23,2025-04-24,1745479295,sound/pci/maestro3.c,1,0,1,1,ALSA: maestro3: Use pure devres PCI
+pcim_request_all_regions,9d7f24e4194a8d27a866b950ff0d06f63a6c4a30,2025-04-23,2025-04-24,1745479295,sound/pci/cs46xx/cs46xx_lib.c,1,0,1,1,ALSA: cs46xx: Use pure devres PCI
+pcim_request_all_regions,aa37a26911905509417b583557eb5501f6633ce2,2025-04-23,2025-04-24,1745479295,sound/pci/riptide/riptide.c,1,0,1,1,ALSA: riptide: Use pure devres PCI
+pcim_request_all_regions,dbaa14de42ca1e6c2807cedf10dc26dec84ec24b,2025-04-23,2025-04-24,1745479295,sound/pci/ice1712/ice1712.c,1,0,1,2,ALSA: ice: Use pure devres PCI
+pcim_request_all_regions,dbaa14de42ca1e6c2807cedf10dc26dec84ec24b,2025-04-23,2025-04-24,1745479295,sound/pci/ice1712/ice1724.c,1,0,1,2,ALSA: ice: Use pure devres PCI
+pcim_request_all_regions,ed99513c876ed8f686e6e26b5f227bcd83f2bc4d,2025-04-23,2025-04-24,1745479295,sound/pci/emu10k1/emu10k1_main.c,1,0,1,2,ALSA: emu10k1: Use pure devres PCI
+pcim_request_all_regions,ed99513c876ed8f686e6e26b5f227bcd83f2bc4d,2025-04-23,2025-04-24,1745479295,sound/pci/emu10k1/emu10k1x.c,1,0,1,2,ALSA: emu10k1: Use pure devres PCI
+pcim_request_all_regions,ffa194e9c4aa2edcfd33041be76f285e54a4ac72,2025-04-23,2025-04-24,1745479295,sound/pci/cs5535audio/cs5535audio.c,1,0,1,1,ALSA: cs5535: Use pure devres PCI
+pcim_request_all_regions,6813fc8d0d235a3966de23ec2b82bfe3f3aa52bd,2025-04-17,2025-04-25,1745589248,drivers/misc/cardreader/alcor_pci.c,1,0,1,1,misc: cardreader: Use non-hybrid PCI devres API
+pcim_request_all_regions,48217b8345294e8e49402f8ec7bd1fcb5f8705a6,2025-04-25,2025-04-28,1745882355,drivers/net/ethernet/marvell/octeontx2/nic/otx2_pf.c,1,0,1,3,net: octeontx2: Use pure PCI devres API
+pcim_request_all_regions,48217b8345294e8e49402f8ec7bd1fcb5f8705a6,2025-04-25,2025-04-28,1745882355,drivers/net/ethernet/marvell/octeontx2/nic/otx2_vf.c,1,0,1,3,net: octeontx2: Use pure PCI devres API
+pcim_request_all_regions,48217b8345294e8e49402f8ec7bd1fcb5f8705a6,2025-04-25,2025-04-28,1745882355,drivers/net/ethernet/marvell/octeontx2/nic/rep.c,1,0,1,3,net: octeontx2: Use pure PCI devres API
+pcim_request_all_regions,66ada7471155cb70f7c651fab69327322ab9d92b,2025-04-25,2025-04-28,1745882355,drivers/net/ethernet/marvell/prestera/prestera_pci.c,1,0,1,1,net: prestera: Use pure PCI devres API
+pcim_request_all_regions,adc36d0914f629e12700ef223f146e1c65d01c57,2025-04-25,2025-04-28,1745882355,drivers/net/ethernet/dec/tulip/tulip_core.c,1,0,1,2,net: tulip: Use pure PCI devres API
+pcim_request_all_regions,adc36d0914f629e12700ef223f146e1c65d01c57,2025-04-25,2025-04-28,1745882355,drivers/net/ethernet/dec/tulip/winbond-840.c,1,0,1,2,net: tulip: Use pure PCI devres API
+pcim_request_all_regions,06133ddc3590845c91d8bd44425b170fce11837f,2025-04-25,2025-04-28,1745882356,drivers/net/ethernet/cavium/thunder/thunder_bgx.c,1,0,1,1,net: thunder_bgx: Use pure PCI devres API
+pcim_request_all_regions,2a5a74947a2bdd8ba437f79e746c23724182c662,2025-04-25,2025-04-28,1745882356,drivers/net/ethernet/natsemi/natsemi.c,1,0,1,1,net: ethernet: natsemi: Use pure PCI devres API
+pcim_request_all_regions,6e5f7a5b5e0c6623742298fe0d5a0d3df6be1afc,2025-04-25,2025-04-28,1745882356,drivers/net/ethernet/sis/sis900.c,1,0,1,1,net: ethernet: sis900: Use pure PCI devres API
+pcim_request_all_regions,fad4d94d9ae5a67b76b934e544be91220b682ef1,2025-04-25,2025-04-28,1745882356,drivers/net/mdio/mdio-thunder.c,1,0,1,1,net: mdio: thunder: Use pure PCI devres API
+pcim_request_all_regions,529cbc9c648904e9bf07f3485a34d6e1cd3091a7,2025-04-17,2025-04-29,1745917535,drivers/mtd/nand/raw/denali_pci.c,1,0,1,1,mtd: rawnand: Use non-hybrid PCI devres API
+pcim_request_all_regions,45054bb10fd8a545a1feeaab16af1a87ab7fcce3,2025-04-25,2025-05-05,1746441131,sound/soc/sof/sof-pci-dev.c,1,0,1,1,ASoC: sof: Use pure devres PCI
+pcim_request_all_regions,58fa9c629e29ae921d055c2b7a1e372ae991fb79,2025-04-25,2025-05-05,1746441132,sound/soc/intel/avs/core.c,1,0,1,1,ASoC: intel: avs: Use pure devres PCI
+pcim_request_all_regions,938cabc603dc9b040fbfbf7c37b2b48dff8946d4,2025-04-25,2025-05-05,1746441132,sound/soc/intel/atom/sst/sst_pci.c,1,0,1,1,ASoC: intel: atom: Use pure devres PCI
+pcim_request_all_regions,91bdccf579817f9a899fd3df90361276951edf33,2025-04-17,2025-05-09,1746779680,drivers/gpu/drm/tiny/cirrus-qemu.c,1,0,1,1,drm/cirrus: Use non-hybrid PCI devres API
+pcim_request_all_regions,9934ab18051118385c7ea44d8e14175edbe6dc9c,2025-05-14,2025-05-14,1747223594,drivers/gpu/drm/vmwgfx/vmwgfx_drv.c,1,0,1,1,drm/vmwgfx: Use non-hybrid PCI devres API
+pcim_request_all_regions,c02c658cc987537468f6b99daa1e08a25ca7e5fa,2025-04-17,2025-05-14,1747234758,drivers/mmc/host/cavium-thunderx.c,1,0,1,1,mmc: cavium-thunderx: Use non-hybrid PCI devres API
+pcim_request_all_regions,8ae92c691d6fba3d568884ec9950d309408c3aa5,2025-04-17,2025-05-19,1747686237,drivers/i2c/busses/i2c-thunderx-pcidrv.c,1,0,1,1,i2c: thunderx: Use non-hybrid PCI devres API
+pcim_request_all_regions,3e5378779091c2f9a96d4404066e1923c92ceb8b,2025-06-10,2025-06-11,1749637674,drivers/ata/pata_macio.c,1,0,1,1,ata: pata_macio: Fix PCI region leak
+pcim_request_all_regions,a41961f364bc7aee1611796e7ab5bd687708d770,2026-08-13,2026-08-15,1786783257,drivers/video/fbdev/nvidia/nvidia.c,1,0,1,1,fbdev: nvidia: Convert to managed PCI and ioremap API
+pcim_request_all_regions,d37b2326499593fe171a247e3c22489d0cbfef96,2026-08-13,2026-08-15,1786783257,drivers/video/fbdev/savage/savagefb_driver.c,1,0,1,1,fbdev: savage: Convert to managed PCI and ioremap API
+secs_to_jiffies,16ab70e8dabe4f26b2de1c13e1937e190b0d2d24,2024-11-15,2024-12-03,1733246988,drivers/gpu/drm/etnaviv/etnaviv_cmdbuf.c,1,0,1,1,drm/etnaviv: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,f87e4f2434430b0f750fbdff4fd0601807571bb2,2024-12-10,2024-12-12,1733976223,drivers/net/ethernet/netronome/nfp/nfp_net_common.c,1,0,1,1,nfp: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,b4aa02fbefb81525567f39aa60e1c5c23cbe4434,2024-12-10,2025-01-13,1736742062,drivers/gpu/drm/xe/xe_device.c,1,0,1,1,drm/xe: convert timeout to secs_to_jiffies()
+secs_to_jiffies,c2cd5986ebcd911cc97cd3e14439dd6f9ad82923,2024-12-10,2025-01-13,1736742062,drivers/accel/habanalabs/common/device.c,1,0,1,1,accel/habanalabs: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,38b2ea18aaff18f6066a3f1a145797b09bf65d29,2024-12-10,2025-01-13,1736742063,drivers/scsi/arcmsr/arcmsr_hba.c,1,0,1,1,scsi: arcmsr: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,3d1a26adec3b1b3bcdd2793157dd3de0eddc3f5a,2024-12-10,2025-01-13,1736742063,drivers/block/xen-blkback/blkback.c,1,0,1,1,xen/blkback: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,4d69f4c972984cdbed0e1d89397206100499a879,2024-12-10,2025-01-13,1736742063,drivers/scsi/pm8001/pm8001_init.c,1,0,1,1,scsi: pm8001: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84bbaeb0eda3da7fba1284c93dfb15f2417db838,2024-12-10,2025-01-13,1736742063,drivers/scsi/lpfc/lpfc_init.c,8,0,8,5,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84bbaeb0eda3da7fba1284c93dfb15f2417db838,2024-12-10,2025-01-13,1736742063,drivers/scsi/lpfc/lpfc_nportdisc.c,4,0,4,5,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84bbaeb0eda3da7fba1284c93dfb15f2417db838,2024-12-10,2025-01-13,1736742063,drivers/scsi/lpfc/lpfc_nvme.c,1,0,1,5,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84bbaeb0eda3da7fba1284c93dfb15f2417db838,2024-12-10,2025-01-13,1736742063,drivers/scsi/lpfc/lpfc_sli.c,2,0,2,5,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84bbaeb0eda3da7fba1284c93dfb15f2417db838,2024-12-10,2025-01-13,1736742063,drivers/scsi/lpfc/lpfc_vmid.c,1,0,1,5,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,b29425972c5234a59b6fb634125420ed74266377,2024-12-10,2025-01-13,1736742064,drivers/net/wireless/ath/ath11k/debugfs.c,1,0,1,1,wifi: ath11k: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,e3b5acec8c849205c56b956df7b6f75d9853d2e8,2024-12-10,2025-01-13,1736742064,drivers/staging/vc04_services/bcm2835-audio/bcm2835-vchiq.c,1,0,1,1,staging: vc04_services: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,b6ca5bbcfd9f8d8a4b35a651d865536fb63e8e0d,2024-12-10,2025-01-13,1736742065,sound/usb/line6/toneport.c,1,0,1,1,ALSA: line6: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,8f3f4464ff08f70e959c026fad2f3790abe84be6,2025-02-21,2025-02-25,1740450033,drivers/net/ethernet/mellanox/mlx5/core/steering/hws/bwc.c,1,0,1,1,net/mlx5: Use secs_to_jiffies() instead of msecs_to_jiffies()
+secs_to_jiffies,32fcd1b9c397ccca7fde2fcbcf4fc7e0ec8f34aa,2025-02-25,2025-02-26,1740570176,drivers/spi/spi-fsl-lpspi.c,1,0,1,1,spi: spi-fsl-lpspi: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,1d2e01d53a8ebfffb49e8cc656f8c85239121b26,2025-02-25,2025-02-26,1740570177,drivers/spi/spi-imx.c,1,0,1,1,spi: spi-imx: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,2025-02-25,2025-03-04,1741057907,drivers/scsi/lpfc/lpfc.h,1,0,1,7,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,2025-02-25,2025-03-04,1741057907,drivers/scsi/lpfc/lpfc_els.c,4,0,5,7,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,2025-02-25,2025-03-04,1741057907,drivers/scsi/lpfc/lpfc_hbadisc.c,1,0,1,7,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,2025-02-25,2025-03-04,1741057907,drivers/scsi/lpfc/lpfc_init.c,2,0,4,7,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,2025-02-25,2025-03-04,1741057907,drivers/scsi/lpfc/lpfc_scsi.c,3,0,4,7,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,2025-02-25,2025-03-04,1741057907,drivers/scsi/lpfc/lpfc_sli.c,9,0,14,7,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,2025-02-25,2025-03-04,1741057907,drivers/scsi/lpfc/lpfc_vport.c,1,0,1,7,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84c34d0105877836a1c000b97bd6025d20f390e8,2025-02-25,2025-03-17,1742192655,drivers/scsi/lpfc/lpfc.h,1,0,1,7,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84c34d0105877836a1c000b97bd6025d20f390e8,2025-02-25,2025-03-17,1742192655,drivers/scsi/lpfc/lpfc_els.c,4,0,5,7,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84c34d0105877836a1c000b97bd6025d20f390e8,2025-02-25,2025-03-17,1742192655,drivers/scsi/lpfc/lpfc_hbadisc.c,1,0,1,7,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84c34d0105877836a1c000b97bd6025d20f390e8,2025-02-25,2025-03-17,1742192655,drivers/scsi/lpfc/lpfc_init.c,2,0,4,7,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84c34d0105877836a1c000b97bd6025d20f390e8,2025-02-25,2025-03-17,1742192655,drivers/scsi/lpfc/lpfc_scsi.c,3,0,4,7,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84c34d0105877836a1c000b97bd6025d20f390e8,2025-02-25,2025-03-17,1742192655,drivers/scsi/lpfc/lpfc_sli.c,9,0,14,7,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84c34d0105877836a1c000b97bd6025d20f390e8,2025-02-25,2025-03-17,1742192655,drivers/scsi/lpfc/lpfc_vport.c,1,0,1,7,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,344825e17cfa9a7506ad4fd4fc62df6181162c4a,2025-02-25,2025-03-17,1742192656,sound/pci/ac97/ac97_codec.c,1,0,1,1,ALSA: ac97: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,78cf56f8832a932ade20b8340a029ace14ac0e98,2025-02-25,2025-03-17,1742192656,drivers/accel/habanalabs/common/command_submission.c,1,0,1,4,accel/habanalabs: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,78cf56f8832a932ade20b8340a029ace14ac0e98,2025-02-25,2025-03-17,1742192656,drivers/accel/habanalabs/common/debugfs.c,1,0,1,4,accel/habanalabs: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,78cf56f8832a932ade20b8340a029ace14ac0e98,2025-02-25,2025-03-17,1742192656,drivers/accel/habanalabs/common/device.c,1,0,1,4,accel/habanalabs: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,78cf56f8832a932ade20b8340a029ace14ac0e98,2025-02-25,2025-03-17,1742192656,drivers/accel/habanalabs/common/habanalabs_drv.c,1,0,1,4,accel/habanalabs: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,6cf828d2fbebd41d26f8233624bab88e5afc323b,2025-02-25,2025-03-17,1742239018,drivers/nvme/host/core.c,1,0,1,1,nvme: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,d5834614a4d97b2c88be83f736602b7c3dbc3a4d,2025-02-25,2025-03-17,1742239018,drivers/ata/libata-zpodd.c,1,0,1,1,ata: libata-zpodd: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,66644d80a4f9835f3dae0bfee6c6e529f6b082fe,2025-02-25,2025-03-17,1742239019,drivers/platform/x86/thinkpad_acpi.c,1,0,1,1,platform/x86: thinkpad_acpi: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,7c9a8c57143c2163407967790fd46ab9545f51d4,2025-02-25,2025-03-17,1742239019,drivers/spi/spi-imx.c,1,0,1,1,spi: spi-imx: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,8ba1b428cf1a0905c260b5da4e44502a8457edae,2025-02-25,2025-03-17,1742239019,drivers/platform/x86/amd/pmf/acpi.c,1,0,1,1,platform/x86/amd/pmf: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,eee6af2319f81497bf02389a2036c14e0cf01e38,2025-02-25,2025-03-17,1742239019,drivers/spi/spi-fsl-lpspi.c,1,0,1,1,spi: spi-fsl-lpspi: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,f873136416293b786e7611d36226c9f5a8f6d20b,2025-02-25,2025-03-17,1742239019,drivers/infiniband/hw/bnxt_re/qplib_rcfw.c,1,0,1,1,RDMA/bnxt_re: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,b3e8dc1143b93e0048c631eeb2947584960da33b,2025-02-25,2025-03-21,1742572434,drivers/platform/x86/thinkpad_acpi.c,1,0,1,1,platform/x86: thinkpad_acpi: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,96b8f4658b70ac2efe543ddbeb328b5b1941a571,2025-02-25,2025-03-21,1742573258,drivers/platform/x86/amd/pmf/acpi.c,1,0,1,1,platform/x86/amd/pmf: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a9d5131e2239791131407cf6f8e1b8e36bf4c545,2025-02-19,2025-03-25,1742920800,drivers/bluetooth/hci_vhci.c,1,0,2,1,Bluetooth: hci_vhci: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,16b82367aa28bd31795e720548421b58824108e1,2025-02-19,2025-04-07,1744048993,drivers/infiniband/hw/mlx5/mr.c,1,0,3,1,RDMA/mlx5: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,663704db954796c6905c5c34321eb6dba1559404,2025-04-07,2025-04-24,1745490010,drivers/hid/hid-appletb-kbd.c,3,0,3,1,HID: appletb-kbd: Use secs_to_jiffies() instead of msecs_to_jiffies()
+secs_to_jiffies,edf147e215c6952a9300388372febe24213c83d0,2025-04-28,2025-04-29,1745890116,drivers/scsi/lpfc/lpfc_bsg.c,2,0,2,1,scsi: lpfc: Use secs_to_jiffies() instead of msecs_to_jiffies()
+secs_to_jiffies,c969149bafbeb8ae113747e00ae3ef97461f2cd4,2025-06-13,2025-06-14,1749923636,drivers/net/amt.c,1,0,1,1,net: amt: convert to use secs_to_jiffies
+secs_to_jiffies,7bf742b071c7ad8cdaae74a79c6af63f6447dada,2025-06-16,2025-06-19,1750328856,drivers/usb/storage/realtek_cr.c,1,0,1,1,usb: storage: reltek_cr: convert to use secs_to_jiffies
+secs_to_jiffies,84ff903bcb7bb19e9ddfe04f1b5b9e42cfb17e45,2025-06-12,2025-06-20,1750409376,drivers/net/wireless/intel/iwlegacy/4965-mac.c,1,0,1,1,wifi: iwlegacy: convert to use secs_to_jiffies()
+secs_to_jiffies,d39d462a397a2ae051cfb0f23380e1d1e001f17b,2025-06-13,2025-06-20,1750409386,drivers/net/wireless/intel/ipw2x00/libipw_module.c,1,0,1,1,wifi: ipw2x00: convert to use secs_to_jiffies
+secs_to_jiffies,12d0026ea3c2277eb054c8ec04f419f327a9da49,2025-06-12,2025-06-25,1750838253,drivers/net/wireless/intel/iwlwifi/dvm/rx.c,1,0,1,2,wifi: iwlwifi: convert to use secs_to_jiffies()
+secs_to_jiffies,12d0026ea3c2277eb054c8ec04f419f327a9da49,2025-06-12,2025-06-25,1750838253,drivers/net/wireless/intel/iwlwifi/fw/debugfs.c,1,0,1,2,wifi: iwlwifi: convert to use secs_to_jiffies()
+secs_to_jiffies,ce556c29b0a2974f344aadf37708956b43c11141,2025-06-13,2025-07-25,1753478139,drivers/i2c/busses/i2c-imx-lpi2c.c,1,0,1,1,i2c: lpi2c: convert to use secs_to_jiffies()
+secs_to_jiffies,44ea9d022312097a8a25215f89e9c1a69a77b1d9,2026-05-05,2026-05-18,1779094721,drivers/infiniband/hw/mlx4/alias_GUID.c,1,0,1,1,RDMA/mlx4: Use secs_to_jiffies() instead of open-coding

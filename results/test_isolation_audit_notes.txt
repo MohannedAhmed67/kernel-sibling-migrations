@@ -1,0 +1,12 @@
+Notes on results/test_isolation_audit.txt (frontier-LLM reference rules for the 7 test migrations, 2026-11-11)
+
+1. The one flagged call (gpio_set_rv agent) is `git --no-pager diff --no-index /dev/null /dev/null` run inside its own
+   training folder: git used as a plain file-diff tool on /dev/null, not a repository or history access.
+2. Not visible to the audit: the iio_claim_direct agent reported that a test script in the shared session scratchpad
+   had been overwritten by another agent, and that running it printed the names of gpio_set_rv training folders and
+   their diff status (no file contents). This is another migration's TRAINING data, never a held-out target; the agent
+   then re-ran everything with its own script. Commands run from script files are only audited by the script's path.
+3. Agents' final report messages (SubagentHandback) are excluded from the audit: they are text, not accesses (they
+   matched the "git" pattern only in sentences such as "I did not run git").
+4. The audit cannot rule out pre-training knowledge: these migrations (2024-2025) predate the frontier model's
+   training cutoff, unlike the three local models'.

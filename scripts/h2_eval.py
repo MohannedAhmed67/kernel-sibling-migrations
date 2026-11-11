@@ -28,7 +28,8 @@ LINUX = os.environ.get("LINUX", "/linux/linux")
 SOURCES = [s for s in os.environ.get("H2_SOURCES", "manual,spinfer").split(",") if os.path.isdir(f"rules/{s}")]
 OUT = os.environ.get("H2_OUT", "h2")
 JOBS = int(os.environ.get("H2_JOBS", "4"))
-MIGS = {m["id"]: m for m in json.load(open("data/migrations.json"))["migrations"]}
+MIGS = {m["id"]: m for m in [m for f in ("data/migrations.json", "data/test/migrations.json") if os.path.exists(f) for m in json.load(open(f))["migrations"]]}  # dev + test
+SPLIT = os.environ.get("H2_SPLIT", "data/h2_split.csv")
 
 
 def sh(cmd, cwd=None, timeout=1800):
@@ -80,7 +81,7 @@ def build(wt, bdir, rel, content, log_path):
 
 
 def run_migration(mig):
-    targets = [r for r in csv.DictReader(open("data/h2_split.csv")) if r["migration"] == mig and r["role"] == "target"]
+    targets = [r for r in csv.DictReader(open(SPLIT)) if r["migration"] == mig and r["role"] == "target"]
     wt, bdir = f"/linux/wt/{mig}", f"/linux/build/{mig}"
     if not os.path.isdir(wt):
         sh(["git", "-C", LINUX, "-c", "gc.auto=0", "worktree", "add", "-q", "--detach", wt, "HEAD"])
@@ -147,7 +148,7 @@ def run_migration(mig):
 
 
 def main():
-    migs = sys.argv[1:] or sorted({r["migration"] for r in csv.DictReader(open("data/h2_split.csv"))})
+    migs = sys.argv[1:] or sorted({r["migration"] for r in csv.DictReader(open(SPLIT))})
     with Pool(len(migs)) as p:
         allrows = [r for rows in p.map(run_migration, migs) for r in rows]
     fields = ["migration", "idx", "commit", "file", "commit_date", "source", "auto_class", "build_original", "build_human",

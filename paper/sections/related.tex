@@ -1,0 +1,33 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Collateral evolutions and semantic patches.} Padioleau et al.\ named the driver changes forced by kernel
+API changes \emph{collateral evolutions}~\cite{padioleau2006understanding} and introduced Coccinelle and its
+semantic patch language SmPL to perform them~\cite{padioleau2008documenting}. Such rules are usually written by
+experts. Our training data are earlier hand conversions of the same migration (\emph{sibling migrations}).
+
+\paragraph{Inferring rules from examples.} spdiff infers a generic patch from a few before/after file
+pairs~\cite{andersen2008generic}. Spinfer~\cite{serrano2020spinfer} infers Coccinelle rules from example changes and
+already evaluates chronologically, learning from the first changed files and testing on later ones; its evaluation
+compares inferred rules with expert patches rather than compiling the outputs, and in our runs it inferred no rule
+for migrations whose change lies in a struct initialiser outside any function (``no code to learn from'').
+Prequel retrieves relevant porting commits from history~\cite{lawall2017prequel}, and FixMorph synthesises a
+transformation from one patch for backporting~\cite{shariffdeen2021fixmorph}.
+
+\paragraph{LLMs and semantic patches.} Yusuf et al.\ compare Spinfer with GPT-4, Claude~3.7 Sonnet and DeepSeek-V3
+prompted to write SmPL from change examples~\cite{yusuf2025howfar}. They find that the LLMs produce valid patches
+from few examples but struggle with syntax, that Spinfer produces overly specific patches, and that both perform
+poorly on change examples with several variants; among their future directions they list refining abstraction
+``based on feedback from patch application results''. We build exactly such a feedback loop, add decomposition by
+variant and a compile critic, use 4--8B models that run on a laptop instead of frontier APIs, and evaluate on a
+pre-registered test set whose APIs postdate the models.
+
+\paragraph{LLMs for kernel evolution.} AutoDriver (DRIVEBENCH)~\cite{kharlamova2025autodriver} updates drivers with
+an LLM multi-agent loop checked by compilation and QEMU, without retrieving earlier conversions; MigGPT~\cite{dang2025miggpt}
+and PortGPT~\cite{li2026portgpt} migrate or backport out-of-tree patches with LLMs. These systems edit code directly; we
+generate a reusable, reviewable rule that kernel maintainers already know how to read and apply tree-wide.
+
+\paragraph{Decomposition and critics for code generation.} Our framework adapts guided code generation
+(GCG)~\cite{almorsi2025gcg}, which decomposes a task into a tree, generates bottom-up with tests and adds critic
+agents, and which improved Llama~3.1 8B on HumanEval. GCG reported no ablations or variance; here each component
+is ablated over three seeds and three models.

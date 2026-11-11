@@ -31,3 +31,13 @@ abstracts or PDFs. **This list decides how we may (and may not) describe our con
 
 Framing: *"retrieval of sibling migrations as context for LLM driver co-evolution, with rule-based (Coccinelle) application
 validated by compilation"*. This builds on Spinfer/Prequel and plugs into AUTODRIVER's stated future work.
+
+## Added 2026-11-11 (before writing the preprint)
+
+| Work | What it does | Overlap with us |
+|---|---|---|
+| Yusuf, Huang, Lawall, Jiang, Lo, Bui, Li, Wu, Yu. *Deep Learning-Based Automatic Semantic Patch Generation for the Linux Kernel: How Far Are We?* Manuscript (author copy at imamnurby.github.io/assets/files/spatch_emse.pdf; data: github.com/imamnurby/SMPL-How-Far-Are-We; venue not confirmed) | Compares Spinfer with GPT-4 (gpt-4-2024-11-20), Claude-3-7-sonnet-20250219 and DeepSeek-V3 generating SmPL from change examples, on reproducing the examples and on unseen code. Abstract: "Deep learning models generate valid semantic patches with minimal examples but struggle with syntax correctness, while Spinfer ensures syntactic validity but creates overly specific patches"; "both approaches perform poorly on diverse change examples with multiple variants". Proposes as future work "methods for automatically refining abstraction based on feedback from patch application results". | **LLMs writing Coccinelle rules is not new.** Differences we may claim: small local models (7-8B, 4B) instead of frontier APIs; a decomposition + feedback + repair framework rather than one-shot prompting; chronological sibling split; compile validation; a contamination-free post-cutoff test set. |
+| Almorsi, Ahmed, Gomaa. *Guided Code Generation with LLMs: A Multi-Agent Framework for Complex Code Tasks.* arXiv:2501.06625 | Hierarchical decomposition, bottom-up generation, critic/testing agents; Llama 3.1 8B int4 on HumanEval. | Our framework adapts this design to semantic-patch generation (author's own prior work). |
+| Lin, Mukherjee, Rawat, Zhang, Fonseca. *Learning From Developers: Towards Reliable Patch Validation at Scale for Linux.* arXiv:2603.24825 (2026) | FLINT: patch validation from past developer review discussions plus an LLM. | Kernel + LLM, but patch review, not rule generation. Not essential to cite. |
+
+Revised "must not claim": that LLM generation of SmPL / Coccinelle rules is new (Yusuf et al.).

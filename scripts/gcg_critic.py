@@ -40,8 +40,8 @@ def sh(cmd, cwd=None, timeout=1800):
 class Builder:
     """One worktree + build directory per migration; reconfigured only when the training commit changes."""
 
-    def __init__(self, mig):
-        self.wt, self.bdir, self.at = f"/linux/wt/critic_{mig}", f"/linux/build/critic_{mig}", None
+    def __init__(self, mig, tag="critic"):
+        self.wt, self.bdir, self.at = f"/linux/wt/{tag}_{mig}", f"/linux/build/{tag}_{mig}", None
         if not os.path.isdir(self.wt):
             sh(["git", "-C", LINUX, "-c", "gc.auto=0", "worktree", "add", "-q", "--detach", self.wt, "HEAD"])
 

@@ -1,0 +1,57 @@
+migration,commit,file,commit_date,subject
+secs_to_jiffies,16ab70e8dabe4f26b2de1c13e1937e190b0d2d24,drivers/gpu/drm/etnaviv/etnaviv_cmdbuf.c,2024-12-03,drm/etnaviv: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,84bbaeb0eda3da7fba1284c93dfb15f2417db838,drivers/scsi/lpfc/lpfc_nvme.c,2025-01-13,scsi: lpfc: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,32fcd1b9c397ccca7fde2fcbcf4fc7e0ec8f34aa,drivers/spi/spi-fsl-lpspi.c,2025-02-26,spi: spi-fsl-lpspi: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,a131f20804d6a817140c1b78fb2a23696a1e2098,drivers/scsi/lpfc/lpfc_vport.c,2025-03-04,scsi: lpfc: Convert timeouts to secs_to_jiffies()
+secs_to_jiffies,78cf56f8832a932ade20b8340a029ace14ac0e98,drivers/accel/habanalabs/common/debugfs.c,2025-03-17,accel/habanalabs: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,66644d80a4f9835f3dae0bfee6c6e529f6b082fe,drivers/platform/x86/thinkpad_acpi.c,2025-03-17,platform/x86: thinkpad_acpi: convert timeouts to secs_to_jiffies()
+secs_to_jiffies,edf147e215c6952a9300388372febe24213c83d0,drivers/scsi/lpfc/lpfc_bsg.c,2025-04-29,scsi: lpfc: Use secs_to_jiffies() instead of msecs_to_jiffies()
+secs_to_jiffies,44ea9d022312097a8a25215f89e9c1a69a77b1d9,drivers/infiniband/hw/mlx4/alias_GUID.c,2026-05-18,RDMA/mlx4: Use secs_to_jiffies() instead of open-coding
+iio_claim_direct,403f0f9b3609b88fa2beb774893867a238f51a64,drivers/iio/chemical/scd30_core.c,2025-02-17,iio: chemical: scd30: Switch to sparse friendly claim/release_direct()
+iio_claim_direct,4758f987d3a1b0e7f7b559fb864db02ae2474231,drivers/iio/adc/ad7192.c,2025-03-04,iio: adc: ad7192: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,1a21a9842e3b2e923c69cdccb3260a6d6b2494da,drivers/iio/adc/ad7887.c,2025-03-04,iio: adc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e6d364b4086226964fe9e67632e1ba5c27406171,drivers/iio/adc/mxs-lradc-adc.c,2025-04-22,iio: adc: mxs-lradc: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,e0dc0feb991b07df6b4b80d5fd417a3967b8ebb7,drivers/iio/light/rpr0521.c,2025-04-22,iio: light: rpr0521: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,fcc065fdf52fc8da44b17125449838118a4aeeff,drivers/iio/gyro/adxrs290.c,2025-04-22,iio: gyro: adxrs290: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,587895606e1193cecc16adc650d7d20b719fa86c,drivers/iio/magnetometer/mag3110.c,2025-04-22,iio: magnetometer: mag3110: Switch to sparse friendly iio_device_claim/release_direct()
+iio_claim_direct,692760702f80abb227cb6cd1f961cf13a4088b4c,drivers/staging/iio/impedance-analyzer/ad5933.c,2025-04-22,staging: iio: ad5933: Switch to sparse friendly iio_device_claim/release_direct()
+iio_push_with_ts,edfafbd82f1d416ff4710b93d9fb38e742751685,drivers/iio/accel/adxl355_core.c,2025-05-21,iio: accel: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,drivers/iio/adc/ad4000.c,2025-05-21,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,drivers/iio/adc/mcp3911.c,2025-05-21,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,c65d3f3f938600345146df9f5cac7681c9f1b15e,drivers/iio/adc/ti-lmp92064.c,2025-05-21,iio: adc: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,fc11c42dd13710342c05008a0bccf426247cb101,drivers/iio/proximity/mb1232.c,2025-05-21,iio: proximity: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,f4cd499970cc9a0ade52132075d4faabf5ef77f5,drivers/iio/magnetometer/hmc5843_core.c,2025-05-21,iio: magnetometer: Use iio_push_to_buffers_with_ts() to provide length for runtime checks.
+iio_push_with_ts,66c556aa8358cd71979da9738a810e6074918daa,drivers/iio/light/tcs3472.c,2025-08-16,iio: light: tcs3472: Use iio_push_to_buffers_with_ts() to allow source size runtime check
+iio_push_with_ts,8e9443b8fcf658ada1488acb3074b224f2a420d0,drivers/iio/gyro/itg3200_buffer.c,2026-08-30,iio: gyro: itg3200: use iio_push_to_buffers_with_ts()
+gpio_set_rv,f01436c2a038fe8d7b69a5fe701ab98028ce5cc4,drivers/gpio/gpio-davinci.c,2025-02-26,gpio: davinci: use value returning setters
+gpio_set_rv,cf16c640143161ed5d4b196e38b7aa3fc7787510,sound/soc/soc-ac97.c,2025-04-13,ASoC: soc-ac97: use new GPIO line value setter callbacks
+gpio_set_rv,cd5a048c1a175b52ff890514652f8aeb648bdedd,drivers/pinctrl/qcom/pinctrl-ssbi-gpio.c,2025-04-17,pinctrl: qcom: ssbi-gpio: use new GPIO line value setter callbacks
+gpio_set_rv,722332f58aa82b92c857b053426dd46e09988e38,drivers/gpio/gpio-ljca.c,2025-04-30,gpio: ljca: use new line value setter callbacks
+gpio_set_rv,c5eab2dfdb671383f685627fac156c1a245e5474,drivers/pinctrl/renesas/pinctrl-rza1.c,2025-06-13,pinctrl: renesas: rza1: Use new GPIO line value setter callbacks
+gpio_set_rv,9da895e97057ad946b2e727694af3fa5ee51d527,drivers/platform/cznic/turris-omnia-mcu-gpio.c,2025-06-19,platform: cznic: use new GPIO line value setter callbacks
+gpio_set_rv,8a81d128e1377a7662d0913bc5013eb8a90c3e33,drivers/gpio/gpio-tegra.c,2025-07-07,gpio: tegra: use new GPIO line value setter callbacks
+gpio_set_rv,83d92eae8d44e320a414b76fcba8186fa739f3e8,drivers/pinctrl/pinctrl-rp1.c,2025-07-21,pinctrl: rp1: use new GPIO line value setter callbacks
+pcim_request_all_regions,23812bbd7d5fe27b6b2e0fe5a8ba4c6f37f26671,drivers/spi/spi-cavium-thunderx.c,2025-04-17,spi: spi-cavium-thunderx: Use non-hybrid PCI devres API
+pcim_request_all_regions,a205115e008ad2e024b50e896ebddeb1a7e7e2d0,sound/pci/via82xx.c,2025-04-24,ALSA: via82: Use pure devres PCI
+pcim_request_all_regions,c07e644a8c6516544b981db1544ce251756a7902,sound/pci/intel8x0m.c,2025-04-24,ALSA: intel8x: Use pure devres PCI
+pcim_request_all_regions,112b3388b170996d48dc0b76aa2bcc2b4ae26428,sound/pci/ali5451/ali5451.c,2025-04-24,ALSA: ali5451: Use pure devres PCI
+pcim_request_all_regions,dbaa14de42ca1e6c2807cedf10dc26dec84ec24b,sound/pci/ice1712/ice1724.c,2025-04-24,ALSA: ice: Use pure devres PCI
+pcim_request_all_regions,48217b8345294e8e49402f8ec7bd1fcb5f8705a6,drivers/net/ethernet/marvell/octeontx2/nic/otx2_vf.c,2025-04-28,net: octeontx2: Use pure PCI devres API
+pcim_request_all_regions,938cabc603dc9b040fbfbf7c37b2b48dff8946d4,sound/soc/intel/atom/sst/sst_pci.c,2025-05-05,ASoC: intel: atom: Use pure devres PCI
+pcim_request_all_regions,d37b2326499593fe171a247e3c22489d0cbfef96,drivers/video/fbdev/savage/savagefb_driver.c,2026-08-15,fbdev: savage: Convert to managed PCI and ioremap API
+ethtool_rx_ring_count,483446690a625c325149c6d14283b9782aaefffe,drivers/net/virtio_net.c,2025-09-18,net: virtio_net: add get_rxrings ethtool callback for RX ring queries
+ethtool_rx_ring_count,672cb5c2a9584802ad43d61209d5e24cccee823d,drivers/net/vmxnet3/vmxnet3_ethtool.c,2025-11-20,net: vmxnet3: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,873a1942fbc622694ef21b43eb567bdcd163ab86,drivers/net/ethernet/intel/idpf/idpf_ethtool.c,2025-11-27,idpf: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,335d78c6161b18e95f72404ee3e210e64b5f5adc,drivers/net/ethernet/broadcom/genet/bcmgenet.c,2025-11-29,net: bcmgenet: extract GRXRINGS from .get_rxnfc
+ethtool_rx_ring_count,623b213825fdee1a3047774593f2fa2435947756,drivers/net/ethernet/marvell/octeontx2/nic/otx2_ethtool.c,2026-01-10,net: octeontx2: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,efa375c44090faf214d351a873cc90b7903080b2,drivers/net/ethernet/engleder/tsnep_ethtool.c,2026-01-18,net: tsnep: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,c4279332f479a811e4c3c413eb4cd71bc8463288,drivers/net/ethernet/wangxun/txgbe/txgbe_ethtool.c,2026-01-18,net: txgbe: convert to use .get_rx_ring_count
+ethtool_rx_ring_count,f584347c1a2ba44ba589688100de7b482f04d00f,drivers/net/ethernet/sfc/falcon/ethtool.c,2026-01-23,net: sfc: falcon: convert to use .get_rx_ring_count
+devm_kmemdup_array,a0d78eec88395e67117a3453f55a4fc3c7265cf2,drivers/iio/adc/xilinx-xadc-core.c,2025-02-24,iio: adc: xilinx-xadc-core: use devm_kmemdup_array()
+devm_kmemdup_array,d795fb90d6c63ef3182b49c766a6fef75b4f790d,drivers/pinctrl/intel/pinctrl-cherryview.c,2025-02-24,pinctrl: cherryview: use devm_kmemdup_array()
+devm_kmemdup_array,76d5fb0e58d8e30e9a10d3259b64ffc6bac89029,drivers/power/supply/sc27xx_fuel_gauge.c,2025-02-25,power: supply: sc27xx: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,sound/soc/intel/avs/boards/nau8825.c,2025-02-28,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,0bd862846e7f89910252cbef8718a757950f1683,sound/soc/intel/avs/boards/rt5663.c,2025-02-28,ASoC: Intel: avs: use devm_kmemdup_array()
+devm_kmemdup_array,69aaab0e65e9bd7601740c1e14cc6de86dafb621,sound/soc/codecs/tlv320dac33.c,2025-02-28,ASoC: tlv320dac33: use devm_kmemdup_array()
+devm_kmemdup_array,c5c4ce6612bb25ce6d6936d8ade96fcba635da54,drivers/regulator/cros-ec-regulator.c,2025-02-28,regulator: cros-ec: use devm_kmemdup_array()
+devm_kmemdup_array,fcac0f23d4d20b11014a39f8e2527cdc12ec9c82,drivers/net/wireless/realtek/rtw88/main.c,2025-12-26,wifi: rtw88: Fix inadvertent sharing of struct ieee80211_supported_band data

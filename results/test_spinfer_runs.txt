@@ -1,0 +1,7 @@
+devm_kmemdup_array rc=0 seconds=8 rule
+gpio_set_rv rc=0 seconds=8 rule
+ethtool_rx_ring_count rc=2 seconds=15 no_rule
+iio_push_with_ts rc=0 seconds=18 rule
+secs_to_jiffies rc=2 seconds=21 no_rule
+iio_claim_direct rc=0 seconds=23 rule
+pcim_request_all_regions rc=0 seconds=29 rule

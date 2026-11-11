@@ -1,0 +1,65 @@
+\section{Guided Semantic-Patch Generation}
+\label{sec:method}
+
+The input is a migration $M$ (its id and the old/new API line patterns used to mine it) and its training siblings:
+pairs $(b_i, a_i)$ of one driver file before and after its hand conversion, all committed before any target was
+written. The output is one Coccinelle semantic patch for $M$, or an explicit abstention. No step reads a held-out
+target. The design follows guided code generation (GCG)~\cite{almorsi2025gcg}: decompose the task into a tree,
+generate the leaves bottom-up with tests, and let a critic check the assembled result. Here the ``tests'' are the
+training siblings themselves, and the critic is the C compiler. Figure~\ref{fig:pipeline} shows the four stages.
+
+\paragraph{Units and change hunks.} Both versions of a file are split into statement-level units (cut at
+\texttt{;}, \texttt{\{}, \texttt{\}} and comment ends; preprocessor lines are units of their own) and normalised for
+whitespace. A hunk is a maximal run of removed and added units. All scoring below counts units: a rule's output
+$o_i$ on $b_i$ \emph{hits} an expected unit if the unit change also appears between $b_i$ and $o_i$, and makes an
+\emph{extra} edit for every unit change between $b_i$ and $o_i$ that the human did not make between $b_i$ and $a_i$.
+
+\subsection{Stage 1: variant tree (decomposition)}
+Every hunk of every training sibling becomes a leaf candidate. Hunks that touch a migration API name (the first
+identifier of a match of the old or new pattern) are \emph{anchor} hunks and are grouped by the API names they
+contain; the remaining hunks are \emph{companion} hunks (for example, a function's return type that changes because
+the API it is registered with changed) and are grouped by their C keywords and by identifiers that recur in at least
+two training files. Each group is a leaf. Within a leaf, hunks are abstracted to a \emph{shape}: identifiers become
+\texttt{ID1}, \texttt{ID2},~\ldots, numbers \texttt{NUM} and strings \texttt{STR}; the \emph{minimal edit} is the
+hunk with its common prefix and suffix tokens removed. A leaf is a \emph{task} if it is an anchor leaf or occurs in
+at least two training files; companion leaves seen in one file only are treated as possibly unrelated edits.
+
+\subsection{Stage 2: leaf rules with test feedback}
+For each task leaf, the model receives a short SmPL primer (a toy \texttt{kmalloc}+\texttt{memset}~$\to$
+\texttt{kzalloc} rule and syntax notes, unrelated to any studied migration) and a task prompt with one example per
+distinct minimal-edit shape: the enclosing function or struct header (\emph{inside}), the preceding context, the
+minimal edit and its abstract pattern. Anchor leaves are generated first. A companion leaf gets an
+\emph{interface}: the framework takes the passing rule of the anchor leaf that shares most training files with it,
+names its first rule, and writes the header of a dependent rule that inherits all its metavariables; the model only
+writes the body. This is GCG's ``a parent sees only its children's interfaces'', inverted for rules that must run
+after their anchor.
+
+Each answer goes through four deterministic steps before \texttt{spatch} runs:
+(i) \emph{auto-repair} of mechanical SmPL errors (missing or trailing \texttt{@@}, metavariables used as fields or
+callees declared as \texttt{identifier}, undeclared \texttt{ID}/\texttt{NUM}/\texttt{STR} placeholders);
+(ii) the \emph{generality critic}: a name that the rule matches literally, that the change keeps (it appears on
+context lines or on both a removed and an added line), that is not called as a function, and that occurs in only
+one training file is driver-specific and is turned into a metavariable;
+(iii) a \emph{lint} for rules without \texttt{-}/\texttt{+} lines, comments used in place of code, and unbalanced
+brackets; (iv) application to every training file of the leaf. If the rule fails to parse, misses an expected
+unit, or makes an extra edit, the model gets feedback for up to $R=3$ rounds: \texttt{spatch}'s error with a
+matching generic repair hint, or, per failing file, the missed units with their abstract pattern and the extra edits.
+A rule identical to an earlier one raises the sampling temperature by 0.3 for the next round. The best round is
+kept (parses, then most hits, then fewest extra edits, then earliest).
+
+\subsection{Stage 3: composition}
+Leaf rules are renamed so that rule names cannot collide (a companion rule carries its anchor rule with it) and
+composed greedily: candidates are tried in decreasing order of their own hits minus extra edits, and a candidate is
+kept only if the composed patch still parses and its score over \emph{all} training files of the migration
+strictly increases. Expected units are those of all task leaves, so a leaf that also helps another leaf is
+rewarded and a leaf whose edits clash with another is dropped.
+
+\subsection{Stage 4: compile critic}
+The composed rule is applied to the most recent training files it changes (up to three whose human version
+compiles), and each output is compiled in a worktree at that training commit's parent (x86\_64
+\texttt{allmodconfig}, \texttt{CONFIG\_WERROR} off). If an output does not compile, the model gets the compiler
+errors, the converted code around them, and the diff between its output and the human version of that training
+file, and writes one additional dependent rule through the same interface mechanism (two rounds). Among the rules
+whose checked outputs compile (the composed rule, the repaired rules, and the composed rule minus one leaf), the
+one with the best training score is kept; if none compiles, the framework \emph{abstains}. A migration without a
+rule is counted as a failure on every target, never silently dropped.

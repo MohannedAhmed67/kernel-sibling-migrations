@@ -1,0 +1,15 @@
+migration,new_api_status,new_api_commit,new_api_date
+hrtimer_setup,introduced in window,908a1d775422,2024-11-07
+secs_to_jiffies,introduced in window,b35108a51cf7,2024-10-30
+iio_claim_direct,introduced in window,d795e38df4b7,2025-02-17
+iio_push_with_ts,introduced in window,8f08055bc67a,2025-05-21
+gpio_set_rv,introduced in window,98ce1eb1fd87,2025-02-26
+timer_container_of,introduced in window,41cb08555c41,2025-06-08
+devm_mmc_alloc_host,present at v6.10,,
+devm_platform_profile,introduced in window,b651ea8a44aa,2024-12-29
+pcim_request_all_regions,introduced in window,d9d959c36bec,2024-10-30
+snd_soc_component_to_dapm,introduced in window,a1c99b6097af,2025-09-18
+ethtool_rx_ring_count,introduced in window,84eaf4359c36,2025-09-18
+aligned_s64,introduced in window,e4ca0e59c394,2024-09-30
+devm_kmemdup_array,introduced in window,a103b833ac38,2025-02-24
+irq_domain_create,present at v6.10,,

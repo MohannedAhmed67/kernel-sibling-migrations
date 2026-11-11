@@ -1,0 +1,51 @@
+\section{Experimental Setup}
+\label{sec:setup}
+
+\paragraph{Migrations and split.} A \emph{conversion} is a (commit, file) pair whose diff removes a line matching the
+migration's old-API pattern and adds a line matching its new-API pattern. Per migration, the earliest 30\% of
+\texttt{.c} conversions by commit time (at most 20, one per file) are the training siblings. Targets are conversions
+\emph{written} (author time) after the last training commit was committed, in a file and a commit that are not
+training ones; up to 20 are sampled evenly over time. Every training sibling is therefore in a different file and
+existed before the target was written.
+
+\paragraph{Development set.} Five migrations from Linux v5.10--v6.10 (Table~\ref{tab:data}): \texttt{ida\_simple},
+\texttt{i2c\_probe\_new}, \texttt{platform\_remove\_new}, \texttt{strlcpy\_strscpy} and \texttt{pci\_dma\_wrappers},
+100 targets. All prompts, hints, thresholds and critic rules were designed on their training siblings, and their
+held-out targets were evaluated during development, so results on them are development results.
+
+\paragraph{Test set (pre-registered).} Before mining any history after v6.10, we fixed 14 candidate migrations whose
+new API we expected to be recent, and an inclusion rule (committed to the repository before the mined data existed):
+(1) the new API is absent from \texttt{include/} at v6.10 and first appears on or after 2024-09-01, after the
+training cutoff of all three models; (2) at least three conversion commits; (3) verified precision of at least 0.85
+on up to eight sampled candidates, each judged by two independent LLM reviewers against the real diff; (4) at least
+five training siblings and ten eligible targets after the split. Seven migrations qualified
+(Table~\ref{tab:data}); three of the excluded ones fail rule~4 because almost all of their conversions were
+\emph{written} before the last training commit (a patch series posted at once and merged over months). The test set
+was run once, with the framework frozen at a git tag.
+
+\paragraph{Models.} Three open-weight models run locally with Ollama on one 8\,GB laptop GPU (RTX~5060, 4-bit
+quantisation): Qwen2.5-Coder 7B (code data from repositories created before February 2024), Llama~3.1 8B
+(knowledge cutoff December 2023) and Gemma~3 4B (August 2024). Context 8{,}192 tokens, temperature 0.4, at most
+1{,}024 output tokens, seeds 1--3.
+
+\paragraph{Baselines.} \emph{Spinfer}~\cite{serrano2020spinfer} (commit \texttt{c47696a}, default settings) on the
+same training pairs. \emph{Frontier LLM}: a Claude agent (Anthropic) whose file access was limited to the
+migration's training folder writes one rule per migration and may test it with \texttt{spatch} on the training files;
+a transcript audit checks that it read nothing else. Unlike the local models, this agent's training data may contain
+the test migrations, so it is an upper reference, not a fair competitor.
+
+\paragraph{Ablations.} Six configurations, each adding one component: \textsc{one-shot} (one rule for the whole
+migration from the plain examples, no feedback), \textsc{+feedback} (three rounds), \textsc{+decomposition} (leaf
+tasks, plain prompts), \textsc{+guidance} (minimal-edit patterns, context, interface, hints, lint, stall handling),
+\textsc{+auto-repair}, and \textsc{full} (+generality critic and compile critic). All configurations are composed by
+stage~3.
+
+\paragraph{Evaluation.} Each rule is applied with \texttt{spatch}~1.1.1 to the target file at the parent of its fix
+commit and compared with the human fix on whitespace-normalised lines: \emph{exact} (identical), \emph{subset
+complete} (every changed line is one the human changed, and no more old-API uses remain than in the human
+version), \emph{subset incomplete}, \emph{divergent} (an edit the human did not make), \emph{no change},
+\emph{spatch error} and \emph{no rule}. The original, human and rule versions are compiled in that tree (x86\_64
+\texttt{allmodconfig}, \texttt{CONFIG\_WERROR} off). A target is \emph{buildable} if its original file compiles.
+\textbf{Success} means exact or subset complete \emph{and} the rule output compiles, counted over buildable targets.
+This metric needs no human judgement; it undercounts correct rules that differ from the human fix in form, which
+we report separately.

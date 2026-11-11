@@ -1,0 +1,15 @@
+migration,conversions,distinct_files,distinct_commits,first_commit_date,last_commit_date,max_files_in_one_commit,share_in_largest_commit,commits_with_1_file
+aligned_s64,71,71,16,2024-09-30,2025-10-14,13,0.183,6
+devm_kmemdup_array,23,23,16,2025-02-24,2025-12-26,8,0.348,15
+devm_mmc_alloc_host,39,39,39,2024-10-14,2026-09-17,1,0.026,39
+devm_platform_profile,12,11,12,2024-12-30,2025-01-17,1,0.083,12
+ethtool_rx_ring_count,50,50,49,2025-09-18,2026-01-23,2,0.040,48
+gpio_set_rv,189,189,189,2025-02-26,2025-07-21,1,0.005,189
+hrtimer_setup,103,95,76,2025-02-05,2025-04-05,4,0.039,59
+iio_claim_direct,89,89,69,2025-02-17,2025-04-22,15,0.169,66
+iio_push_with_ts,109,109,26,2025-05-21,2026-08-30,34,0.312,18
+irq_domain_create,171,168,32,2024-07-30,2026-07-20,68,0.398,21
+pcim_request_all_regions,59,59,49,2025-04-17,2026-08-15,3,0.051,40
+secs_to_jiffies,58,44,38,2024-12-03,2026-05-18,7,0.121,33
+snd_soc_component_to_dapm,113,113,113,2025-11-17,2026-01-12,1,0.009,113
+timer_container_of,571,571,1,2025-06-08,2025-06-08,571,1.000,0
