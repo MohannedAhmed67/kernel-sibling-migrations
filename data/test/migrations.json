@@ -1,0 +1,19 @@
+{
+ "_comment": "TEST-SET candidate API migrations, fixed on 2026-11-11 BEFORE mining v6.10..v7.4-rc2 (docs/test_set_rule.md). Same conventions as data/migrations.json: a (commit, file) is a candidate conversion if a removed line matches 'old' and an added line matches 'new'. hdr_new is a git-grep -P regex over include/ that locates when the new API appeared.",
+ "migrations": [
+  {"id": "hrtimer_setup", "old": "\\bhrtimer_init\\s*\\(", "new": "\\bhrtimer_setup\\s*\\(", "hdr_new": "\\bhrtimer_setup\\s*\\("},
+  {"id": "secs_to_jiffies", "old": "\\bmsecs_to_jiffies\\s*\\([^;]*(?:\\*\\s*(?:1000|MSEC_PER_SEC)\\b|\\b(?:1000|MSEC_PER_SEC)\\s*\\*)", "new": "\\bsecs_to_jiffies\\s*\\(", "hdr_new": "\\bsecs_to_jiffies\\b"},
+  {"id": "iio_claim_direct", "old": "\\biio_device_claim_direct_mode\\s*\\(", "new": "\\biio_device_claim_direct\\s*\\(", "hdr_new": "\\biio_device_claim_direct\\s*\\("},
+  {"id": "iio_push_with_ts", "old": "\\biio_push_to_buffers_with_timestamp\\s*\\(", "new": "\\biio_push_to_buffers_with_ts\\s*\\(", "hdr_new": "\\biio_push_to_buffers_with_ts\\s*\\("},
+  {"id": "gpio_set_rv", "old": "\\.set\\s*=", "new": "\\.set_rv\\s*=", "hdr_new": "\\(\\*set_rv\\)"},
+  {"id": "timer_container_of", "old": "\\bfrom_timer\\s*\\(", "new": "\\btimer_container_of\\s*\\(", "hdr_new": "\\btimer_container_of\\b"},
+  {"id": "devm_mmc_alloc_host", "old": "\\bmmc_alloc_host\\s*\\(", "new": "\\bdevm_mmc_alloc_host\\s*\\(", "hdr_new": "\\bdevm_mmc_alloc_host\\b"},
+  {"id": "devm_platform_profile", "old": "\\bplatform_profile_register\\s*\\(", "new": "\\bdevm_platform_profile_register\\s*\\(", "hdr_new": "\\bdevm_platform_profile_register\\b"},
+  {"id": "pcim_request_all_regions", "old": "\\bpci_request_regions\\s*\\(", "new": "\\bpcim_request_all_regions\\s*\\(", "hdr_new": "\\bpcim_request_all_regions\\b"},
+  {"id": "snd_soc_component_to_dapm", "old": "\\bsnd_soc_component_get_dapm\\s*\\(", "new": "\\bsnd_soc_component_to_dapm\\s*\\(", "hdr_new": "\\bsnd_soc_component_to_dapm\\b"},
+  {"id": "ethtool_rx_ring_count", "old": "\\bETHTOOL_GRXRINGS\\b", "new": "\\.get_rx_ring_count\\s*=", "hdr_new": "\\(\\*get_rx_ring_count\\)"},
+  {"id": "aligned_s64", "old": "\\bs64\\s+\\w+\\s+__aligned\\s*\\(\\s*8\\s*\\)", "new": "\\baligned_s64\\s+\\w+", "hdr_new": "\\baligned_s64\\b"},
+  {"id": "devm_kmemdup_array", "old": "\\bdevm_kmemdup\\s*\\(", "new": "\\bdevm_kmemdup_array\\s*\\(", "hdr_new": "\\bdevm_kmemdup_array\\b"},
+  {"id": "irq_domain_create", "old": "\\birq_domain_add_(?:linear|tree|legacy|simple|nomap)\\s*\\(", "new": "\\birq_domain_create_(?:linear|tree|legacy|simple)\\s*\\(", "hdr_new": "\\birq_domain_create_linear\\b"}
+ ]
+}

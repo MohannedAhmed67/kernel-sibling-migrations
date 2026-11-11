@@ -440,6 +440,77 @@ def autofix(rule):
     return "\n\n".join(r.strip("\n") for r in new_rules) + "\n", fixes
 
 
+C_WORDS = set("""auto break case char const continue default do double else enum extern float for goto if inline int
+long register restrict return short signed sizeof static struct switch typedef union unsigned void volatile while
+bool true false NULL u8 u16 u32 u64 s8 s16 s32 s64 size_t""".split()) | set(DECL_KINDS) | {
+    "depends", "on", "when", "exists", "forall", "strict", "any", "fresh", "typeof", "metavariable", "virtual"}
+_FILE_IDS = {}
+
+
+def file_identifiers(mig):
+    """For each identifier, the number of the migration's training files (before.c) that contain it."""
+    if mig not in _FILE_IDS:
+        c = collections.Counter()
+        base = f"work/h2/{mig}/train"
+        for k in sorted(os.listdir(base)):
+            if os.path.isdir(f"{base}/{k}"):
+                c.update(set(re.findall(r"\b[A-Za-z_]\w*\b", open(f"{base}/{k}/before.c", errors="replace").read())))
+        _FILE_IDS[mig] = c
+    return _FILE_IDS[mig]
+
+
+def is_callee(n, text):
+    """True if `n` is called somewhere in `text`; the name of a function DEFINITION ('static int n(...)' at the
+    start of a line) is not a call: it is the driver's own function and therefore driver-specific."""
+    for line in text.splitlines():
+        for m in re.finditer(rf"\b{n}\s*\(", line):
+            if not re.fullmatch(r"\s*(?:static\s+|inline\s+|const\s+)*(?:struct\s+)?\w+[\s*]+", line[:m.start()]):
+                return True
+    return False
+
+
+def generalize(rule, mig):
+    """Generality critic (deterministic, training files only): a name that the rule matches literally but that
+    occurs in only ONE training file is driver-specific, so the rule could not apply to unseen drivers. Such
+    names on '-' or context lines are declared as metavariables (identifier when used as a field, callee or in
+    a declaration; expression when it stands alone as a function argument). Names on '+' lines only are new
+    code and are left alone. Returns (rule, list of applied changes)."""
+    counts = file_identifiers(mig)
+    out, changes = [], []
+    for header, decls, code in split_rules(rule):
+        if header is None:
+            out.append("\n".join(code)); continue
+        declared = set()
+        for d in decls:
+            body = re.sub(r"^\s*(?:" + "|".join(sorted(DECL_KINDS, key=len, reverse=True)) + r")\s+", "", d.strip())
+            declared |= {re.sub(r".*\.", "", v.strip()) for v in body.rstrip(";").split(",") if v.strip()}
+        matched = "\n".join(l[1:] for l in code if l[:1] in ("-", " "))
+
+        def words(prefixes):
+            return set(re.findall(r"\b[A-Za-z_]\w*\b",
+                                  re.sub(r'"[^"]*"', "", "\n".join(l[1:] for l in code if l[:1] in prefixes))))
+        # only names the change KEEPS (context, or on both a '-' and a '+' line) can be driver-specific; a name
+        # that is only removed is the API being migrated, and a callee is a function API, so both stay literal
+        kept = words(" ") | (words("-") & words("+"))
+        names = sorted({n for n in kept if n not in declared and n not in C_WORDS and counts.get(n, 0) == 1
+                        and not is_callee(n, matched)})
+        ids, exprs = [], []
+        for n in names:
+            if re.search(rf"[(,]\s*{n}\s*[,)]", matched) and not re.search(rf"(->|\.)\s*{n}\b|\b{n}\s*\(", matched):
+                exprs.append(n)
+            else:
+                ids.append(n)
+        new_decls = list(decls)
+        if ids:
+            new_decls.append(f"identifier {', '.join(ids)};")
+        if exprs:
+            new_decls.append(f"expression {', '.join(exprs)};")
+        if names:
+            changes.append(f"made driver-specific name(s) {', '.join(names)} into metavariables")
+        out.append(header + "\n" + "\n".join(new_decls) + "\n@@\n" + "\n".join(code))
+    return "\n\n".join(r.strip("\n") for r in out) + "\n", changes
+
+
 def lint(rule):
     """Cheap checks before spatch runs, on the raw text; returns a message for the model or None."""
     lines = rule.splitlines()
@@ -475,6 +546,9 @@ def run_task(args, mig, tree, task, out_dir):
         raw, fixes = extract_rule(text), []
         if args.guided and args.autofix:
             raw, fixes = autofix(raw)
+        if args.guided and args.critic:
+            raw, gen = generalize(raw, mig)
+            fixes += gen
         rule = assemble(task["interface"], raw) if task.get("interface") else raw
         norm_rule = re.sub(r"\s+", " ", rule).strip()
         repeated = norm_rule in seen_rules
@@ -532,9 +606,11 @@ def main():
     ap.add_argument("--unguided", dest="guided", action="store_false",
                     help="ablation: no variant patterns, no anchor interface, no lint, no auto-repair, no stall handling")
     ap.add_argument("--no-autofix", dest="autofix", action="store_false", help="ablation: guided, but no auto-repair")
+    ap.add_argument("--critic", action="store_true",
+                    help="guided only: apply the generality critic (driver-specific names -> metavariables)")
     args = ap.parse_args()
-    tag = f"{args.mode}_{'g' if args.guided else 'u'}{'' if args.autofix or not args.guided else 'nofix'}" \
-          f"_r{args.rounds}_s{args.seed}"
+    variant = ("gc" if args.critic else "g" if args.autofix else "gnofix") if args.guided else "u"
+    tag = f"{args.mode}_{variant}_r{args.rounds}_s{args.seed}"
     for mig in args.migration:
         tree = json.load(open(f"work/gcg/{mig}/tree.json"))
         run = f"work/gcg/runs/{args.model.replace(':', '_')}/{tag}/{mig}"
