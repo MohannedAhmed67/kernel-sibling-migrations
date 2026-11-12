@@ -1,0 +1,33 @@
+Item L073   migration: iio_claim_direct   file: drivers/iio/light/isl29125.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -131,11 +131,10 @@
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 		ret = isl29125_read_data(data, chan->scan_index);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 		*val = ret;
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -135,7 +135,7 @@
+ 		if (ret)
+ 			return ret;
+ 		ret = isl29125_read_data(data, chan->scan_index);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 		*val = ret;

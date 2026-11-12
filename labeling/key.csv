@@ -1,0 +1,117 @@
+id,migration,idx,auto_class,sources
+L000,iio_claim_direct,3,subset_complete,spinfer
+L001,iio_push_with_ts,1,divergent,frontier_llm spinfer
+L002,iio_claim_direct,9,subset_complete,spinfer
+L003,devm_kmemdup_array,14,divergent,frontier_llm
+L004,iio_claim_direct,6,subset_complete,spinfer
+L005,iio_push_with_ts,15,divergent,frontier_llm spinfer
+L006,iio_push_with_ts,0,divergent,frontier_llm spinfer
+L007,gpio_set_rv,6,divergent,frontier_llm
+L008,iio_claim_direct,10,divergent,spinfer
+L009,iio_claim_direct,0,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L010,gpio_set_rv,17,subset_complete,spinfer
+L011,gpio_set_rv,11,subset_complete,spinfer
+L012,iio_push_with_ts,4,divergent,full_qwen2.5-coder_7b
+L013,pcim_request_all_regions,3,subset_complete,frontier_llm spinfer
+L014,iio_claim_direct,15,subset_complete,spinfer
+L015,gpio_set_rv,9,divergent,frontier_llm
+L016,pcim_request_all_regions,12,subset_complete,spinfer
+L017,iio_push_with_ts,4,divergent,frontier_llm spinfer
+L018,iio_claim_direct,1,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L019,iio_claim_direct,14,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L020,ethtool_rx_ring_count,5,subset_complete,frontier_llm
+L021,iio_claim_direct,17,subset_complete,spinfer
+L022,iio_push_with_ts,2,divergent,full_qwen2.5-coder_7b
+L023,iio_claim_direct,2,subset_complete,spinfer
+L024,devm_kmemdup_array,0,divergent,frontier_llm spinfer
+L025,iio_claim_direct,3,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L026,gpio_set_rv,3,subset_complete,frontier_llm
+L027,pcim_request_all_regions,0,subset_complete,full_gemma3_4b full_qwen2.5-coder_7b
+L028,pcim_request_all_regions,9,subset_complete,frontier_llm spinfer
+L029,iio_push_with_ts,9,divergent,full_qwen2.5-coder_7b
+L030,pcim_request_all_regions,13,subset_complete,spinfer
+L031,gpio_set_rv,7,subset_complete,frontier_llm
+L032,gpio_set_rv,13,divergent,frontier_llm
+L033,iio_claim_direct,13,subset_complete,spinfer
+L034,pcim_request_all_regions,3,subset_complete,full_gemma3_4b full_qwen2.5-coder_7b
+L035,iio_claim_direct,8,subset_complete,spinfer
+L036,ethtool_rx_ring_count,18,subset_complete,frontier_llm
+L037,pcim_request_all_regions,0,subset_complete,spinfer
+L038,iio_claim_direct,4,subset_incomplete,full_gemma3_4b full_llama3.1_8b full_qwen2.5-coder_7b
+L039,devm_kmemdup_array,2,divergent,frontier_llm spinfer
+L040,iio_push_with_ts,3,divergent,full_qwen2.5-coder_7b
+L041,gpio_set_rv,15,subset_complete,spinfer
+L042,iio_claim_direct,12,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L043,devm_kmemdup_array,1,divergent,frontier_llm spinfer
+L044,iio_claim_direct,13,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L045,devm_kmemdup_array,5,divergent,frontier_llm spinfer
+L046,iio_push_with_ts,6,divergent,frontier_llm spinfer
+L047,iio_claim_direct,6,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L048,gpio_set_rv,2,subset_complete,spinfer
+L049,gpio_set_rv,10,subset_complete,frontier_llm
+L050,pcim_request_all_regions,16,divergent,full_qwen2.5-coder_7b
+L051,devm_kmemdup_array,6,divergent,frontier_llm spinfer
+L052,devm_kmemdup_array,11,divergent,frontier_llm
+L053,iio_claim_direct,4,subset_complete,spinfer
+L054,pcim_request_all_regions,11,subset_complete,full_qwen2.5-coder_7b
+L055,iio_claim_direct,10,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L056,gpio_set_rv,17,subset_complete,frontier_llm
+L057,pcim_request_all_regions,6,subset_complete,full_gemma3_4b full_qwen2.5-coder_7b
+L058,ethtool_rx_ring_count,12,divergent,frontier_llm
+L059,pcim_request_all_regions,11,divergent,frontier_llm
+L060,iio_claim_direct,16,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L061,iio_claim_direct,14,subset_complete,spinfer
+L062,gpio_set_rv,5,divergent,frontier_llm
+L063,pcim_request_all_regions,16,subset_incomplete,spinfer
+L064,pcim_request_all_regions,15,subset_incomplete,spinfer
+L065,iio_claim_direct,11,subset_complete,spinfer
+L066,iio_claim_direct,15,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L067,iio_claim_direct,5,subset_incomplete,full_gemma3_4b full_llama3.1_8b full_qwen2.5-coder_7b
+L068,gpio_set_rv,13,subset_complete,spinfer
+L069,iio_push_with_ts,5,divergent,full_qwen2.5-coder_7b
+L070,gpio_set_rv,0,subset_complete,spinfer
+L071,iio_claim_direct,8,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L072,iio_claim_direct,18,subset_incomplete,full_gemma3_4b full_llama3.1_8b full_qwen2.5-coder_7b
+L073,iio_claim_direct,2,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L074,iio_claim_direct,0,subset_complete,spinfer
+L075,pcim_request_all_regions,11,subset_complete,spinfer
+L076,gpio_set_rv,3,subset_complete,spinfer
+L077,iio_claim_direct,16,subset_complete,spinfer
+L078,pcim_request_all_regions,10,divergent,frontier_llm spinfer
+L079,pcim_request_all_regions,1,subset_complete,spinfer
+L080,ethtool_rx_ring_count,0,divergent,frontier_llm
+L081,pcim_request_all_regions,2,subset_complete,full_gemma3_4b full_qwen2.5-coder_7b
+L082,pcim_request_all_regions,1,subset_complete,full_gemma3_4b full_qwen2.5-coder_7b
+L083,pcim_request_all_regions,12,subset_complete,full_qwen2.5-coder_7b
+L084,devm_kmemdup_array,4,divergent,frontier_llm spinfer
+L085,devm_kmemdup_array,7,divergent,spinfer
+L086,iio_push_with_ts,7,divergent,full_qwen2.5-coder_7b
+L087,iio_push_with_ts,2,divergent,frontier_llm spinfer
+L088,pcim_request_all_regions,2,subset_complete,frontier_llm spinfer
+L089,gpio_set_rv,16,subset_complete,spinfer
+L090,iio_claim_direct,7,subset_incomplete,full_gemma3_4b full_llama3.1_8b full_qwen2.5-coder_7b
+L091,pcim_request_all_regions,9,subset_complete,full_gemma3_4b full_qwen2.5-coder_7b
+L092,iio_push_with_ts,14,divergent,full_qwen2.5-coder_7b
+L093,iio_push_with_ts,5,divergent,frontier_llm spinfer
+L094,pcim_request_all_regions,15,subset_complete,full_qwen2.5-coder_7b
+L095,iio_claim_direct,12,subset_complete,spinfer
+L096,gpio_set_rv,9,subset_complete,spinfer
+L097,gpio_set_rv,10,subset_complete,spinfer
+L098,gpio_set_rv,5,subset_complete,spinfer
+L099,iio_claim_direct,19,subset_complete,spinfer
+L100,iio_claim_direct,19,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L101,devm_kmemdup_array,3,divergent,frontier_llm spinfer
+L102,devm_kmemdup_array,7,divergent,frontier_llm
+L103,pcim_request_all_regions,10,subset_complete,full_qwen2.5-coder_7b
+L104,gpio_set_rv,14,subset_complete,spinfer
+L105,ethtool_rx_ring_count,2,divergent,frontier_llm
+L106,iio_claim_direct,9,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L107,iio_push_with_ts,3,divergent,frontier_llm spinfer
+L108,pcim_request_all_regions,13,subset_complete,full_gemma3_4b full_qwen2.5-coder_7b
+L109,iio_claim_direct,1,subset_complete,spinfer
+L110,iio_claim_direct,17,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L111,gpio_set_rv,12,divergent,frontier_llm
+L112,iio_claim_direct,11,subset_incomplete,full_gemma3_4b full_llama3.1_8b
+L113,gpio_set_rv,6,subset_complete,spinfer
+L114,pcim_request_all_regions,6,subset_complete,frontier_llm spinfer
+L115,iio_claim_direct,16,subset_complete,frontier_llm full_qwen2.5-coder_7b

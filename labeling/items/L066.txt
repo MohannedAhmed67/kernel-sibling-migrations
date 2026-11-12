@@ -1,0 +1,34 @@
+Item L066   migration: iio_claim_direct   file: drivers/iio/pressure/rohm-bm1390.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -319,12 +319,11 @@
+ 
+ 		return -EINVAL;
+ 	case IIO_CHAN_INFO_RAW:
+-		ret = iio_device_claim_direct_mode(idev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(idev))
++			return -EBUSY;
+ 
+ 		ret = bm1390_read_data(data, chan, val, val2);
+-		iio_device_release_direct_mode(idev);
++		iio_device_release_direct(idev);
+ 		if (ret)
+ 			return ret;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -324,7 +324,7 @@
+ 			return ret;
+ 
+ 		ret = bm1390_read_data(data, chan, val, val2);
+-		iio_device_release_direct_mode(idev);
++		iio_device_release_direct(idev);
+ 		if (ret)
+ 			return ret;
+ 

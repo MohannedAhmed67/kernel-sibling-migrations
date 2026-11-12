@@ -1,0 +1,38 @@
+Item L074   migration: iio_claim_direct   file: drivers/iio/light/apds9306.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -831,11 +831,10 @@
+ 		 * Changing device parameters during adc operation, resets
+ 		 * the ADC which has to avoided.
+ 		 */
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 		ret = apds9306_read_data(data, val, reg);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret)
+ 			return ret;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -831,11 +831,10 @@
+ 		 * Changing device parameters during adc operation, resets
+ 		 * the ADC which has to avoided.
+ 		 */
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
++		if (!iio_device_claim_direct(indio_dev))
+ 			return ret;
+ 		ret = apds9306_read_data(data, val, reg);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret)
+ 			return ret;
+ 

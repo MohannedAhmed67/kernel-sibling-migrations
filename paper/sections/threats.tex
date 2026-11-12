@@ -1,0 +1,38 @@
+\section{Threats to Validity}
+\label{sec:threats}
+
+\paragraph{What success measures.} Success requires the rule's output to match the human fix (exactly or as a
+complete subset) and to compile. It does not test behaviour: a compiled conversion can still be wrong at run time,
+and we run no driver tests. It also undercounts: a correct rule that converts a site the human converted in a later
+commit, or writes an equivalent expression, is counted as a failure, and \emph{divergent} outputs
+(Table~\ref{tab:safety}) include such cases as well as real errors. We did not label them manually; the released
+outputs and a blind labelling packet (source hidden) allow this check. The undercount affects all systems, but not
+necessarily equally.
+
+\paragraph{Compilation scope.} Outputs are compiled for x86\_64 \texttt{allmodconfig} only. Targets whose original
+file does not compile there (other architectures, broken intermediate commits) are excluded from the denominator
+for every system alike. A rule that breaks a configuration we do not build would go unnoticed.
+
+\paragraph{Contamination.} The local models' training cutoffs are taken from their vendors' statements. The test
+set admits only migrations whose new API first appears in the kernel after all three cutoffs, but a model may still
+have seen similar older APIs. The frontier-LLM baseline has no such guarantee and, unlike the local models, worked
+agentically with a test loop of its own design; it is a reference point, not a like-for-like competitor.
+
+\paragraph{Test-set construction.} Conversions are mined with line patterns, so the data contain only conversions
+whose diff matches them, and precision was verified on a sample (at most eight per migration). The verification
+was planned for one reviewer; we used two independent LLM reviewers instead (a judge and a skeptic) and report this
+deviation from the pre-registered protocol. They disagreed on no sample's verdict. The frontier baseline's rule
+writers were audited for file access; one agent saw the names (not contents) of another migration's training
+folder through a reused scratch script, which we report in the released audit notes.
+
+\paragraph{Development reuse.} Prompts, hints, thresholds and both critics were designed while looking at the
+development migrations and their held-out results. Development numbers are therefore optimistic; only the test-set
+numbers, obtained once after freezing the framework at a git tag, measure generalisation. The test-set
+generation run was interrupted during its second configuration, first by the host running out of memory and
+then when we moved it into a detached container (no output had been evaluated); the interrupted configuration was
+restarted from scratch for the test migrations with the same seeds, and no completed
+configuration was rerun.
+
+\paragraph{Scale.} The test set has \testMigrations{} migrations and \testBuildable{} buildable targets, and three
+seeds per configuration. Per-migration results swing with whether one leaf rule is right, so we report seed ranges
+and per-migration tables rather than significance tests. All timings come from one laptop GPU and 4-bit models.

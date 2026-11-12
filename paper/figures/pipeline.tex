@@ -1,0 +1,26 @@
+% Pipeline of the guided framework (included by sections/method.tex)
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  node distance=5mm and 5mm,
+  box/.style={draw, rounded corners, align=center, font=\footnotesize, minimum height=12mm, text width=30mm},
+  det/.style={box, fill=gray!12},
+  llm/.style={box, fill=blue!10},
+  arr/.style={-{Stealth[length=2mm]}}]
+\node[det] (s1) {\textbf{1.~Variant tree}\\hunks $\to$ leaves\\(script)};
+\node[llm, right=of s1] (s2) {\textbf{2.~Leaf rules}\\model + \texttt{spatch}\\feedback, $\le 3$ rounds};
+\node[det, right=of s2] (s3) {\textbf{3.~Composition}\\greedy, scored on\\all siblings (script)};
+\node[llm, right=of s3] (s4) {\textbf{4.~Compile critic}\\build, repair\\or abstain};
+\node[det, below=of s2, text width=62mm, minimum height=7mm] (fix)
+  {auto-repair $\cdot$ generality critic $\cdot$ lint (script)};
+\node[above=2mm of s1, font=\footnotesize] (in) {training siblings};
+\node[above=2mm of s4, font=\footnotesize] (out) {one rule, or abstain};
+\draw[arr] (in) -- (s1); \draw[arr] (s1) -- (s2); \draw[arr] (s2) -- (s3); \draw[arr] (s3) -- (s4);
+\draw[arr] (s4) -- (out);
+\draw[arr] ([xshift=-3mm]s2.south) -- ([xshift=-3mm]s2.south |- fix.north);
+\draw[arr] ([xshift=3mm]s2.south |- fix.north) -- ([xshift=3mm]s2.south);
+\end{tikzpicture}
+\caption{The four stages. Shaded boxes are deterministic scripts; blue boxes call the local model. Only the
+training siblings are read; held-out targets are never seen.}
+\label{fig:pipeline}
+\end{figure}

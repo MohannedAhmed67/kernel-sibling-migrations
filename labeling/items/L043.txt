@@ -1,0 +1,29 @@
+Item L043   migration: devm_kmemdup_array   file: sound/soc/intel/avs/boards/es8336.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -109,7 +109,8 @@
+ 	data = snd_soc_card_get_drvdata(card);
+ 	num_pins = ARRAY_SIZE(card_headset_pins);
+ 
+-	pins = devm_kmemdup(card->dev, card_headset_pins, sizeof(*pins) * num_pins, GFP_KERNEL);
++	pins = devm_kmemdup_array(card->dev, card_headset_pins, num_pins,
++				  sizeof(card_headset_pins[0]), GFP_KERNEL);
+ 	if (!pins)
+ 		return -ENOMEM;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -109,7 +109,8 @@
+ 	data = snd_soc_card_get_drvdata(card);
+ 	num_pins = ARRAY_SIZE(card_headset_pins);
+ 
+-	pins = devm_kmemdup(card->dev, card_headset_pins, sizeof(*pins) * num_pins, GFP_KERNEL);
++	pins = devm_kmemdup_array(card->dev, card_headset_pins, num_pins,
++				  sizeof(*card_headset_pins), GFP_KERNEL);
+ 	if (!pins)
+ 		return -ENOMEM;
+ 

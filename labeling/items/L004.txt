@@ -1,0 +1,89 @@
+Item L004   migration: iio_claim_direct   file: drivers/iio/light/rohm-bu27034.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -998,9 +998,8 @@
+ 			return -EINVAL;
+ 
+ 		/* Don't mess with measurement enabling while buffering */
+-		ret = iio_device_claim_direct_mode(idev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(idev))
++			return -EBUSY;
+ 
+ 		mutex_lock(&data->mutex);
+ 		/*
+@@ -1011,7 +1010,7 @@
+ 		ret = result_get(data, chan->channel, val);
+ 
+ 		mutex_unlock(&data->mutex);
+-		iio_device_release_direct_mode(idev);
++		iio_device_release_direct(idev);
+ 
+ 		if (ret)
+ 			return ret;
+@@ -1050,9 +1049,8 @@
+ 	struct bu27034_data *data = iio_priv(idev);
+ 	int ret;
+ 
+-	ret = iio_device_claim_direct_mode(idev);
+-	if (ret)
+-		return ret;
++	if (!iio_device_claim_direct(idev))
++		return -EBUSY;
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_SCALE:
+@@ -1069,7 +1067,7 @@
+ 		break;
+ 	}
+ 
+-	iio_device_release_direct_mode(idev);
++	iio_device_release_direct(idev);
+ 
+ 	return ret;
+ }
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -998,8 +998,7 @@
+ 			return -EINVAL;
+ 
+ 		/* Don't mess with measurement enabling while buffering */
+-		ret = iio_device_claim_direct_mode(idev);
+-		if (ret)
++		if (!iio_device_claim_direct(idev))
+ 			return ret;
+ 
+ 		mutex_lock(&data->mutex);
+@@ -1011,7 +1010,7 @@
+ 		ret = result_get(data, chan->channel, val);
+ 
+ 		mutex_unlock(&data->mutex);
+-		iio_device_release_direct_mode(idev);
++		iio_device_release_direct(idev);
+ 
+ 		if (ret)
+ 			return ret;
+@@ -1050,8 +1049,7 @@
+ 	struct bu27034_data *data = iio_priv(idev);
+ 	int ret;
+ 
+-	ret = iio_device_claim_direct_mode(idev);
+-	if (ret)
++	if (!iio_device_claim_direct(idev))
+ 		return ret;
+ 
+ 	switch (mask) {
+@@ -1069,7 +1067,7 @@
+ 		break;
+ 	}
+ 
+-	iio_device_release_direct_mode(idev);
++	iio_device_release_direct(idev);
+ 
+ 	return ret;
+ }

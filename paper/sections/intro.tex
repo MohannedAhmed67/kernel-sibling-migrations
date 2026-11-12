@@ -22,15 +22,23 @@ a tree of change variants; the model writes one small rule per variant under tes
 themselves; deterministic components repair mechanical SmPL errors and generalise driver-specific names; rules are
 composed greedily; and a compile critic either repairs or rejects a rule whose output does not build.
 
+On \testMigrations{} migrations whose APIs postdate all three models, the framework takes Qwen2.5-Coder 7B from
+\testQwenCoderOneShot{} to \testQwenCoderFull{} solved conversions out of \testBuildable{}, close to but below
+Spinfer (\testSpinfer), with the highest precision of all systems on the test set
+(\testSafeQwenCoderPrecision). Decomposition and guidance carry most of the gain; the compile critic adds no
+solved conversions but removes every output that matches the human fix and fails to build. The two general-purpose
+models, Llama~3.1 8B and Gemma~3 4B, remain weak, mainly because they rarely write SmPL that parses. Changes that
+span a declaration and its uses, such as a callback whose return type changes, defeat every local model.
+
 \paragraph{Contributions.}
 \begin{itemize}
   \item A guided framework for semantic-patch generation with 4--8B local models (Section~\ref{sec:method}), whose
     every step except rule writing is deterministic and auditable.
-  \item A pre-registered, contamination-free test set: \testMigrations{} Linux API migrations whose new API first
+  \item A pre-registered test set beyond the models' training cutoffs: \testMigrations{} Linux API migrations whose new API first
     appeared after all three models' training cutoffs, with \testTargets{} held-out driver conversions
     (Section~\ref{sec:setup}).
-  \item An evaluation that compiles every candidate output on x86\_64 \texttt{allmodconfig} and reports an automatic,
-    judgement-free success metric, three seeds per configuration, and an ablation of every component
-    (Section~\ref{sec:results}).
+  \item An evaluation that compiles candidate outputs on x86\_64 \texttt{allmodconfig} and reports an automatic,
+    judgement-free success metric and precision, three seeds per configuration, an ablation of every component,
+    and an analysis of the failures (Section~\ref{sec:results}).
 \end{itemize}
 All code, prompts, model responses and results are released.\footnote{\url{https://github.com/MohannedAhmed67/kernel-sibling-migrations}}

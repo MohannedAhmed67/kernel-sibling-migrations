@@ -1,0 +1,34 @@
+Item L003   migration: devm_kmemdup_array   file: drivers/crypto/caam/ctrl.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -592,9 +592,9 @@
+ 	int ret;
+ 
+ 	ctrlpriv->num_clks = data->num_clks;
+-	ctrlpriv->clks = devm_kmemdup(dev, data->clks,
+-				      data->num_clks * sizeof(data->clks[0]),
+-				      GFP_KERNEL);
++	ctrlpriv->clks = devm_kmemdup_array(dev, data->clks,
++					    data->num_clks, sizeof(*data->clks),
++					    GFP_KERNEL);
+ 	if (!ctrlpriv->clks)
+ 		return -ENOMEM;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -592,9 +592,8 @@
+ 	int ret;
+ 
+ 	ctrlpriv->num_clks = data->num_clks;
+-	ctrlpriv->clks = devm_kmemdup(dev, data->clks,
+-				      data->num_clks * sizeof(data->clks[0]),
+-				      GFP_KERNEL);
++	ctrlpriv->clks = devm_kmemdup_array(dev, data->clks, data->num_clks, sizeof(*data->clks),
++					    GFP_KERNEL);
+ 	if (!ctrlpriv->clks)
+ 		return -ENOMEM;
+ 

@@ -1,0 +1,56 @@
+Item L001   migration: iio_push_with_ts   file: drivers/iio/light/adjd_s311.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -54,10 +54,6 @@
+ 
+ struct adjd_s311_data {
+ 	struct i2c_client *client;
+-	struct {
+-		s16 chans[4];
+-		aligned_s64 ts;
+-	} scan;
+ };
+ 
+ enum adjd_s311_channel_idx {
+@@ -120,6 +116,10 @@
+ 	struct adjd_s311_data *data = iio_priv(indio_dev);
+ 	s64 time_ns = iio_get_time_ns(indio_dev);
+ 	int i, j = 0;
++	struct {
++		s16 chans[4];
++		aligned_s64 ts;
++	} scan = { };
+ 
+ 	int ret = adjd_s311_req_data(indio_dev);
+ 	if (ret < 0)
+@@ -131,10 +131,10 @@
+ 		if (ret < 0)
+ 			goto done;
+ 
+-		data->scan.chans[j++] = ret & ADJD_S311_DATA_MASK;
+-	}
+-
+-	iio_push_to_buffers_with_timestamp(indio_dev, &data->scan, time_ns);
++		scan.chans[j++] = ret & ADJD_S311_DATA_MASK;
++	}
++
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan), time_ns);
+ 
+ done:
+ 	iio_trigger_notify_done(indio_dev->trig);
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -134,7 +134,8 @@
+ 		data->scan.chans[j++] = ret & ADJD_S311_DATA_MASK;
+ 	}
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &data->scan, time_ns);
++	iio_push_to_buffers_with_ts(indio_dev, &data->scan,
++				    sizeof(data->scan), time_ns);
+ 
+ done:
+ 	iio_trigger_notify_done(indio_dev->trig);

@@ -1,0 +1,45 @@
+Item L070   migration: gpio_set_rv   file: drivers/regulator/rpi-panel-attiny-regulator.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -205,7 +205,7 @@
+ 	return GPIO_LINE_DIRECTION_OUT;
+ }
+ 
+-static void attiny_gpio_set(struct gpio_chip *gc, unsigned int off, int val)
++static int attiny_gpio_set(struct gpio_chip *gc, unsigned int off, int val)
+ {
+ 	struct attiny_lcd *state = gpiochip_get_data(gc);
+ 	u8 last_val;
+@@ -232,6 +232,8 @@
+ 
+ 		msleep(100);
+ 	}
++
++	return 0;
+ }
+ 
+ static int attiny_i2c_read(struct i2c_client *client, u8 reg, unsigned int *buf)
+@@ -349,7 +351,7 @@
+ 	state->gc.base = -1;
+ 	state->gc.ngpio = NUM_GPIO;
+ 
+-	state->gc.set = attiny_gpio_set;
++	state->gc.set_rv = attiny_gpio_set;
+ 	state->gc.get_direction = attiny_gpio_get_direction;
+ 	state->gc.can_sleep = true;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -349,7 +349,7 @@
+ 	state->gc.base = -1;
+ 	state->gc.ngpio = NUM_GPIO;
+ 
+-	state->gc.set = attiny_gpio_set;
++	state->gc.set_rv = attiny_gpio_set;
+ 	state->gc.get_direction = attiny_gpio_get_direction;
+ 	state->gc.can_sleep = true;
+ 

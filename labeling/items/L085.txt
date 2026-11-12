@@ -1,0 +1,29 @@
+Item L085   migration: devm_kmemdup_array   file: sound/soc/intel/avs/boards/rt5682.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -102,7 +102,8 @@
+ 	jack = snd_soc_card_get_drvdata(card);
+ 	num_pins = ARRAY_SIZE(card_jack_pins);
+ 
+-	pins = devm_kmemdup(card->dev, card_jack_pins, sizeof(*pins) * num_pins, GFP_KERNEL);
++	pins = devm_kmemdup_array(card->dev, card_jack_pins, num_pins,
++				  sizeof(card_jack_pins[0]), GFP_KERNEL);
+ 	if (!pins)
+ 		return -ENOMEM;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -102,7 +102,8 @@
+ 	jack = snd_soc_card_get_drvdata(card);
+ 	num_pins = ARRAY_SIZE(card_jack_pins);
+ 
+-	pins = devm_kmemdup(card->dev, card_jack_pins, sizeof(*pins) * num_pins, GFP_KERNEL);
++	pins = devm_kmemdup_array(card->dev, card_jack_pins, num_pins,
++				  sizeof(*card_jack_pins), GFP_KERNEL);
+ 	if (!pins)
+ 		return -ENOMEM;
+ 

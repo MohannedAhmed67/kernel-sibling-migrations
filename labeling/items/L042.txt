@@ -1,0 +1,33 @@
+Item L042   migration: iio_claim_direct   file: drivers/iio/imu/inv_icm42600/inv_icm42600_temp.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -56,11 +56,10 @@
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 		ret = inv_icm42600_temp_read(st, &temp);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret)
+ 			return ret;
+ 		*val = temp;
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -60,7 +60,7 @@
+ 		if (ret)
+ 			return ret;
+ 		ret = inv_icm42600_temp_read(st, &temp);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret)
+ 			return ret;
+ 		*val = temp;

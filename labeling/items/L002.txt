@@ -1,0 +1,40 @@
+Item L002   migration: iio_claim_direct   file: drivers/iio/humidity/hdc100x.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -212,12 +212,11 @@
+ 			*val = hdc100x_get_heater_status(data);
+ 			return IIO_VAL_INT;
+ 		}
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 
+ 		ret = hdc100x_get_measurement(data, chan);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 		*val = ret;
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -212,12 +212,11 @@
+ 			*val = hdc100x_get_heater_status(data);
+ 			return IIO_VAL_INT;
+ 		}
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
++		if (!iio_device_claim_direct(indio_dev))
+ 			return ret;
+ 
+ 		ret = hdc100x_get_measurement(data, chan);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 		*val = ret;

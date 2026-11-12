@@ -1,0 +1,40 @@
+Item L099   migration: iio_claim_direct   file: drivers/iio/proximity/hx9023s.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -701,12 +701,11 @@
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 
+ 		ret = hx9023s_get_proximity(data, chan, val);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		return ret;
+ 	case IIO_CHAN_INFO_SAMP_FREQ:
+ 		return hx9023s_get_samp_freq(data, val, val2);
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -701,12 +701,11 @@
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
++		if (!iio_device_claim_direct(indio_dev))
+ 			return ret;
+ 
+ 		ret = hx9023s_get_proximity(data, chan, val);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		return ret;
+ 	case IIO_CHAN_INFO_SAMP_FREQ:
+ 		return hx9023s_get_samp_freq(data, val, val2);

@@ -1,0 +1,28 @@
+Item L006   migration: iio_push_with_ts   file: drivers/iio/light/acpi-als.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -167,7 +167,7 @@
+ 	if (!pf->timestamp)
+ 		pf->timestamp = iio_get_time_ns(indio_dev);
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan, pf->timestamp);
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan), pf->timestamp);
+ out:
+ 	mutex_unlock(&als->lock);
+ 	iio_trigger_notify_done(indio_dev->trig);
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -167,7 +167,8 @@
+ 	if (!pf->timestamp)
+ 		pf->timestamp = iio_get_time_ns(indio_dev);
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan, pf->timestamp);
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan),
++				    pf->timestamp);
+ out:
+ 	mutex_unlock(&als->lock);
+ 	iio_trigger_notify_done(indio_dev->trig);

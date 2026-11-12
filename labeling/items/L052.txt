@@ -1,0 +1,33 @@
+Item L052   migration: devm_kmemdup_array   file: drivers/regulator/devres.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -332,9 +332,8 @@
+ 				  const struct regulator_bulk_data *in_consumers,
+ 				  struct regulator_bulk_data **out_consumers)
+ {
+-	*out_consumers = devm_kmemdup(dev, in_consumers,
+-				      num_consumers * sizeof(*in_consumers),
+-				      GFP_KERNEL);
++	*out_consumers = devm_kmemdup_array(dev, in_consumers, num_consumers,
++					    sizeof(*in_consumers), GFP_KERNEL);
+ 	if (*out_consumers == NULL)
+ 		return -ENOMEM;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -332,9 +332,8 @@
+ 				  const struct regulator_bulk_data *in_consumers,
+ 				  struct regulator_bulk_data **out_consumers)
+ {
+-	*out_consumers = devm_kmemdup(dev, in_consumers,
+-				      num_consumers * sizeof(*in_consumers),
+-				      GFP_KERNEL);
++	*out_consumers = devm_kmemdup_array(dev, in_consumers, num_consumers, sizeof(*in_consumers),
++					    GFP_KERNEL);
+ 	if (*out_consumers == NULL)
+ 		return -ENOMEM;
+ 

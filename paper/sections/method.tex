@@ -8,6 +8,8 @@ target. The design follows guided code generation (GCG)~\cite{almorsi2025gcg}: d
 generate the leaves bottom-up with tests, and let a critic check the assembled result. Here the ``tests'' are the
 training siblings themselves, and the critic is the C compiler. Figure~\ref{fig:pipeline} shows the four stages.
 
+\input{figures/pipeline}
+
 \paragraph{Units and change hunks.} Both versions of a file are split into statement-level units (cut at
 \texttt{;}, \texttt{\{}, \texttt{\}} and comment ends; preprocessor lines are units of their own) and normalised for
 whitespace. A hunk is a maximal run of removed and added units. All scoring below counts units: a rule's output

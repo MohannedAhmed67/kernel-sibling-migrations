@@ -1,0 +1,23 @@
+\begin{tabular}{llrrrrr}
+\toprule
+Set & Source & Success & Changed & Divergent & Broken & Precision \\
+\midrule
+dev & Frontier LLM$^\dagger$ & 72.0 & 91.0 & 17.0 & 0.0 & 0.79 \\
+dev & Spinfer & 24.0 & 47.0 & 13.0 & 0.0 & 0.51 \\
+dev & Qwen2.5-Coder 7B, before compile critic & 38.0 & 82.7 & 12.0 & 20.0 & 0.46 \\
+dev & Qwen2.5-Coder 7B, \textsc{full} & 38.0 & 62.7 & 12.0 & 0.0 & 0.61 \\
+dev & Llama 3.1 8B, before compile critic & 1.7 & 22.3 & 10.7 & 0.0 & 0.07 \\
+dev & Llama 3.1 8B, \textsc{full} & 1.7 & 20.7 & 8.7 & 0.0 & 0.08 \\
+dev & Gemma 3 4B, before compile critic & 3.0 & 9.3 & 2.7 & 0.0 & 0.32 \\
+dev & Gemma 3 4B, \textsc{full} & 3.0 & 9.3 & 2.7 & 0.0 & 0.32 \\
+\midrule
+test & Frontier LLM$^\dagger$ & 66.0 & 94.0 & 28.0 & 0.0 & 0.70 \\
+test & Spinfer & 41.0 & 74.0 & 18.0 & 13.0 & 0.55 \\
+test & Qwen2.5-Coder 7B, before compile critic & 35.3 & 74.3 & 22.0 & 13.0 & 0.48 \\
+test & Qwen2.5-Coder 7B, \textsc{full} & 35.3 & 48.0 & 8.7 & 0.0 & 0.74 \\
+test & Llama 3.1 8B, before compile critic & 7.0 & 27.3 & 0.3 & 0.0 & 0.26 \\
+test & Llama 3.1 8B, \textsc{full} & 7.0 & 27.3 & 0.3 & 0.0 & 0.26 \\
+test & Gemma 3 4B, before compile critic & 2.7 & 34.7 & 0.0 & 12.0 & 0.08 \\
+test & Gemma 3 4B, \textsc{full} & 2.7 & 22.7 & 0.0 & 0.0 & 0.12 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,31 @@
+Item L029   migration: iio_push_with_ts   file: drivers/iio/light/ltr501.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -1315,8 +1315,8 @@
+ 		scan.channels[j++] = psdata & LTR501_PS_DATA_MASK;
+ 	}
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan,
+-					   iio_get_time_ns(indio_dev));
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan),
++				    iio_get_time_ns(indio_dev));
+ 
+ done:
+ 	iio_trigger_notify_done(indio_dev->trig);
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -1315,8 +1315,8 @@
+ 		scan.channels[j++] = psdata & LTR501_PS_DATA_MASK;
+ 	}
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan,
+-					   iio_get_time_ns(indio_dev));
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(&scan),
++				    iio_get_time_ns(indio_dev));
+ 
+ done:
+ 	iio_trigger_notify_done(indio_dev->trig);

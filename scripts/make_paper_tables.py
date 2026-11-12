@@ -90,8 +90,10 @@ for name in ("dev", "test"):
     S, migs = sets[name]["seed"], sets[name]["migs"]
     if not migs:
         continue
-    hdr = ("Migration & Buildable & Frontier LLM$^\\dagger$ & Spinfer & " +
-           " & ".join(f"{lab.split()[0]} one-shot & {lab.split()[0]} \\textsc{{full}}" for _, lab in MODELS) + " \\\\")
+    hdr = (" & & Frontier & & " + " & ".join(f"\\multicolumn{{2}}{{c}}{{{lab}}}" for _, lab in MODELS) + " \\\\\n" +
+           "".join(f"\\cmidrule(lr){{{5 + 2 * i}-{6 + 2 * i}}}" for i in range(len(MODELS))) + "\n" +
+           "Migration & Bld. & LLM$^\\dagger$ & Spinfer & " +
+           " & ".join("one-shot & \\textsc{full}" for _ in MODELS) + " \\\\")
     body = []
     for mig in migs + ["ALL"]:
         b = next((r["buildable"] for r in sets[name]["rows"] if r["migration"] == mig), "--")
@@ -122,11 +124,15 @@ for name in ("dev", "test"):
 
 # ---- ablation table ---------------------------------------------------------------------------------------------
 body = []
-for cfg, var, label in CONFIGS:
+ABL = ["OneShot", "Feedback", "Decomp", "Guidance", "Repair", "GenCritic", "Full"]
+for (cfg, var, label), ablkey in zip(CONFIGS, ABL):
     cells = [label]
     for name in ("dev", "test"):
-        for m, _ in MODELS:
-            cells.append(fmt(stat(sets[name]["seed"].get((m, cfg, var, "ALL"), {}))))
+        for m, lab in MODELS:
+            st = stat(sets[name]["seed"].get((m, cfg, var, "ALL"), {}))
+            cells.append(fmt(st))
+            if st:
+                macro(f"{name}Abl{re.sub(r'[^A-Za-z]', '', lab.split()[0])}{ablkey}", f"{st[0]:.1f}")
     body.append(" & ".join(cells) + " \\\\")
 hdr = ("Configuration & " + " & ".join(f"{lab.split()[0]}" for _, lab in MODELS) + " & " +
        " & ".join(f"{lab.split()[0]}" for _, lab in MODELS) + " \\\\")
@@ -136,23 +142,83 @@ open("paper/tables/ablation.tex", "w").write(
     f"{numbers.get('testBuildable', '?')})" + "} \\\\\n\\cmidrule(lr){2-4}\\cmidrule(lr){5-7}\n" + hdr +
     "\n\\midrule\n" + "\n".join(body) + "\n\\bottomrule\n\\end{tabular}\n")
 
+# ---- safety of outputs (what the compile critic changes) --------------------------------------------------------
+# Over buildable targets: success; divergent (an edit the human did not make); broken (exact/subset output that
+# does not compile). Means over seeds for the local models.
+def safety(rows_path):
+    acc = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
+    for r in load(rows_path):
+        if r["build_original"] != "True":
+            continue
+        m = re.match(r"(.*)_s(\d+)$", r["config"])
+        cfg, seed = (m.group(1), m.group(2)) if m else (r["config"], "0")
+        c = acc[(r["model"], cfg, r["variant"])][seed]
+        c["success"] += r["success"] in ("1", "True")
+        c["divergent"] += r["auto_class"] == "divergent"
+        c["broken"] += r["auto_class"] in ("exact", "subset_complete") and r["build_rule"] == "False"
+        c["changed"] += r["auto_class"] in ("exact", "subset_complete", "subset_incomplete", "divergent")
+    return {k: {f: statistics.mean(c[f] for c in v.values()) for f in ("success", "divergent", "broken", "changed")}
+            for k, v in acc.items()}
+
+
+body = []
+for name, path in (("dev", "results/gcg_heldout_dev_rows.csv"), ("test", "results/gcg_heldout_test_rows.csv")):
+    sf = safety(path)
+    if not sf:
+        continue
+    srcs = [("manual", "-", "rules", "Frontier LLM$^\\dagger$"), ("spinfer", "-", "rules", "Spinfer")]
+    for m, lab in MODELS:
+        srcs += [(m, "leaf_gc_r3", "composed", f"{lab}, before compile critic"),
+                 (m, "leaf_gc_r3", "critic", f"{lab}, \\textsc{{full}}")]
+    for model, cfg, var, lab in srcs:
+        v = sf.get((model, cfg, var))
+        if not v:
+            continue
+        prec = v["success"] / v["changed"] if v["changed"] else 0
+        body.append(f"{name} & {lab} & {v['success']:.1f} & {v['changed']:.1f} & {v['divergent']:.1f} & "
+                    f"{v['broken']:.1f} & {prec:.2f} \\\\")
+        key = re.sub(r"[^A-Za-z]", "", lab.split(",")[0].split()[0]) + ("Pre" if var == "composed" else "")
+        macro(f"{name}Safe{key}Divergent", f"{v['divergent']:.1f}")
+        macro(f"{name}Safe{key}Broken", f"{v['broken']:.1f}")
+        macro(f"{name}Safe{key}Precision", f"{prec:.2f}")
+    body.append("\\midrule")
+open("paper/tables/safety.tex", "w").write(
+    "\\begin{tabular}{llrrrrr}\n\\toprule\nSet & Source & Success & Changed & Divergent & Broken & Precision \\\\\n"
+    "\\midrule\n" + "\n".join(body[:-1]) + "\n\\bottomrule\n\\end{tabular}\n")
+
 # ---- cost ---------------------------------------------------------------------------------------------------------
 tasks = load("results/gcg_stage2_tasks.csv")
 critic = load("results/gcg_stage4_critic.csv")
+# share of leaf tasks whose best rule does not parse, without and with auto-repair (both sets, all seeds)
+for m, lab in MODELS:
+    key = re.sub(r"[^A-Za-z]", "", lab.split()[0])
+    for cfg, tag in (("leaf_gnofix_r3", "NoFix"), ("leaf_g_r3", "Fix")):
+        rs = [r for r in tasks if r["model"] == m and re.sub(r"_s\d+$", "", r["config"]) == cfg]
+        if rs:
+            macro(f"parseFail{key}{tag}", f"{100 * sum(int(r['spatch_error']) for r in rs) / len(rs):.0f}")
+            macro(f"parseTasks{key}{tag}", len(rs))
+
 body = []
 for m, lab in MODELS:
-    rs = [r for r in tasks if r["model"] == m and r["config"].startswith("leaf_gc_r3")]
-    if not rs:
-        continue
-    runs = {(r["config"], r["migration"]) for r in rs}
-    calls = sum(int(r["calls"]) for r in rs) / len(runs)
-    secs = sum(float(r["seconds"]) for r in rs) / len(runs)
-    rep = [int(r["repair_calls"]) for r in critic if r["model"] == m]
-    body.append(f"{lab} & {calls:.1f} & {secs:.0f} & {statistics.mean(rep) if rep else 0:.1f} \\\\")
+    cells = [lab]
     key = re.sub(r"[^A-Za-z]", "", lab.split()[0])
-    macro(f"cost{key}Calls", f"{calls:.1f}"); macro(f"cost{key}Seconds", f"{secs:.0f}")
+    for name in ("dev", "test"):
+        migs = set(DEV) if name == "dev" else set(sets["test"]["migs"])
+        rs = [r for r in tasks if r["model"] == m and r["config"].startswith("leaf_gc_r3") and r["migration"] in migs]
+        if not rs:
+            cells += ["--"] * 3
+            continue
+        runs = {(r["config"], r["migration"]) for r in rs}   # one run = one migration x seed
+        calls = sum(int(r["calls"]) for r in rs) / len(runs)
+        secs = sum(float(r["seconds"]) for r in rs) / len(runs)
+        rep = [int(r["repair_calls"]) for r in critic if r["model"] == m and r["migration"] in migs]
+        cells += [f"{calls:.1f}", f"{secs:.0f}", f"{statistics.mean(rep) if rep else 0:.1f}"]
+        macro(f"{name}Cost{key}Calls", f"{calls:.1f}"); macro(f"{name}Cost{key}Seconds", f"{secs:.0f}")
+    body.append(" & ".join(cells) + " \\\\")
 open("paper/tables/cost.tex", "w").write(
-    "\\begin{tabular}{lrrr}\n\\toprule\nModel & Model calls & Generation seconds & Repair calls \\\\\n"
+    "\\begin{tabular}{lrrrrrr}\n\\toprule\n & \\multicolumn{3}{c}{Development} & \\multicolumn{3}{c}{Test} \\\\\n"
+    "\\cmidrule(lr){2-4}\\cmidrule(lr){5-7}\n"
+    "Model & Calls & Seconds & Repairs & Calls & Seconds & Repairs \\\\\n"
     "\\midrule\n" + "\n".join(body) + "\n\\bottomrule\n\\end{tabular}\n")
 
 with open("paper/numbers.tex", "w") as f:

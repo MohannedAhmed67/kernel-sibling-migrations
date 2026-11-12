@@ -1,0 +1,37 @@
+Item L071   migration: iio_claim_direct   file: drivers/iio/chemical/scd4x.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -358,15 +358,14 @@
+ 			return IIO_VAL_INT;
+ 		}
+ 
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 
+ 		mutex_lock(&state->lock);
+ 		ret = scd4x_read_channel(state, chan->address);
+ 		mutex_unlock(&state->lock);
+ 
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -366,7 +366,7 @@
+ 		ret = scd4x_read_channel(state, chan->address);
+ 		mutex_unlock(&state->lock);
+ 
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 

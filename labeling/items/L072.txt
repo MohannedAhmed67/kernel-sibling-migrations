@@ -1,0 +1,36 @@
+Item L072   migration: iio_claim_direct   file: drivers/iio/proximity/pulsedlight-lidar-lite-v2.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -208,7 +208,7 @@
+ 	case IIO_CHAN_INFO_RAW: {
+ 		u16 reg;
+ 
+-		if (iio_device_claim_direct_mode(indio_dev))
++		if (!iio_device_claim_direct(indio_dev))
+ 			return -EBUSY;
+ 
+ 		ret = lidar_get_measurement(data, &reg);
+@@ -216,7 +216,7 @@
+ 			*val = reg;
+ 			ret = IIO_VAL_INT;
+ 		}
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		break;
+ 	}
+ 	case IIO_CHAN_INFO_SCALE:
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -216,7 +216,7 @@
+ 			*val = reg;
+ 			ret = IIO_VAL_INT;
+ 		}
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		break;
+ 	}
+ 	case IIO_CHAN_INFO_SCALE:

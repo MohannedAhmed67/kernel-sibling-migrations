@@ -113,7 +113,7 @@ def main():
     ap.add_argument("--rules-dirs", nargs="*", default=[])
     args = ap.parse_args()
     migs = args.migration or sorted({r["migration"] for r in csv.DictReader(open(args.split))})
-    with Pool(len(migs)) as p:
+    with Pool(min(len(migs), int(os.environ.get("H2_POOL", "3")))) as p:   # parallel kernel builds (memory)
         rows = [r for rs in p.map(run_migration, [(m, args.split, args.rules_dirs) for m in migs]) for r in rs]
     fields = ["model", "config", "variant", "migration", "idx", "commit", "file", "auto_class", "success",
               "build_original", "build_human", "build_rule", "human_changed_lines", "rule_changed_lines",

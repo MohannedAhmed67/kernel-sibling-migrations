@@ -1,0 +1,58 @@
+Item L046   migration: iio_push_with_ts   file: drivers/iio/light/vl6180.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -96,11 +96,6 @@
+ 	unsigned int als_it_ms;
+ 	unsigned int als_meas_rate;
+ 	unsigned int range_meas_rate;
+-
+-	struct {
+-		u16 chan[2];
+-		aligned_s64 timestamp;
+-	} scan;
+ };
+ 
+ enum { VL6180_ALS, VL6180_RANGE, VL6180_PROX };
+@@ -545,6 +540,11 @@
+ 	struct vl6180_data *data = iio_priv(indio_dev);
+ 	s64 time_ns = iio_get_time_ns(indio_dev);
+ 	int ret, bit, i = 0;
++	struct {
++		u16 chan[2];
++		aligned_s64 timestamp;
++	} scan = { };
++
+ 
+ 	iio_for_each_active_channel(indio_dev, bit) {
+ 		if (vl6180_chan_regs_table[bit].word)
+@@ -560,10 +560,10 @@
+ 			return IRQ_HANDLED;
+ 		}
+ 
+-		data->scan.chan[i++] = ret;
+-	}
+-
+-	iio_push_to_buffers_with_timestamp(indio_dev, &data->scan, time_ns);
++		scan.chan[i++] = ret;
++	}
++
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan), time_ns);
+ 	iio_trigger_notify_done(indio_dev->trig);
+ 
+ 	/* Clear the interrupt flag after data read */
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -563,7 +563,8 @@
+ 		data->scan.chan[i++] = ret;
+ 	}
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &data->scan, time_ns);
++	iio_push_to_buffers_with_ts(indio_dev, &data->scan,
++				    sizeof(data->scan), time_ns);
+ 	iio_trigger_notify_done(indio_dev->trig);
+ 
+ 	/* Clear the interrupt flag after data read */

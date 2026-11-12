@@ -1,0 +1,31 @@
+Item L092   migration: iio_push_with_ts   file: drivers/iio/light/vcnl4000.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -1698,8 +1698,8 @@
+ 	if (!data_read)
+ 		goto end;
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan,
+-					   iio_get_time_ns(indio_dev));
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan),
++				    iio_get_time_ns(indio_dev));
+ 
+ end:
+ 	iio_trigger_notify_done(indio_dev->trig);
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -1698,8 +1698,8 @@
+ 	if (!data_read)
+ 		goto end;
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan,
+-					   iio_get_time_ns(indio_dev));
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(&scan),
++				    iio_get_time_ns(indio_dev));
+ 
+ end:
+ 	iio_trigger_notify_done(indio_dev->trig);

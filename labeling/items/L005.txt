@@ -1,0 +1,28 @@
+Item L005   migration: iio_push_with_ts   file: drivers/media/pci/mgb4/mgb4_trigger.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -97,7 +97,7 @@
+ 	scan.data = mgb4_read_reg(&st->mgbdev->video, 0xA0);
+ 	mgb4_write_reg(&st->mgbdev->video, 0xA0, scan.data);
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan, pf->timestamp);
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan), pf->timestamp);
+ 	iio_trigger_notify_done(indio_dev->trig);
+ 
+ 	mgb4_write_reg(&st->mgbdev->video, 0xB4, 1U << 11);
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -97,7 +97,8 @@
+ 	scan.data = mgb4_read_reg(&st->mgbdev->video, 0xA0);
+ 	mgb4_write_reg(&st->mgbdev->video, 0xA0, scan.data);
+ 
+-	iio_push_to_buffers_with_timestamp(indio_dev, &scan, pf->timestamp);
++	iio_push_to_buffers_with_ts(indio_dev, &scan, sizeof(scan),
++				    pf->timestamp);
+ 	iio_trigger_notify_done(indio_dev->trig);
+ 
+ 	mgb4_write_reg(&st->mgbdev->video, 0xB4, 1U << 11);

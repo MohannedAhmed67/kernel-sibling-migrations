@@ -1,0 +1,72 @@
+Item L038   migration: iio_claim_direct   file: drivers/iio/light/as73211.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -419,18 +419,17 @@
+ 	case IIO_CHAN_INFO_RAW: {
+ 		int ret;
+ 
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret < 0)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 
+ 		ret = as73211_req_data(data);
+ 		if (ret < 0) {
+-			iio_device_release_direct_mode(indio_dev);
++			iio_device_release_direct(indio_dev);
+ 			return ret;
+ 		}
+ 
+ 		ret = i2c_smbus_read_word_data(data->client, chan->address);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 
+@@ -614,12 +613,11 @@
+ 
+ 	guard(mutex)(&data->mutex);
+ 
+-	ret = iio_device_claim_direct_mode(indio_dev);
+-	if (ret < 0)
+-		return ret;
++	if (!iio_device_claim_direct(indio_dev))
++		return -EBUSY;
+ 
+ 	ret = _as73211_write_raw(indio_dev, chan, val, val2, mask);
+-	iio_device_release_direct_mode(indio_dev);
++	iio_device_release_direct(indio_dev);
+ 
+ 	return ret;
+ }
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -425,12 +425,12 @@
+ 
+ 		ret = as73211_req_data(data);
+ 		if (ret < 0) {
+-			iio_device_release_direct_mode(indio_dev);
++			iio_device_release_direct(indio_dev);
+ 			return ret;
+ 		}
+ 
+ 		ret = i2c_smbus_read_word_data(data->client, chan->address);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 
+@@ -619,7 +619,7 @@
+ 		return ret;
+ 
+ 	ret = _as73211_write_raw(indio_dev, chan, val, val2, mask);
+-	iio_device_release_direct_mode(indio_dev);
++	iio_device_release_direct(indio_dev);
+ 
+ 	return ret;
+ }

@@ -1,0 +1,76 @@
+Item L031   migration: gpio_set_rv   file: drivers/gpio/gpio-it87.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -213,8 +213,7 @@
+ 	return rc;
+ }
+ 
+-static void it87_gpio_set(struct gpio_chip *chip,
+-			  unsigned gpio_num, int val)
++static int it87_gpio_set(struct gpio_chip *chip, unsigned int gpio_num, int val)
+ {
+ 	u8 mask, curr_vals;
+ 	u16 reg;
+@@ -228,6 +227,8 @@
+ 		outb(curr_vals | mask, reg);
+ 	else
+ 		outb(curr_vals & ~mask, reg);
++
++	return 0;
+ }
+ 
+ static int it87_gpio_direction_out(struct gpio_chip *chip,
+@@ -249,7 +250,9 @@
+ 	/* set the output enable bit */
+ 	superio_set_mask(mask, group + it87_gpio->output_base);
+ 
+-	it87_gpio_set(chip, gpio_num, val);
++	rc = it87_gpio_set(chip, gpio_num, val);
++	if (rc)
++		goto exit;
+ 
+ 	superio_exit();
+ 
+@@ -264,7 +267,7 @@
+ 	.request		= it87_gpio_request,
+ 	.get			= it87_gpio_get,
+ 	.direction_input	= it87_gpio_direction_in,
+-	.set			= it87_gpio_set,
++	.set_rv			= it87_gpio_set,
+ 	.direction_output	= it87_gpio_direction_out,
+ 	.base			= -1
+ };
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -213,8 +213,7 @@
+ 	return rc;
+ }
+ 
+-static void it87_gpio_set(struct gpio_chip *chip,
+-			  unsigned gpio_num, int val)
++static int it87_gpio_set(struct gpio_chip *chip, unsigned int gpio_num, int val)
+ {
+ 	u8 mask, curr_vals;
+ 	u16 reg;
+@@ -228,6 +227,8 @@
+ 		outb(curr_vals | mask, reg);
+ 	else
+ 		outb(curr_vals & ~mask, reg);
++
++	return 0;
+ }
+ 
+ static int it87_gpio_direction_out(struct gpio_chip *chip,
+@@ -264,7 +265,7 @@
+ 	.request		= it87_gpio_request,
+ 	.get			= it87_gpio_get,
+ 	.direction_input	= it87_gpio_direction_in,
+-	.set			= it87_gpio_set,
++	.set_rv			= it87_gpio_set,
+ 	.direction_output	= it87_gpio_direction_out,
+ 	.base			= -1
+ };

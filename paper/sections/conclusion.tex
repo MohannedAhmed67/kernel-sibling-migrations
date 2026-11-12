@@ -1,0 +1,14 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+Earlier hand conversions of a kernel API migration are enough material for a 7B code model on a laptop to write
+working Coccinelle rules, provided the work is structured for it: decomposed by variant, guided by the examples'
+minimal edits, checked against the examples, repaired where the errors are mechanical, and gated by the compiler.
+Prompted directly, the same model solves almost nothing on migrations it cannot have seen; with the framework it
+approaches Spinfer and, on the test set, is more precise than every other system we tested. The structure does not rescue
+general-purpose 4--8B models, and no local model handled changes that couple a declaration with its uses.
+
+Three directions follow. Rules that must agree across a declaration and its call sites need an interface the model
+cannot get wrong, for example a framework-written skeleton that fixes the shared metavariables. A semantic check
+beyond compilation would catch outputs such as \texttt{sizeof} of a pointer. And a larger pre-registered test set,
+refreshed as new APIs land, would let such frameworks be compared without contamination.

@@ -1,0 +1,93 @@
+Item L050   migration: pcim_request_all_regions   file: drivers/video/fbdev/savage/savagefb_driver.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -1728,7 +1728,7 @@
+ 
+ 	par->mmio.len = SAVAGE_NEWMMIO_REGSIZE;
+ 
+-	par->mmio.vbase = ioremap(par->mmio.pbase, par->mmio.len);
++	par->mmio.vbase = devm_ioremap(&par->pcidev->dev, par->mmio.pbase, par->mmio.len);
+ 	if (!par->mmio.vbase) {
+ 		printk("savagefb: unable to map memory mapped IO\n");
+ 		return -ENOMEM;
+@@ -1755,7 +1755,6 @@
+ 	savage_disable_mmio(par);
+ 
+ 	if (par->mmio.vbase) {
+-		iounmap(par->mmio.vbase);
+ 		par->mmio.vbase = NULL;
+ 	}
+ }
+@@ -1774,7 +1773,7 @@
+ 
+ 	par->video.pbase = pci_resource_start(par->pcidev, resource);
+ 	par->video.len   = video_len;
+-	par->video.vbase = ioremap_wc(par->video.pbase, par->video.len);
++	par->video.vbase = devm_ioremap_wc(&par->pcidev->dev, par->video.pbase, par->video.len);
+ 
+ 	if (!par->video.vbase) {
+ 		printk("savagefb: unable to map screen memory\n");
+@@ -1802,7 +1801,6 @@
+ 
+ 	if (par->video.vbase) {
+ 		arch_phys_wc_del(par->video.wc_cookie);
+-		iounmap(par->video.vbase);
+ 		par->video.vbase = NULL;
+ 		info->screen_base = NULL;
+ 	}
+@@ -2188,11 +2186,12 @@
+ 		return -ENOMEM;
+ 	par = info->par;
+ 	mutex_init(&par->open_lock);
+-	err = pci_enable_device(dev);
++	err = pcim_enable_device(dev);
+ 	if (err)
+ 		goto failed_enable;
+ 
+-	if ((err = pci_request_regions(dev, "savagefb"))) {
++	err = pcim_request_all_regions(dev, "savagefb");
++	if (err) {
+ 		printk(KERN_ERR "cannot request PCI regions\n");
+ 		goto failed_enable;
+ 	}
+@@ -2200,7 +2199,7 @@
+ 	err = -ENOMEM;
+ 
+ 	if ((err = savage_init_fb_info(info, dev, id)))
+-		goto failed_init;
++		goto failed_enable;
+ 
+ 	err = savage_map_mmio(info);
+ 	if (err)
+@@ -2331,8 +2330,6 @@
+ 	savage_unmap_mmio(info);
+  failed_mmio:
+ 	kfree(info->pixmap.addr);
+- failed_init:
+-	pci_release_regions(dev);
+  failed_enable:
+ 	framebuffer_release(info);
+ 
+@@ -2355,7 +2352,6 @@
+ 		savage_unmap_video(info);
+ 		savage_unmap_mmio(info);
+ 		kfree(info->pixmap.addr);
+-		pci_release_regions(dev);
+ 		framebuffer_release(info);
+ 	}
+ }
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -2192,7 +2192,7 @@
+ 	if (err)
+ 		goto failed_enable;
+ 
+-	if ((err = pci_request_regions(dev, "savagefb"))) {
++	if ((err = pcim_request_all_regions(dev, "savagefb"))) {
+ 		printk(KERN_ERR "cannot request PCI regions\n");
+ 		goto failed_enable;
+ 	}

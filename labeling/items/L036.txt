@@ -1,0 +1,110 @@
+Item L036   migration: ethtool_rx_ring_count   file: drivers/net/ethernet/emulex/benet/be_ethtool.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -1073,6 +1073,13 @@
+ 	adapter->msg_enable = level;
+ }
+ 
++static u32 be_get_rx_ring_count(struct net_device *netdev)
++{
++	struct be_adapter *adapter = netdev_priv(netdev);
++
++	return adapter->num_rx_qs;
++}
++
+ static int be_get_rxfh_fields(struct net_device *netdev,
+ 			      struct ethtool_rxfh_fields *cmd)
+ {
+@@ -1114,28 +1121,6 @@
+ 	}
+ 
+ 	cmd->data = data;
+-	return 0;
+-}
+-
+-static int be_get_rxnfc(struct net_device *netdev, struct ethtool_rxnfc *cmd,
+-			u32 *rule_locs)
+-{
+-	struct be_adapter *adapter = netdev_priv(netdev);
+-
+-	if (!be_multi_rxq(adapter)) {
+-		dev_info(&adapter->pdev->dev,
+-			 "ethtool::get_rxnfc: RX flow hashing is disabled\n");
+-		return -EINVAL;
+-	}
+-
+-	switch (cmd->cmd) {
+-	case ETHTOOL_GRXRINGS:
+-		cmd->data = adapter->num_rx_qs;
+-		break;
+-	default:
+-		return -EINVAL;
+-	}
+-
+ 	return 0;
+ }
+ 
+@@ -1292,6 +1277,12 @@
+ 	struct be_adapter *adapter = netdev_priv(netdev);
+ 	u8 *hkey = rxfh->key;
+ 	u8 rsstable[RSS_INDIR_TABLE_LEN];
++
++	if (!be_multi_rxq(adapter)) {
++		dev_info(&adapter->pdev->dev,
++			 "ethtool::set_rxfh: RX flow hashing is disabled\n");
++		return -EINVAL;
++	}
+ 
+ 	/* We do not allow change in unsupported parameters */
+ 	if (rxfh->hfunc != ETH_RSS_HASH_NO_CHANGE &&
+@@ -1441,7 +1432,7 @@
+ 	.get_ethtool_stats = be_get_ethtool_stats,
+ 	.flash_device = be_do_flash,
+ 	.self_test = be_self_test,
+-	.get_rxnfc = be_get_rxnfc,
++	.get_rx_ring_count = be_get_rx_ring_count,
+ 	.get_rxfh_fields = be_get_rxfh_fields,
+ 	.set_rxfh_fields = be_set_rxfh_fields,
+ 	.get_rxfh_indir_size = be_get_rxfh_indir_size,
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -1117,8 +1117,7 @@
+ 	return 0;
+ }
+ 
+-static int be_get_rxnfc(struct net_device *netdev, struct ethtool_rxnfc *cmd,
+-			u32 *rule_locs)
++static u32 be_get_rx_ring_count(struct net_device *netdev)
+ {
+ 	struct be_adapter *adapter = netdev_priv(netdev);
+ 
+@@ -1128,15 +1127,7 @@
+ 		return -EINVAL;
+ 	}
+ 
+-	switch (cmd->cmd) {
+-	case ETHTOOL_GRXRINGS:
+-		cmd->data = adapter->num_rx_qs;
+-		break;
+-	default:
+-		return -EINVAL;
+-	}
+-
+-	return 0;
++	return adapter->num_rx_qs;
+ }
+ 
+ static int be_set_rxfh_fields(struct net_device *netdev,
+@@ -1441,7 +1432,7 @@
+ 	.get_ethtool_stats = be_get_ethtool_stats,
+ 	.flash_device = be_do_flash,
+ 	.self_test = be_self_test,
+-	.get_rxnfc = be_get_rxnfc,
++	.get_rx_ring_count = be_get_rx_ring_count,
+ 	.get_rxfh_fields = be_get_rxfh_fields,
+ 	.set_rxfh_fields = be_set_rxfh_fields,
+ 	.get_rxfh_indir_size = be_get_rxfh_indir_size,

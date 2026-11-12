@@ -1,0 +1,131 @@
+\section{Results}
+\label{sec:results}
+
+\begin{table}[t]
+\centering
+\caption{Data. \emph{New API}: first commit that adds the new API under \texttt{include/} (test set only; all
+after the models' training cutoffs). \emph{Train}: training siblings. \emph{Buildable}: targets whose original file
+compiles on x86\_64 \texttt{allmodconfig}; the denominator of every success count.}
+\label{tab:data}
+\small
+\input{tables/data.tex}
+\end{table}
+
+\begin{table*}[t]
+\centering
+\caption{Test set: held-out conversions solved (output matches the human fix exactly or as a complete subset, and
+compiles). Local models: mean over three seeds, [min--max] where the seeds differ. \textsc{one-shot}: one rule from
+the plain examples; \textsc{full}: the complete framework. $^\dagger$A frontier LLM agent that may have seen these
+migrations during training; a reference point, not a like-for-like competitor.}
+\label{tab:test}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{\input{tables/test_main.tex}}
+\end{table*}
+
+\paragraph{Main result.} Table~\ref{tab:test} gives the test-set results. Prompted directly, none of the three local
+models can turn the training siblings into a working rule: Qwen2.5-Coder solves \testQwenCoderOneShot{} of
+\testBuildable{} conversions and the other two none. With the framework, Qwen2.5-Coder solves
+\testQwenCoderFull{} on average (\testQwenCoderFullMin--\testQwenCoderFullMax{} across seeds), Llama~3.1 8B
+solves \testLlamaFull{} and Gemma~3 4B \testGemmaFull. Spinfer solves \testSpinfer{} and the frontier LLM agent
+\testFrontier. The local model therefore closes most but not all of the distance to Spinfer, and the frontier agent
+stays well ahead. The per-migration picture is uneven: the guided Qwen2.5-Coder solves more conversions than
+Spinfer on \texttt{pcim\_request\_all\_regions} and \texttt{secs\_to\_jiffies}, matches it on
+\texttt{iio\_claim\_direct}, and falls behind on \texttt{iio\_push\_with\_ts}; on \texttt{gpio\_set\_rv} and
+\texttt{ethtool\_rx\_ring\_count} neither it nor Spinfer solves anything, while the frontier agent does.
+
+On the development set (Table~\ref{tab:dev}), whose migrations shaped the design, Qwen2.5-Coder solves
+\devQwenCoderFull{} of \devBuildable{} with the framework against \devQwenCoderOneShot{} one-shot, Spinfer
+\devSpinfer{} and the frontier agent \devFrontier. The general-purpose models again stay near zero.
+
+\begin{table*}[t]
+\centering
+\caption{Development set, same layout as Table~\ref{tab:test}. These migrations were used to design the framework,
+so the numbers are optimistic.}
+\label{tab:dev}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{\input{tables/dev_main.tex}}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Ablation: conversions solved as components are added (mean over three seeds, [min--max]). Every
+configuration is composed by stage~3; the last row adds the compile critic of stage~4.}
+\label{tab:ablation}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\input{tables/ablation.tex}
+\end{table}
+
+\paragraph{Which components matter.} Table~\ref{tab:ablation} adds one component at a time. For Qwen2.5-Coder on
+the test set, test feedback alone changes nothing (\testAblQwenCoderOneShot{} to \testAblQwenCoderFeedback):
+asked for one rule covering every variant at once, the model never produces a rule good enough for feedback to
+refine. Decomposition into variant leaves is the first large step (\testAblQwenCoderDecomp), and guidance (minimal
+edits, context, interfaces, hints, lint and stall handling) roughly doubles it again
+(\testAblQwenCoderGuidance). On the development set the order differs: decomposition adds little
+(\devAblQwenCoderFeedback{} to \devAblQwenCoderDecomp), guidance and auto-repair add most
+(\devAblQwenCoderGuidance, then \devAblQwenCoderRepair). The general-purpose models fail for a more basic reason:
+they rarely write SmPL that parses. Without auto-repair, the best rule of \parseFailGemmaNoFix\% of Gemma's leaf
+tasks does not parse (\parseFailLlamaNoFix\% for Llama, \parseFailQwenCoderNoFix\% for Qwen2.5-Coder); auto-repair
+lowers this to \parseFailGemmaFix\%, \parseFailLlamaFix\% and \parseFailQwenCoderFix\%. For Gemma, auto-repair
+is what makes any success possible at all; for Llama on the test set it does not help (\testAblLlamaGuidance{}
+before, \testAblLlamaRepair{} after). Adding the generality critic left the mean number of solved conversions
+unchanged for every model on both sets. We keep it because it is cheap and did not hurt, but our data give no
+evidence that it is needed.
+
+\begin{table}[t]
+\centering
+\caption{Precision of the outputs on buildable targets (local models: mean over seeds). \emph{Changed}: targets
+the rule edits; \emph{Divergent}: the rule makes an edit the human did not make; \emph{Broken}: the output matches
+the human fix (exactly or as a subset) but does not compile; \emph{Precision}: solved / changed.}
+\label{tab:safety}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{\input{tables/safety.tex}}
+\end{table}
+
+\paragraph{The compile critic buys precision at no cost.} The compile critic never changes the number of
+solved conversions (Table~\ref{tab:ablation}), but it changes what the rule does to the others
+(Table~\ref{tab:safety}). Before it, Qwen2.5-Coder's composed rules on the test set produce
+\testSafeQwenCoderPreBroken{} outputs per seed that match the human fix but do not build, and
+\testSafeQwenCoderPreDivergent{} divergent ones. The critic either repairs such a rule or abstains for that
+migration, leaving \testSafeQwenCoderBroken{} broken and \testSafeQwenCoderDivergent{} divergent outputs and raising
+precision from \testSafeQwenCoderPrePrecision{} to \testSafeQwenCoderPrecision{}, above Spinfer
+(\testSafeSpinferPrecision, with \testSafeSpinferBroken{} broken outputs) and the frontier agent
+(\testSafeFrontierPrecision). On the development set the frontier agent remains more precise
+(\devSafeFrontierPrecision{} against \devSafeQwenCoderPrecision). For a maintainer, a rule that converts fewer
+files but rarely needs to be undone, or no rule at all, is easier to adopt than one that has to be checked file by
+file.
+
+\paragraph{Where the framework fails.} Three failure modes account for the test migrations the local models do not
+solve. (i) \emph{Changes that span declarations.} \texttt{gpio\_set\_rv} turns a \texttt{void} callback into one
+returning \texttt{int}, returns the value of its last call, and renames the struct field that registers it;
+\texttt{ethtool\_rx\_ring\_count} moves a \texttt{switch} case into a new function and registers it in an
+\texttt{ethtool\_ops} initialiser. Both need several rules that agree on a function name across a file. The
+framework's interface mechanism passes metavariables from an anchor rule to its dependants, but whenever a model
+composed a rule for these migrations, its outputs on the training files did not compile (the compiler reports
+the registering field renamed while the callback keeps its old type, or a \texttt{return} with a value left in a
+\texttt{void} function), repair did not fix them, and the critic abstained
+for all three models on every seed. The development
+migration \texttt{platform\_remove\_new} has the same shape and the same outcome. (ii) \emph{Over-specific
+patterns.} On \texttt{iio\_push\_with\_ts} Qwen2.5-Coder's rule requires the timestamp argument to be a function
+call, so it misses the common \texttt{pf->timestamp} form, and it writes \texttt{sizeof(ID2)} where
+\texttt{ID2} is the expression \texttt{\&scan}: the output computes the size of a pointer. That output compiles,
+which no compile check can catch; it shows up only as a divergent edit. (iii) \emph{Invalid SmPL} remains the main
+failure of the two general-purpose models, as quantified above.
+
+\begin{table}[t]
+\centering
+\caption{Cost per migration of the \textsc{full} configuration on one laptop GPU (RTX~5060, 8\,GB): model calls
+and seconds of generation in stage~2, and repair calls of the compile critic (stage~4), mean over migrations and
+seeds. Compilation time is excluded.}
+\label{tab:cost}
+\small
+\input{tables/cost.tex}
+\end{table}
+
+\paragraph{Cost.} Table~\ref{tab:cost} reports generation cost. A migration needs ten to twenty model calls and well
+under a minute of generation (\testCostQwenCoderCalls{} calls and \testCostQwenCoderSeconds{}\,s for
+Qwen2.5-Coder on the test set). Stage~4 additionally configures a kernel tree at each training commit it checks
+and compiles single object files there; build results are cached by commit, file and content.

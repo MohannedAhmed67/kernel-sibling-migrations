@@ -1,0 +1,33 @@
+Item L018   migration: iio_claim_direct   file: drivers/iio/adc/vf610_adc.c
+
+=== HUMAN FIX (diff original -> human) ===
+--- original
++++ human
+@@ -681,11 +681,10 @@
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+ 	case IIO_CHAN_INFO_PROCESSED:
+-		ret = iio_device_claim_direct_mode(indio_dev);
+-		if (ret)
+-			return ret;
++		if (!iio_device_claim_direct(indio_dev))
++			return -EBUSY;
+ 		ret = vf610_read_sample(info, chan, val);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 
+
+=== RULE OUTPUT (diff original -> rule) ===
+--- original
++++ rule
+@@ -685,7 +685,7 @@
+ 		if (ret)
+ 			return ret;
+ 		ret = vf610_read_sample(info, chan, val);
+-		iio_device_release_direct_mode(indio_dev);
++		iio_device_release_direct(indio_dev);
+ 		if (ret < 0)
+ 			return ret;
+ 
