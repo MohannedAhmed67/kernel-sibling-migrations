@@ -1,28 +1,6 @@
 \section{Results}
 \label{sec:results}
 
-\begin{table}[t]
-\centering
-\caption{Data. \emph{New API}: first commit that adds the new API under \texttt{include/} (test set only; all
-after the models' training cutoffs). \emph{Train}: training siblings. \emph{Buildable}: targets whose original file
-compiles on x86\_64 \texttt{allmodconfig}; the denominator of every success count.}
-\label{tab:data}
-\small
-\input{tables/data.tex}
-\end{table}
-
-\begin{table*}[t]
-\centering
-\caption{Test set: held-out conversions solved (output matches the human fix exactly or as a complete subset, and
-compiles). Local models: mean over three seeds, [min--max] where the seeds differ. \textsc{one-shot}: one rule from
-the plain examples; \textsc{full}: the complete framework. $^\dagger$A frontier LLM agent that may have seen these
-migrations during training; a reference point, not a like-for-like competitor.}
-\label{tab:test}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\resizebox{\textwidth}{!}{\input{tables/test_main.tex}}
-\end{table*}
-
 \paragraph{Main result.} Table~\ref{tab:test} gives the test-set results. Prompted directly, none of the three local
 models can turn the training siblings into a working rule: Qwen2.5-Coder solves \testQwenCoderOneShot{} of
 \testBuildable{} conversions and the other two none. With the framework, Qwen2.5-Coder solves
@@ -43,20 +21,20 @@ On the development set (Table~\ref{tab:dev}), whose migrations shaped the design
 \caption{Development set, same layout as Table~\ref{tab:test}. These migrations were used to design the framework,
 so the numbers are optimistic.}
 \label{tab:dev}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\resizebox{\textwidth}{!}{\input{tables/dev_main.tex}}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\input{tables/dev_main.tex}
 \end{table*}
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Ablation: conversions solved as components are added (mean over three seeds, [min--max]). Every
 configuration is composed by stage~3; the last row adds the compile critic of stage~4.}
 \label{tab:ablation}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
 \input{tables/ablation.tex}
-\end{table}
+\end{table*}
 
 \paragraph{Which components matter.} Table~\ref{tab:ablation} adds one component at a time. For Qwen2.5-Coder on
 the test set, test feedback alone changes nothing (\testAblQwenCoderOneShot{} to \testAblQwenCoderFeedback):
@@ -74,16 +52,16 @@ before, \testAblLlamaRepair{} after). Adding the generality critic left the mean
 unchanged for every model on both sets. We keep it because it is cheap and did not hurt, but our data give no
 evidence that it is needed.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Precision of the outputs on buildable targets (local models: mean over seeds). \emph{Changed}: targets
 the rule edits; \emph{Divergent}: the rule makes an edit the human did not make; \emph{Broken}: the output matches
 the human fix (exactly or as a subset) but does not compile; \emph{Precision}: solved / changed.}
 \label{tab:safety}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\resizebox{\textwidth}{!}{\input{tables/safety.tex}}
-\end{table}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\input{tables/safety.tex}
+\end{table*}
 
 \paragraph{The compile critic buys precision at no cost.} The compile critic never changes the number of
 solved conversions (Table~\ref{tab:ablation}), but it changes what the rule does to the others
@@ -121,8 +99,7 @@ failure of the two general-purpose models, as quantified above.
 and seconds of generation in stage~2, and repair calls of the compile critic (stage~4), mean over migrations and
 seeds. Compilation time is excluded.}
 \label{tab:cost}
-\small
-\input{tables/cost.tex}
+\resizebox{\columnwidth}{!}{\input{tables/cost.tex}}
 \end{table}
 
 \paragraph{Cost.} Table~\ref{tab:cost} reports generation cost. A migration needs ten to twenty model calls and well

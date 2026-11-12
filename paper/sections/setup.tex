@@ -1,6 +1,28 @@
 \section{Experimental Setup}
 \label{sec:setup}
 
+\begin{table*}[t]
+\centering
+\caption{Data. \emph{New API}: first commit that adds the new API under \texttt{include/} (test set only; all
+after the models' training cutoffs). \emph{Train}: training siblings. \emph{Buildable}: targets whose original file
+compiles on x86\_64 \texttt{allmodconfig}; the denominator of every success count.}
+\label{tab:data}
+\footnotesize
+\input{tables/data.tex}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Test set: held-out conversions solved (output matches the human fix exactly or as a complete subset, and
+compiles). Local models: mean over three seeds, [min--max] where the seeds differ. \textsc{one-shot}: one rule from
+the plain examples; \textsc{full}: the complete framework. $^\dagger$A frontier LLM agent that may have seen these
+migrations during training; a reference point, not a like-for-like competitor.}
+\label{tab:test}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\input{tables/test_main.tex}
+\end{table*}
+
 \paragraph{Migrations and split.} A \emph{conversion} is a (commit, file) pair whose diff removes a line matching the
 migration's old-API pattern and adds a line matching its new-API pattern. Per migration, the earliest 30\% of
 \texttt{.c} conversions by commit time (at most 20, one per file) are the training siblings. Targets are conversions
